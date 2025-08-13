@@ -1,131 +1,387 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-
+<html lang="en">
 <head>
-    <title>m3u8播放器</title>
+    <title>M3U8 Player Online - Free HLS Video Streaming Player</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="M3U8Player播放器，用于m3u8文件的在线播放">
-
+    <meta name="description" content="Free M3U8 Player Online - Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced HTML5 video player. No downloads required.">
+    <meta name="keywords" content="m3u8 player online, HLS player, video streaming, m3u8 streaming, online video player, HTML5 player">
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
+    <meta property="og:description" content="Stream M3U8 videos online with our free HLS player. Play .m3u8 files directly in your browser.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
+    <meta name="twitter:description" content="Stream M3U8 videos online with our free HLS player.">
+    <link rel="canonical" href="https://m3u8player.co/">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
     <link rel="stylesheet" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css">
     <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js"></script>
-
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
     <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
-
- 
-
     <style>
-
-        @media screen and (max-width: 640px){
-            #player-container-id {
-                height: 200px!important;
-            }
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
-        
-        html, body{
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
             width: 100%;
             height: 100%;
-            display: block;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .hd {
-            width: 100%;
-            height: 50px;
-            background-color: #0e90d2;
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .hd .link-list {
-            padding: 0 16px;
-            height: 50px;
-            width: 100%;
-            max-width: 900px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
             display: flex;
-            flex-direction: row;
-            gap: 24px;
+            justify-content: space-between;
             align-items: center;
-            align-content: center;
+            height: 64px;
         }
 
-        .hd .link-list a {
-            font-size: 16px;
-            color: #fff;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
             text-decoration: none;
-            cursor: pointer;
         }
 
-        .hd .link-list a:hover {
-            font-weight: bold;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .main {
-            padding: 16px 16px;
-            width: 100%;
-            max-width: 900px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .main h1 {
-            text-align: center;
-            font-size: 30px;
-            color: #0e90d2;
-            font-weight: 800;
-            margin-bottom: 24px;
+        .player-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
         }
 
-        .main .form {
-            width: 100%;
+        .input-group {
             display: flex;
-            flex-direction: row;
-            margin-bottom: 24px;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .main .form input {
+        .url-input {
             flex: 1;
-            height: 40px;
-            border-top: 1px solid #0e90d2;
-            border-left: 1px solid #0e90d2;
-            border-bottom: 1px solid #0e90d2;
-            border-right: 0px;
-            padding-left: 10px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: var(--background-color);
+            color: var(--text-primary);
+            transition: border-color 0.2s ease;
         }
 
-        .main .form input:focus {
-            outline: #0e90d2;
+        .url-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
 
-        .main .form img {
-            margin-left: -4px;
-            width: 40px;
-            height: 40px;
+        .play-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
             cursor: pointer;
+            transition: background-color 0.2s ease;
         }
 
-        .main #share {
+        .play-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .video-container {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: #000;
+            box-shadow: var(--shadow);
+        }
+
+        #player-container-id {
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
             text-align: center;
-            margin-top: 24px;
-            margin-bottom: 24px;
         }
 
-        .main p {
-            font-size: 15px;
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
         }
 
-        .main .alert a {
-            color: #501445;
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .usage-guide {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .usage-guide h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .steps {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .embed-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .code-block {
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .embed-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .embed-section h2, .embed-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        .main h2 {
-            font-size: 16px;
-            font-weight: bold;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .play-btn {
+                width: 100%;
+            }
+
+            #player-container-id {
+                min-height: 200px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 
@@ -133,62 +389,150 @@
 </head>
 
 <body>
-
-    <header class="hd">
-        <div class="link-list">
-            <a href="/">首页</a>
-            <a href="/about.html">关于</a>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">M3U8 Player Online</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
         </div>
     </header>
 
     <div class="main">
-        <h1>m3u8在线播放器</h1>
+        <section class="hero">
+            <h1>M3U8 Player Online</h1>
+            <p>Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced HTML5 video player. No downloads required.</p>
+        </section>
 
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Enter M3U8 URL to play" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Play</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
 
-        <div class="form">
-            <input type="text" id="url"  value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="请输入m3u8播放地址" autocomplete="off">
-            <img src="./images/ic-play.png" onclick="play()"/>
-        </div>
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3>Instant Streaming</h3>
+                <p>Play M3U8 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Private</h3>
+                <p>All streaming happens directly in your browser. No data is stored on our servers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>High Performance</h3>
+                <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Universal Support</h3>
+                <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Dark Mode</h3>
+                <p>Switch between light and dark themes for comfortable viewing in any environment.</p>
+            </div>
+        </section>
 
+        <section class="usage-guide">
+            <h2>How to Use M3U8 Player Online</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Get Your M3U8 URL</h3>
+                        <p>Obtain the M3U8 streaming URL from your video source. This could be from a live stream, video hosting service, or your own server.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Paste the URL</h3>
+                        <p>Copy and paste the M3U8 URL into the input field above. Make sure the URL is complete and accessible.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Click Play</h3>
+                        <p>Hit the play button and enjoy your video! The player will automatically load and start streaming the content.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Control Playback</h3>
+                        <p>Use the built-in video controls to pause, seek, adjust volume, or enter fullscreen mode for the best viewing experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>Embed M3U8 Player</h2>
+            <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p>Simply replace <code>https://your-stream-url.m3u8</code> with your actual M3U8 stream URL.</p>
+        </section>
 
-        <video id="player-container-id"  preload="auto" playsinline webkit-playsinline style="width: 100%;min-height:200px; background:#000;">
-        </video> 
-
-
-        <div class="alert alert-success" role="alert">
+        <section class="embed-section">
+            <h2>About M3U8 Technology</h2>
             <p>
-                嵌入网站:
+                M3U8Player is an advanced HTTP Live Streaming (HLS) client that enables seamless playback of .m3u8 files directly in your browser. 
+                It leverages HTML5 video capabilities and Media Source Extensions for optimal performance.
             </p>
             <p>
-            <pre>&lt;iframe src="https://m3u8player.co/player.html?url=https://****index.m3u8"&gt;&lt;/iframe&gt;</pre>
+                The player works by converting MPEG-2 Transport Streams and AAC/MP3 audio streams into ISO BMFF (MP4) fragments. 
+                When Web Workers are available, it utilizes them for asynchronous transcoding, ensuring smooth playback without blocking the main thread. 
+                It also supports HLS + fmp4 for enhanced compatibility.
+            </p>
+            
+            <h3>What is an M3U8 file?</h3>
+            <p>
+                An <a href="https://en.wikipedia.org/wiki/M3U#M3U8" target="_blank" rel="noopener">M3U8</a> file is a UTF-8 encoded playlist file used by audio and video players to describe the location of media files. 
+                These are plain text files that can reference both local and remote media content.
             </p>
             <p>
-                M3U8Player 是一款实现 HTTP 实时流客户端的 Chrome 浏览器扩展工具。你可以播放 .m3u8 HTTP Live Streaming (HLS)。它依靠 HTML5
-                视频和媒体源扩展进行播放。它的工作原理是将 MPEG-2 传输流和 AAC/MP3 流转换成 ISO BMFF (MP4) 片段。如果浏览器中有 Web Worker，可使用它异步执行转码。它还支持 HLS
-                + fmp4。
+                For example, an M3U8 file might provide references to online radio streams, or it could be created locally to establish playlists for your personal music or video collections. 
+                The format allows for quick and easy playback of content referenced in the playlist.
             </p>
-            <h2>什么是m3u8文件?</h2>
             <p>
-                文件扩展名为 <a href="https://en.wikipedia.org/wiki/M3U#M3U8">M3U8</a> 的文件是一种 UTF-8 编码的音频播放列表文件。它们是纯文本文件，音频和视频播放器都可以用它们来描述媒体文件的位置。
-            <p>
-                例如，一个 M3U8 文件可能会提供互联网电台的在线文件参考。另一个文件可能是在你的电脑上创建的，用于为你的个人音乐或一系列视频建立播放列表。
-            <p>
-                无论哪种方式，效果都是一样的：你可以打开文件，快速轻松地开始播放播放列表指向的内容。如果你发现自己想反复听同一首歌，你可以制作一个 M3U8 文件，作为在媒体播放器中播放这些特定曲目的快捷方式。
-            <p>
-                文件可以使用绝对路径、相对路径和 URL 来指向特定的媒体文件和/或媒体文件的整个文件夹。文件中的其他信息可能是描述文件内容的注释。
-
-            <p>
-                M3U8是一种播放多媒体列表的文件格式，它的设计初衷是为了播放音频文件，比如MP3，但是越来越多的软件现在用来播放视频文件列表，M3U8也可以指定在线流媒体音频源。很多<a href="http://m3u8player.org">播放器</a>和软件都支持M3U8文件格式。
+                M3U8 files can use absolute paths, relative paths, and URLs to point to specific media files or entire folders of media content. 
+                They may also contain comments that describe the file contents, making them both functional and self-documenting.
             </p>
+            <p>
+                Originally designed for audio files like MP3, M3U8 has evolved to become widely used for video streaming, 
+                particularly in HTTP Live Streaming (HLS) applications. Many modern <a href="https://m3u8player.org/" target="_blank" rel="noopener">media players</a> 
+                and streaming software support the M3U8 format.
+            </p>
+        </section>
+    </div>
 
-        </div>
-
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 M3U8 Player Online. All rights reserved.</p>
         <p>
-            <span style="font-size: 14px;">© 2019 - 2025 </span>
-            <p>友情链接：
-                <a href="https://m3u8player.org/">m3u8播放器</a>
-            </p>
+            Related: <a href="https://m3u8player.org/" target="_blank" rel="noopener">M3U8 Player</a>
         </p>
+    </footer>
     </div>
 
     <script>

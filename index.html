@@ -15,8 +15,7 @@
     <meta name="twitter:description" content="Stream M3U8 videos online with our free HLS player.">
     <link rel="canonical" href="https://m3u8player.co/">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css">
     <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js"></script>
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
@@ -145,6 +144,7 @@
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         .player-section {
@@ -236,6 +236,11 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .feature-card p {
+            line-height: 1.6;
         }
 
         .usage-guide {
@@ -251,6 +256,7 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             text-align: center;
+            line-height: 1.3;
         }
 
         .steps {
@@ -280,6 +286,11 @@
         .step-content h3 {
             font-weight: 600;
             margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .step-content p {
+            line-height: 1.6;
         }
 
         .embed-section {
@@ -318,6 +329,12 @@
 
         .embed-section h2, .embed-section h3 {
             color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .embed-section p {
+            line-height: 1.7;
             margin-bottom: 1rem;
         }
 
@@ -396,7 +413,7 @@
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
-                    <span id="theme-icon">🌙</span>
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
         </div>
@@ -421,22 +438,22 @@
 
         <section class="features">
             <div class="feature-card">
-                <div class="feature-icon">🎬</div>
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
                 <h3>Instant Streaming</h3>
                 <p>Play M3U8 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📱</div>
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                 <h3>Mobile Friendly</h3>
                 <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🔒</div>
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Secure & Private</h3>
                 <p>All streaming happens directly in your browser. No data is stored on our servers.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                 <h3>High Performance</h3>
                 <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
             </div>
@@ -456,24 +473,24 @@
             <h2>How to Use M3U8 Player Online</h2>
             <div class="steps">
                 <div class="step">
-                    <div class="step-number">1</div>
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Get Your M3U8 URL</h3>
-                        <p>Obtain the M3U8 streaming URL from your video source. This could be from a live stream, video hosting service, or your own server.</p>
+                        <h3>Copy M3U8 URL</h3>
+                        <p>Find and copy the M3U8 stream URL from your video source.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Paste the URL</h3>
-                        <p>Copy and paste the M3U8 URL into the input field above. Make sure the URL is complete and accessible.</p>
+                        <h3>Paste URL</h3>
+                        <p>Paste the M3U8 URL into the input field above.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
+                    <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Click Play</h3>
-                        <p>Hit the play button and enjoy your video! The player will automatically load and start streaming the content.</p>
+                        <h3>Start Playing</h3>
+                        <p>Click the "Play Video" button and enjoy your stream!</p>
                     </div>
                 </div>
                 <div class="step">
@@ -486,7 +503,7 @@
             </div>
         </section> 
         <section class="embed-section">
-            <h2>Embed M3U8 Player</h2>
+            <h3>About M3U8 Technology</h3>
             <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
             <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
@@ -495,7 +512,7 @@
         </section>
 
         <section class="embed-section">
-            <h2>About M3U8 Technology</h2>
+            <h3>About M3U8 Technology</h3>
             <p>
                 M3U8Player is an advanced HTTP Live Streaming (HLS) client that enables seamless playback of .m3u8 files directly in your browser. 
                 It leverages HTML5 video capabilities and Media Source Extensions for optimal performance.
@@ -537,6 +554,37 @@
 
     <script>
         var player = undefined;
+        
+        // 暗黑模式切换功能
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // 页面加载时恢复主题设置
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
         function play() {
             let url = $("#url").val()
 
@@ -549,8 +597,6 @@
                 licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1252819296_1/v_cube.license',
             }); 
             }
-
-
             player.pause();
             console.log(url)
             player.src(url); // url 播放地址

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us - M3U8 Player Online | Free HLS Video Streaming Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about M3U8 Player Online - our mission, vision, and commitment to providing the best free HLS video streaming experience. Discover our privacy policy and values.">
+    <meta name="keywords" content="m3u8 player online, about us, HLS player, video streaming, mission, privacy policy">
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="About Us - M3U8 Player Online">
+    <meta property="og:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - M3U8 Player Online">
+    <meta name="twitter:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
+    <link rel="canonical" href="https://m3u8player.co/about.html">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            line-height: 1.4;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .icon-large {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">M3U8 Player Online</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>About M3U8 Player Online</h1>
+            <p>Learn more about our mission, vision, and commitment to providing the best free HLS video streaming experience.</p>
+        </section>
+
+        <!-- Website Introduction Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-info-circle icon-large"></i>Website Introduction</h2>
+            <p>
+                M3U8 Player Online is a cutting-edge web-based video streaming platform that specializes in HTTP Live Streaming (HLS) technology. 
+                Our platform enables users to play M3U8 files directly in their web browsers without requiring any software downloads or installations.
+            </p>
+            <p>
+                Since our launch, we have been dedicated to providing a seamless, user-friendly experience for streaming HLS content. 
+                Our advanced HTML5 video player leverages the latest web technologies to ensure optimal performance across all devices and browsers.
+            </p>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-star"></i> What Makes Us Special</h3>
+                <p>
+                    We combine simplicity with powerful functionality, offering instant streaming capabilities, 
+                    mobile-responsive design, and robust security features that protect user privacy while delivering exceptional video quality.
+                </p>
+            </div>
+
+            <h3><i class="fas fa-cogs"></i> Key Features</h3>
+            <ul>
+                <li><strong>Instant Streaming:</strong> No downloads or installations required - just paste your M3U8 URL and play</li>
+                <li><strong>Cross-Platform Compatibility:</strong> Works seamlessly on desktop, tablet, and mobile devices</li>
+                <li><strong>Advanced Player Controls:</strong> Full-featured video controls with seek, volume, and fullscreen options</li>
+                <li><strong>Adaptive Bitrate Streaming:</strong> Automatically adjusts quality based on your internet connection</li>
+                <li><strong>Dark Mode Support:</strong> Toggle between light and dark themes for comfortable viewing</li>
+                <li><strong>Privacy-Focused:</strong> All streaming happens client-side with no data stored on our servers</li>
+            </ul>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-bullseye icon-large"></i>Our Mission</h2>
+            <p>
+                Our mission is to democratize access to high-quality video streaming technology by providing a free, 
+                reliable, and user-friendly M3U8 player that works for everyone, everywhere.
+            </p>
+            
+            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+            <p>
+                We envision a world where accessing and streaming video content is effortless, secure, and available to all users 
+                regardless of their technical expertise or device capabilities. We strive to be the go-to platform for M3U8 streaming needs.
+            </p>
+
+            <h3><i class="fas fa-heart"></i> Our Values</h3>
+            <ul>
+                <li><strong>Accessibility:</strong> Making video streaming technology available to everyone, free of charge</li>
+                <li><strong>Privacy:</strong> Protecting user data and ensuring all streaming happens securely in the browser</li>
+                <li><strong>Innovation:</strong> Continuously improving our platform with the latest web technologies</li>
+                <li><strong>Simplicity:</strong> Maintaining an intuitive interface that anyone can use without technical knowledge</li>
+                <li><strong>Reliability:</strong> Providing consistent, high-quality streaming performance across all platforms</li>
+                <li><strong>Community:</strong> Building a platform that serves the global community of content creators and viewers</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-rocket"></i> Our Commitment</h3>
+                <p>
+                    We are committed to maintaining M3U8 Player Online as a free service while continuously enhancing 
+                    its capabilities to meet the evolving needs of our users. We believe that quality video streaming 
+                    technology should be accessible to everyone.
+                </p>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-shield-alt icon-large"></i>Privacy Policy</h2>
+            <p><strong>Last Updated:</strong> January 2025</p>
+            
+            <h3><i class="fas fa-user-shield"></i> Information We Collect</h3>
+            <p>
+                M3U8 Player Online is designed with privacy as a core principle. We collect minimal information to provide our service:
+            </p>
+            <ul>
+                <li><strong>No Personal Data:</strong> We do not collect, store, or process any personal information</li>
+                <li><strong>No Video Content:</strong> All video streaming happens directly in your browser - we never access or store your video content</li>
+                <li><strong>Basic Analytics:</strong> We may collect anonymous usage statistics to improve our service (page views, browser type, general location)</li>
+                <li><strong>Local Storage:</strong> We use browser local storage only to save your theme preferences (light/dark mode)</li>
+            </ul>
+
+            <h3><i class="fas fa-database"></i> How We Use Information</h3>
+            <p>The limited information we collect is used solely for:</p>
+            <ul>
+                <li>Improving the performance and functionality of our player</li>
+                <li>Understanding general usage patterns to enhance user experience</li>
+                <li>Maintaining and optimizing our service infrastructure</li>
+                <li>Remembering your theme preferences for future visits</li>
+            </ul>
+
+            <h3><i class="fas fa-share-alt"></i> Information Sharing</h3>
+            <p>
+                We do not sell, trade, or share any user information with third parties. Since we don't collect personal data, 
+                there is nothing to share. All video streaming occurs directly between your browser and the video source.
+            </p>
+
+            <h3><i class="fas fa-cookie-bite"></i> Cookies and Tracking</h3>
+            <ul>
+                <li>We use minimal cookies only for essential functionality</li>
+                <li>No tracking cookies or third-party advertising cookies are used</li>
+                <li>You can disable cookies in your browser without affecting core functionality</li>
+            </ul>
+
+            <h3><i class="fas fa-lock"></i> Data Security</h3>
+            <p>
+                Since we don't store personal data or video content, there are minimal security risks. Our website uses HTTPS encryption 
+                to protect data transmission, and all video streaming happens securely through your browser.
+            </p>
+
+            <h3><i class="fas fa-child"></i> Children's Privacy</h3>
+            <p>
+                Our service does not knowingly collect any information from children under 13. Since we don't collect personal information 
+                from any users, this policy applies to all age groups.
+            </p>
+
+            <h3><i class="fas fa-edit"></i> Changes to Privacy Policy</h3>
+            <p>
+                We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. 
+                We encourage you to review this policy periodically.
+            </p>
+
+            <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+            <p>
+                If you have any questions about this privacy policy or our practices, please feel free to contact us through our website. 
+                We are committed to addressing any privacy concerns promptly and transparently.
+            </p>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-check-circle"></i> Privacy Summary</h3>
+                <p>
+                    In summary: We respect your privacy completely. We don't collect personal data, don't store your videos, 
+                    and don't track your activity. Your streaming experience is private, secure, and entirely under your control.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 M3U8 Player Online. All rights reserved.</p>
+        <p>
+            Related: <a href="https://m3u8player.org/" target="_blank" rel="noopener">M3U8 Player</a>
+        </p>
+    </footer>
+
+    <script>
+        // 暗黑模式切换功能
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // 页面加载时恢复主题设置
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

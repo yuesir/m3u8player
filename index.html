@@ -160,7 +160,7 @@
                 嵌入网站:
             </p>
             <p>
-            <pre>&lt;iframe src="https://m3u8player.org/player.html?url=https://****index.m3u8"&gt;&lt;/iframe&gt;</pre>
+            <pre>&lt;iframe src="https://m3u8player.co/player.html?url=https://****index.m3u8"&gt;&lt;/iframe&gt;</pre>
             </p>
             <p>
                 M3U8Player 是一款实现 HTTP 实时流客户端的 Chrome 浏览器扩展工具。你可以播放 .m3u8 HTTP Live Streaming (HLS)。它依靠 HTML5
@@ -184,39 +184,16 @@
         </div>
 
         <p>
-            <span>"If something is important enough, even if the odds are against you, you should still do it."
-                <br />如果一件事情对你很重要，即使成功的概率很小，你也应该去做 —— <strong>埃隆马斯克</strong>
-            </span>
-            <br>
-            <br>
-            <br>
-            <span style="font-size: 14px;">资源来源于网络，如有侵权，请联系客服予以删除！</span>
-            <br>
-
             <span style="font-size: 14px;">© 2019 - 2025 </span>
- 
             <p>友情链接：
-                <a href="https://csdn.net">CSDN</a>  | 
-                <a href="https://cnblogs.com">博客园</a> | 
-                <a href="https://zaixianps.net/">在线ps</a> | 
-                <a href="https://gitapp.cn">程序设计网</a> | 
                 <a href="https://m3u8player.org/">m3u8播放器</a>
             </p>
         </p>
-
     </div>
- 
-
- 
 
     <script>
-
-        
         var player = undefined;
-
-
         function play() {
-            
             let url = $("#url").val()
 
             if(player === undefined) {
@@ -225,7 +202,7 @@
                     src: url,
                 }],
                 // licenseUrl需自己去腾讯云申请
-                licenseUrl: 'https://xxxxxxxxxxxxxx',
+                licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1252819296_1/v_cube.license',
             }); 
             }
 
@@ -234,9 +211,6 @@
             console.log(url)
             player.src(url); // url 播放地址
         }
-
     </script>
-
 </body>
-
 </html>

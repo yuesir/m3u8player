@@ -49,13 +49,24 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
             width: 100%;
             height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--background-color);
             color: var(--text-primary);
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-color);
         }
 
         .header {
@@ -219,7 +230,6 @@
             border-top: 1px solid var(--border-color);
             padding: 2rem 0;
             text-align: center;
-            margin-top: 3rem;
         }
 
         .footer p {
@@ -430,16 +440,19 @@
     <script>
         // 暗黑模式切换功能
         function toggleTheme() {
+            const html = document.documentElement;
             const body = document.body;
             const themeIcon = document.getElementById('theme-icon');
             const currentTheme = body.getAttribute('data-theme');
             
             if (currentTheme === 'dark') {
                 body.removeAttribute('data-theme');
+                html.removeAttribute('data-theme');
                 themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
+                html.setAttribute('data-theme', 'dark');
                 themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
                 localStorage.setItem('theme', 'dark');
             }
@@ -448,12 +461,17 @@
         // 页面加载时恢复主题设置
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
+            const html = document.documentElement;
+            const body = document.body;
             const themeIcon = document.getElementById('theme-icon');
             
             if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
+                body.setAttribute('data-theme', 'dark');
+                html.setAttribute('data-theme', 'dark');
                 themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
             } else {
+                body.removeAttribute('data-theme');
+                html.removeAttribute('data-theme');
                 themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
             }
         });

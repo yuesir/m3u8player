@@ -339,9 +339,9 @@
         }
 
         .embed-section h2, .embed-section h3 {
-            color: var(--primary-color);
             margin-bottom: 1rem;
             line-height: 1.4;
+            text-align: center;
         }
 
         .embed-section p {
@@ -466,7 +466,7 @@
                 <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🌐</div>
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
                 <h3>Universal Support</h3>
                 <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
             </div>
@@ -511,7 +511,7 @@
             </div>
         </section> 
         <section class="embed-section">
-            <h3>Embed Our M3U8 Player</h3>
+            <h2>Embed Our M3U8 Player</h2>
             <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
             <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
@@ -520,35 +520,61 @@
         </section>
 
         <section class="embed-section">
-            <h3>About M3U8 Technology</h3>
-            <p>
-                M3U8Player is an advanced HTTP Live Streaming (HLS) client that enables seamless playback of .m3u8 files directly in your browser. 
-                It leverages HTML5 video capabilities and Media Source Extensions for optimal performance.
-            </p>
-            <p>
-                The player works by converting MPEG-2 Transport Streams and AAC/MP3 audio streams into ISO BMFF (MP4) fragments. 
-                When Web Workers are available, it utilizes them for asynchronous transcoding, ensuring smooth playback without blocking the main thread. 
-                It also supports HLS + fmp4 for enhanced compatibility.
-            </p>
+            <h2>Frequently Asked Questions</h2>
             
-            <h3>What is an M3U8 file?</h3>
-            <p>
-                An <a href="https://en.wikipedia.org/wiki/M3U#M3U8" target="_blank" rel="noopener">M3U8</a> file is a UTF-8 encoded playlist file used by audio and video players to describe the location of media files. 
-                These are plain text files that can reference both local and remote media content.
-            </p>
-            <p>
-                For example, an M3U8 file might provide references to online radio streams, or it could be created locally to establish playlists for your personal music or video collections. 
-                The format allows for quick and easy playback of content referenced in the playlist.
-            </p>
-            <p>
-                M3U8 files can use absolute paths, relative paths, and URLs to point to specific media files or entire folders of media content. 
-                They may also contain comments that describe the file contents, making them both functional and self-documenting.
-            </p>
-            <p>
-                Originally designed for audio files like MP3, M3U8 has evolved to become widely used for video streaming, 
-                particularly in HTTP Live Streaming (HLS) applications. Many modern <a href="https://m3u8player.co/" target="_blank" rel="noopener">media players</a> 
-                and streaming software support the M3U8 format.
-            </p>
+            <div class="faq-item">
+                <h3>How to play M3U8 files in browser?</h3>
+                <p>
+                    To play M3U8 files in your browser, you can use our online M3U8 player or any HTML5-compatible video player that supports HLS (HTTP Live Streaming). 
+                    Simply paste the M3U8 URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support M3U8 playback 
+                    through HTML5 video elements with the help of JavaScript libraries like hls.js or native HLS support.
+                </p>
+                <p>
+                    For the best experience, ensure your M3U8 stream is accessible via HTTPS and that CORS headers are properly configured if you're embedding the player on a different domain.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How to embed M3U8 player in web page?</h3>
+                <p>
+                    You can easily embed our M3U8 player into your website using an iframe. Here's the basic code:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_M3U8_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    Replace "YOUR_M3U8_URL" with your actual M3U8 stream URL. You can also customize the width and height attributes to fit your layout. 
+                    For more advanced integration, you can use JavaScript libraries like hls.js or video.js with the HLS plugin to create a custom player.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How to play M3U8 extension video?</h3>
+                <p>
+                    M3U8 files are playlist files that contain references to video segments, not actual video files themselves. To play M3U8 videos, you need a compatible player 
+                    that can parse the playlist and stream the video segments. Our online player automatically handles this process.
+                </p>
+                <p>
+                    If you have a local M3U8 file, you'll need to ensure all referenced video segments are accessible. For online streaming, simply use the M3U8 URL directly. 
+                    The player will automatically download and play the video segments in sequence, providing smooth playback with adaptive bitrate streaming when available.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can VLC play M3U8?</h3>
+                <p>
+                    Yes, VLC Media Player has excellent support for M3U8 files and HLS streaming. You can play M3U8 streams in VLC by:
+                </p>
+                <p>
+                    1. Opening VLC and going to "Media" &gt; "Open Network Stream"<br>
+                    2. Pasting your M3U8 URL in the network URL field<br>
+                    3. Clicking "Play"
+                </p>
+                <p>
+                    VLC also supports local M3U8 playlist files. Simply drag and drop the M3U8 file into VLC or use "File" &gt; "Open File" to browse for it. 
+                    VLC's robust codec support makes it one of the most reliable options for playing various M3U8 streams and formats.
+                </p>
+            </div>
         </section>
     </div>
 

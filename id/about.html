@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <title>About Us - M3U8 Player Online | Free HLS Video Streaming Player</title>
+    <title>Tentang Kami - M3U8 Player Online | Pemutar Video Streaming HLS Gratis</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about M3U8 Player Online - our mission, vision, and commitment to providing the best free HLS video streaming experience. Discover our privacy policy and values.">
-    <meta name="keywords" content="m3u8 player online, about us, HLS player, video streaming, mission, privacy policy">
+    <meta name="description" content="Pelajari tentang M3U8 Player Online - misi, visi, dan komitmen kami untuk memberikan pengalaman streaming video HLS gratis terbaik. Temukan kebijakan privasi dan nilai-nilai kami.">
+    <meta name="keywords" content="m3u8 player online, tentang kami, HLS player, video streaming, misi, kebijakan privasi">
     <meta name="author" content="M3U8 Player Online">
-    <meta property="og:title" content="About Us - M3U8 Player Online">
-    <meta property="og:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
+    <meta property="og:title" content="Tentang Kami - M3U8 Player Online">
+    <meta property="og:description" content="Pelajari tentang misi kami untuk memberikan pengalaman streaming video M3U8 HLS gratis terbaik.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us - M3U8 Player Online">
-    <meta name="twitter:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
-    <link rel="canonical" href="https://m3u8player.co/about.html">
+    <meta name="twitter:title" content="Tentang Kami - M3U8 Player Online">
+    <meta name="twitter:description" content="Pelajari tentang misi kami untuk memberikan pengalaman streaming video M3U8 HLS gratis terbaik.">
+    <link rel="canonical" href="https://m3u8player.org/id/about.html">
+    <link rel="alternate" hreflang="en" href="https://m3u8player.org/about.html">
+    <link rel="alternate" hreflang="tr" href="https://m3u8player.org/tr/about.html">
+    <link rel="alternate" hreflang="id" href="https://m3u8player.org/id/about.html">
+    <link rel="alternate" hreflang="pt" href="https://m3u8player.org/pt/about.html">
+    <link rel="alternate" hreflang="ja" href="https://m3u8player.org/ja/about.html">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -116,36 +121,19 @@
             text-decoration: underline;
         }
 
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
         .language-selector {
             position: relative;
-            display: inline-block;
         }
 
         .language-btn {
             background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 0.5rem;
+            padding: 0.5rem;
+            font-size: 14px;
+            color: white;
             cursor: pointer;
-            transition: background-color 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            transition: all 0.3s ease;
         }
 
         .language-btn:hover {
@@ -194,6 +182,20 @@
 
         .language-option:last-child {
             border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .main {
@@ -323,6 +325,7 @@
 
             .nav-links {
                 gap: 1rem;
+                flex-wrap: wrap;
             }
 
             .content-section {
@@ -342,25 +345,21 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">M3U8 Player Online</a>
+            <a href="index.html" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about.html" class="active">About</a>
+                <a href="index.html">Beranda</a>
+                <a href="about.html" class="active">Tentang Kami</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
-                        <i class="fas fa-globe"></i>
-                        <span>EN</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="language-dropdown" id="languageDropdown">
-                        <a href="/about.html" class="language-option">🇺🇸 English</a>
-                        <a href="/tr/about.html" class="language-option">🇹🇷 Türkçe</a>
-                        <a href="/id/about.html" class="language-option">🇮🇩 Indonesia</a>
-                        <a href="/pt/about.html" class="language-option">🇧🇷 Português</a>
-                        <a href="/ja/about.html" class="language-option">🇯🇵 日本語</a>
+                    <button class="language-btn" onclick="toggleLanguageDropdown()">Bahasa Indonesia ▼</button>
+                    <div class="language-dropdown">
+                        <a href="/about.html">English</a>
+                        <a href="/tr/about.html">Türkçe</a>
+                        <a href="/id/about.html" class="active">Bahasa Indonesia</a>
+                        <a href="/pt/about.html">Português</a>
+                        <a href="/ja/about.html">日本語</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Beralih mode gelap">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
@@ -369,151 +368,151 @@
 
     <div class="main">
         <section class="hero">
-            <h1>About M3U8 Player Online</h1>
-            <p>Learn more about our mission, vision, and commitment to providing the best free HLS video streaming experience.</p>
+            <h1>Tentang M3U8 Player Online</h1>
+            <p>Pelajari lebih lanjut tentang misi, visi, dan komitmen kami untuk memberikan pengalaman streaming video HLS gratis terbaik.</p>
         </section>
 
         <!-- Website Introduction Section -->
         <section class="content-section">
-            <h2><i class="fas fa-info-circle icon-large"></i>Website Introduction</h2>
+            <h2><i class="fas fa-info-circle icon-large"></i>Pengenalan Website</h2>
             <p>
-                M3U8 Player Online is a cutting-edge web-based video streaming platform that specializes in HTTP Live Streaming (HLS) technology. 
-                Our platform enables users to play M3U8 files directly in their web browsers without requiring any software downloads or installations.
+                M3U8 Player Online adalah platform streaming video berbasis web canggih yang mengkhususkan diri dalam teknologi HTTP Live Streaming (HLS). 
+                Platform kami memungkinkan pengguna untuk memutar file M3U8 langsung di browser web mereka tanpa memerlukan unduhan atau instalasi perangkat lunak apa pun.
             </p>
             <p>
-                Since our launch, we have been dedicated to providing a seamless, user-friendly experience for streaming HLS content. 
-                Our advanced HTML5 video player leverages the latest web technologies to ensure optimal performance across all devices and browsers.
+                Sejak diluncurkan, kami telah fokus pada penyediaan pengalaman yang mulus dan ramah pengguna untuk streaming konten HLS. 
+                Pemutar video HTML5 canggih kami memanfaatkan teknologi web terbaru untuk memastikan kinerja optimal di semua perangkat dan browser.
             </p>
             
             <div class="highlight-box">
-                <h3><i class="fas fa-star"></i> What Makes Us Special</h3>
+                <h3><i class="fas fa-star"></i> Apa yang Membuat Kami Istimewa</h3>
                 <p>
-                    We combine simplicity with powerful functionality, offering instant streaming capabilities, 
-                    mobile-responsive design, and robust security features that protect user privacy while delivering exceptional video quality.
+                    Kami menggabungkan kesederhanaan dengan fungsionalitas yang kuat, menawarkan kemampuan streaming instan, 
+                    desain yang ramah mobile, dan fitur keamanan yang kuat yang memberikan kualitas video luar biasa sambil melindungi privasi pengguna.
                 </p>
             </div>
 
-            <h3><i class="fas fa-cogs"></i> Key Features</h3>
+            <h3><i class="fas fa-cogs"></i> Fitur Utama</h3>
             <ul>
-                <li><strong>Instant Streaming:</strong> No downloads or installations required - just paste your M3U8 URL and play</li>
-                <li><strong>Cross-Platform Compatibility:</strong> Works seamlessly on desktop, tablet, and mobile devices</li>
-                <li><strong>Advanced Player Controls:</strong> Full-featured video controls with seek, volume, and fullscreen options</li>
-                <li><strong>Adaptive Bitrate Streaming:</strong> Automatically adjusts quality based on your internet connection</li>
-                <li><strong>Dark Mode Support:</strong> Toggle between light and dark themes for comfortable viewing</li>
-                <li><strong>Privacy-Focused:</strong> All streaming happens client-side with no data stored on our servers</li>
+                <li><strong>Streaming Instan:</strong> Tidak perlu unduhan atau instalasi - cukup tempel URL M3U8 Anda dan putar</li>
+                <li><strong>Kompatibilitas Lintas Platform:</strong> Bekerja dengan mulus di desktop, tablet, dan perangkat mobile</li>
+                <li><strong>Kontrol Pemutar Canggih:</strong> Kontrol video berfitur lengkap dengan opsi pencarian, volume, dan layar penuh</li>
+                <li><strong>Adaptive Bitrate Streaming:</strong> Secara otomatis menyesuaikan kualitas berdasarkan koneksi internet Anda</li>
+                <li><strong>Dukungan Mode Gelap:</strong> Beralih antara tema terang dan gelap untuk kenyamanan menonton</li>
+                <li><strong>Fokus Privasi:</strong> Semua streaming terjadi di sisi klien, tidak ada data yang disimpan di server kami</li>
             </ul>
         </section>
 
         <!-- Mission Section -->
         <section class="content-section">
-            <h2><i class="fas fa-bullseye icon-large"></i>Our Mission</h2>
+            <h2><i class="fas fa-bullseye icon-large"></i>Misi Kami</h2>
             <p>
-                Our mission is to democratize access to high-quality video streaming technology by providing a free, 
-                reliable, and user-friendly M3U8 player that works for everyone, everywhere.
+                Misi kami adalah mendemokratisasi akses ke teknologi streaming video berkualitas tinggi dengan menyediakan pemutar M3U8 gratis, 
+                andal, dan ramah pengguna yang bekerja untuk semua orang, di mana saja.
             </p>
             
-            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+            <h3><i class="fas fa-eye"></i> Visi Kami</h3>
             <p>
-                We envision a world where accessing and streaming video content is effortless, secure, and available to all users 
-                regardless of their technical expertise or device capabilities. We strive to be the go-to platform for M3U8 streaming needs.
+                Kami membayangkan dunia di mana mengakses dan streaming konten video menjadi mudah, aman, dan tersedia untuk semua pengguna 
+                terlepas dari keahlian teknis atau kemampuan perangkat mereka. Kami berusaha menjadi platform pilihan untuk kebutuhan streaming M3U8.
             </p>
 
-            <h3><i class="fas fa-heart"></i> Our Values</h3>
+            <h3><i class="fas fa-heart"></i> Nilai-Nilai Kami</h3>
             <ul>
-                <li><strong>Accessibility:</strong> Making video streaming technology available to everyone, free of charge</li>
-                <li><strong>Privacy:</strong> Protecting user data and ensuring all streaming happens securely in the browser</li>
-                <li><strong>Innovation:</strong> Continuously improving our platform with the latest web technologies</li>
-                <li><strong>Simplicity:</strong> Maintaining an intuitive interface that anyone can use without technical knowledge</li>
-                <li><strong>Reliability:</strong> Providing consistent, high-quality streaming performance across all platforms</li>
-                <li><strong>Community:</strong> Building a platform that serves the global community of content creators and viewers</li>
+                <li><strong>Aksesibilitas:</strong> Membuat teknologi streaming video tersedia secara gratis untuk semua orang</li>
+                <li><strong>Privasi:</strong> Melindungi data pengguna dan memastikan semua streaming terjadi dengan aman di browser</li>
+                <li><strong>Inovasi:</strong> Terus meningkatkan platform kami dengan teknologi web terbaru</li>
+                <li><strong>Kesederhanaan:</strong> Mempertahankan antarmuka intuitif yang dapat digunakan siapa saja tanpa pengetahuan teknis</li>
+                <li><strong>Keandalan:</strong> Memberikan kinerja streaming yang konsisten dan berkualitas tinggi di semua platform</li>
+                <li><strong>Komunitas:</strong> Membangun platform yang melayani komunitas global pembuat konten dan penonton</li>
             </ul>
 
             <div class="highlight-box">
-                <h3><i class="fas fa-rocket"></i> Our Commitment</h3>
+                <h3><i class="fas fa-rocket"></i> Komitmen Kami</h3>
                 <p>
-                    We are committed to maintaining M3U8 Player Online as a free service while continuously enhancing 
-                    its capabilities to meet the evolving needs of our users. We believe that quality video streaming 
-                    technology should be accessible to everyone.
+                    Kami berkomitmen untuk mempertahankan M3U8 Player Online sebagai layanan gratis dan terus meningkatkan 
+                    kemampuannya untuk memenuhi kebutuhan pengguna kami yang berkembang. Kami percaya bahwa teknologi streaming video 
+                    berkualitas harus dapat diakses oleh semua orang.
                 </p>
             </div>
         </section>
 
         <!-- Privacy Policy Section -->
         <section class="content-section">
-            <h2><i class="fas fa-shield-alt icon-large"></i>Privacy Policy</h2>
-            <p><strong>Last Updated:</strong> January 2025</p>
+            <h2><i class="fas fa-shield-alt icon-large"></i>Kebijakan Privasi</h2>
+            <p><strong>Terakhir Diperbarui:</strong> Januari 2025</p>
             
-            <h3><i class="fas fa-user-shield"></i> Information We Collect</h3>
+            <h3><i class="fas fa-user-shield"></i> Informasi yang Kami Kumpulkan</h3>
             <p>
-                M3U8 Player Online is designed with privacy as a core principle. We collect minimal information to provide our service:
+                M3U8 Player Online dibangun dengan desain yang mengutamakan privasi. Kami mengumpulkan informasi minimal untuk menyediakan layanan kami:
             </p>
             <ul>
-                <li><strong>No Personal Data:</strong> We do not collect, store, or process any personal information</li>
-                <li><strong>No Video Content:</strong> All video streaming happens directly in your browser - we never access or store your video content</li>
-                <li><strong>Basic Analytics:</strong> We may collect anonymous usage statistics to improve our service (page views, browser type, general location)</li>
-                <li><strong>Local Storage:</strong> We use browser local storage only to save your theme preferences (light/dark mode)</li>
+                <li><strong>Tidak Ada Data Pribadi:</strong> Kami tidak mengumpulkan, menyimpan, atau memproses informasi pribadi apa pun</li>
+                <li><strong>Tidak Ada Konten Video:</strong> Semua streaming video terjadi langsung di browser Anda - kami tidak pernah mengakses atau menyimpan konten video Anda</li>
+                <li><strong>Analitik Dasar:</strong> Kami mungkin mengumpulkan statistik penggunaan anonim untuk meningkatkan layanan kami (tampilan halaman, jenis browser, lokasi umum)</li>
+                <li><strong>Penyimpanan Lokal:</strong> Kami hanya menggunakan penyimpanan lokal browser untuk menyimpan preferensi tema Anda (mode terang/gelap)</li>
             </ul>
 
-            <h3><i class="fas fa-database"></i> How We Use Information</h3>
-            <p>The limited information we collect is used solely for:</p>
+            <h3><i class="fas fa-database"></i> Bagaimana Kami Menggunakan Informasi</h3>
+            <p>Informasi terbatas yang kami kumpulkan hanya digunakan untuk:</p>
             <ul>
-                <li>Improving the performance and functionality of our player</li>
-                <li>Understanding general usage patterns to enhance user experience</li>
-                <li>Maintaining and optimizing our service infrastructure</li>
-                <li>Remembering your theme preferences for future visits</li>
+                <li>Meningkatkan kinerja dan fungsionalitas pemutar kami</li>
+                <li>Memahami pola penggunaan umum untuk meningkatkan pengalaman pengguna</li>
+                <li>Memelihara dan mengoptimalkan infrastruktur layanan kami</li>
+                <li>Mengingat preferensi tema Anda untuk kunjungan mendatang</li>
             </ul>
 
-            <h3><i class="fas fa-share-alt"></i> Information Sharing</h3>
+            <h3><i class="fas fa-share-alt"></i> Berbagi Informasi</h3>
             <p>
-                We do not sell, trade, or share any user information with third parties. Since we don't collect personal data, 
-                there is nothing to share. All video streaming occurs directly between your browser and the video source.
+                Kami tidak menjual, menukar, atau berbagi informasi pengguna apa pun dengan pihak ketiga. Karena kami tidak mengumpulkan data pribadi, 
+                tidak ada yang bisa dibagikan. Semua streaming video terjadi langsung antara browser Anda dan sumber video.
             </p>
 
-            <h3><i class="fas fa-cookie-bite"></i> Cookies and Tracking</h3>
+            <h3><i class="fas fa-cookie-bite"></i> Cookie dan Pelacakan</h3>
             <ul>
-                <li>We use minimal cookies only for essential functionality</li>
-                <li>No tracking cookies or third-party advertising cookies are used</li>
-                <li>You can disable cookies in your browser without affecting core functionality</li>
+                <li>Kami hanya menggunakan cookie minimal untuk fungsionalitas dasar</li>
+                <li>Tidak ada cookie pelacakan atau cookie iklan pihak ketiga yang digunakan</li>
+                <li>Anda dapat menonaktifkan cookie di browser Anda tanpa mempengaruhi fungsionalitas dasar</li>
             </ul>
 
-            <h3><i class="fas fa-lock"></i> Data Security</h3>
+            <h3><i class="fas fa-lock"></i> Keamanan Data</h3>
             <p>
-                Since we don't store personal data or video content, there are minimal security risks. Our website uses HTTPS encryption 
-                to protect data transmission, and all video streaming happens securely through your browser.
+                Karena kami tidak menyimpan data pribadi atau konten video, risiko keamanan minimal. Website kami menggunakan enkripsi HTTPS untuk melindungi transmisi data 
+                dan semua streaming video terjadi dengan aman melalui browser Anda.
             </p>
 
-            <h3><i class="fas fa-child"></i> Children's Privacy</h3>
+            <h3><i class="fas fa-child"></i> Privasi Anak</h3>
             <p>
-                Our service does not knowingly collect any information from children under 13. Since we don't collect personal information 
-                from any users, this policy applies to all age groups.
+                Layanan kami tidak secara sengaja mengumpulkan informasi apa pun dari anak-anak di bawah usia 13 tahun. Karena kami tidak mengumpulkan informasi pribadi 
+                dari pengguna mana pun, kebijakan ini berlaku untuk semua kelompok usia.
             </p>
 
-            <h3><i class="fas fa-edit"></i> Changes to Privacy Policy</h3>
+            <h3><i class="fas fa-edit"></i> Perubahan Kebijakan Privasi</h3>
             <p>
-                We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. 
-                We encourage you to review this policy periodically.
+                Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Setiap perubahan akan diposting di halaman ini dengan tanggal revisi yang diperbarui. 
+                Kami mendorong Anda untuk meninjau kebijakan ini secara berkala.
             </p>
 
-            <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+            <h3><i class="fas fa-envelope"></i> Hubungi Kami</h3>
             <p>
-                If you have any questions about this privacy policy or our practices, please feel free to contact us through our website. 
-                We are committed to addressing any privacy concerns promptly and transparently.
+                Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau praktik kami, jangan ragu untuk menghubungi kami melalui website kami. 
+                Kami berkomitmen untuk menangani setiap masalah privasi dengan segera dan transparan.
             </p>
 
             <div class="highlight-box">
-                <h3><i class="fas fa-check-circle"></i> Privacy Summary</h3>
+                <h3><i class="fas fa-check-circle"></i> Ringkasan Privasi</h3>
                 <p>
-                    In summary: We respect your privacy completely. We don't collect personal data, don't store your videos, 
-                    and don't track your activity. Your streaming experience is private, secure, and entirely under your control.
+                    Singkatnya: Kami sepenuhnya menghormati privasi Anda. Kami tidak mengumpulkan data pribadi, tidak menyimpan video Anda, 
+                    dan tidak melacak aktivitas Anda. Pengalaman streaming Anda bersifat pribadi, aman, dan sepenuhnya dalam kendali Anda.
                 </p>
             </div>
         </section>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2019 - 2025 M3U8 Player Online. All rights reserved.</p>
+        <p>&copy; 2019 - 2025 M3U8 Player Online. Semua hak dilindungi.</p>
         <p>
-            Links: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
+            Tautan: <a href="https://m3u8player.org/" target="_blank" rel="noopener">M3U8 Player</a>
         </p>
     </footer>
 
@@ -556,17 +555,18 @@
             }
         });
 
-        // Language dropdown functionality
+        // 语言切换下拉菜单功能
         function toggleLanguageDropdown() {
-            const dropdown = document.getElementById('languageDropdown');
+            const dropdown = document.querySelector('.language-dropdown');
             dropdown.classList.toggle('show');
         }
-
-        // Close dropdown when clicking outside
+        
+        // 点击页面其他地方关闭下拉菜单
         document.addEventListener('click', function(event) {
             const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.querySelector('.language-dropdown');
+            
             if (!languageSelector.contains(event.target)) {
-                const dropdown = document.getElementById('languageDropdown');
                 dropdown.classList.remove('show');
             }
         });

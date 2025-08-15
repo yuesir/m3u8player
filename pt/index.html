@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <title>M3U8 Player Online - Free HLS Video Streaming Player</title>
+    <title>M3U8 Player Online - Reprodutor de Streaming de Vídeo HLS Gratuito</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free M3U8 Player Online - Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced HTML5 video player. No downloads required.">
-    <meta name="keywords" content="m3u8 player online, HLS player, video streaming, m3u8 streaming, online video player, HTML5 player">
+    <meta name="description" content="M3U8 Player Online Gratuito - Transmita vídeos HLS diretamente no seu navegador. Reproduza arquivos .m3u8 instantaneamente com nosso reprodutor de vídeo HTML5 avançado. Não requer downloads.">
+    <meta name="keywords" content="m3u8 player online, reprodutor HLS, streaming de vídeo, streaming m3u8, reprodutor de vídeo online, reprodutor HTML5">
     <meta name="author" content="M3U8 Player Online">
-    <meta property="og:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta property="og:description" content="Stream M3U8 videos online with our free HLS player. Play .m3u8 files directly in your browser.">
+    <meta property="og:title" content="M3U8 Player Online - Reprodutor de Streaming de Vídeo HLS Gratuito">
+    <meta property="og:description" content="Transmita vídeos M3U8 online com nosso reprodutor HLS gratuito. Reproduza arquivos .m3u8 diretamente no seu navegador.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta name="twitter:description" content="Stream M3U8 videos online with our free HLS player.">
-    <link rel="canonical" href="https://m3u8player.co/">
+    <meta name="twitter:title" content="M3U8 Player Online - Reprodutor de Streaming de Vídeo HLS Gratuito">
+    <meta name="twitter:description" content="Transmita vídeos M3U8 online com nosso reprodutor HLS gratuito.">
+    <link rel="canonical" href="https://m3u8player.co/pt/">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
@@ -550,14 +550,14 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">M3U8 Player Online</a>
+            <a href="/pt/" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
+                <a href="/pt/">Início</a>
+                <a href="/pt/about.html">Sobre</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Selecionar Idioma">
                         <i class="fas fa-globe"></i>
-                        <span>EN</span>
+                        <span>PT</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
@@ -568,7 +568,7 @@
                         <a href="/ja/" class="language-option">🇯🇵 日本語</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
@@ -578,13 +578,13 @@
     <div class="main">
         <section class="hero">
             <h1>M3U8 Player Online</h1>
-            <p>Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced video player in browser. No downloads required.</p>
+            <p>Transmita vídeos HLS diretamente no seu navegador. Reproduza arquivos .m3u8 instantaneamente com nosso reprodutor de vídeo avançado no navegador. Não requer downloads.</p>
         </section>
 
         <section class="player-section">
             <div class="input-group">
-                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Enter M3U8 URL to play" autocomplete="off">
-                <button class="play-btn" onclick="play()">▶ Play</button>
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Digite a URL M3U8 para reproduzir" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Reproduzir</button>
             </div>
             <div class="video-container">
                 <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
@@ -595,148 +595,117 @@
         <section class="features">
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-video"></i></div>
-                <h3>Instant Streaming</h3>
-                <p>Play M3U8 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
+                <h3>Streaming Instantâneo</h3>
+                <p>Reproduza vídeos M3U8 instantaneamente sem downloads ou instalações. Apenas cole a URL e comece a assistir.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Mobile Friendly</h3>
-                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                <h3>Compatível com Dispositivos Móveis</h3>
+                <p>Design totalmente responsivo que funciona perfeitamente em desktop, tablet e dispositivos móveis.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Secure & Private</h3>
-                <p>All streaming happens directly in your browser. No data is stored on our servers.</p>
+                <h3>Seguro e Privado</h3>
+                <p>Todo o streaming acontece diretamente no seu navegador. Nenhum dado é armazenado em nossos servidores.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3>High Performance</h3>
-                <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
+                <h3>Alto Desempenho</h3>
+                <p>Reprodutor HTML5 otimizado com suporte para streaming de taxa de bits adaptativa e múltiplos formatos.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                <h3>Universal Support</h3>
-                <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
+                <h3>Suporte Universal</h3>
+                <p>Funciona com todos os navegadores modernos e suporta vários protocolos de streaming HLS.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-moon"></i></div>
-                <h3>Dark Mode</h3>
-                <p>Switch between light and dark themes for comfortable viewing in any environment.</p>
+                <h3>Modo Escuro</h3>
+                <p>Alterne entre temas claro e escuro para visualização confortável em qualquer ambiente.</p>
             </div>
         </section>
 
         <section class="usage-guide">
-            <h2>How to Use M3U8 Player Online</h2>
+            <h2>Como Usar o M3U8 Player Online</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Copy M3U8 URL</h3>
-                        <p>Find and copy the M3U8 stream URL from your video source.</p>
+                        <h3>Copiar URL M3U8</h3>
+                        <p>Encontre e copie a URL do stream M3U8 da sua fonte de vídeo.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Paste URL</h3>
-                        <p>Paste the M3U8 URL into the input field above.</p>
+                        <h3>Colar URL</h3>
+                        <p>Cole a URL M3U8 no campo de entrada acima.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Start Playing</h3>
-                        <p>Click the "Play Video" button and enjoy your stream!</p>
+                        <h3>Começar a Reproduzir</h3>
+                        <p>Clique no botão "Reproduzir Vídeo" e aproveite seu stream!</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-sliders"></i></div>
                     <div class="step-content">
-                        <h3>Control Playback</h3>
-                        <p>Use the built-in video controls to pause, seek, adjust volume, or enter fullscreen mode for the best viewing experience.</p>
+                        <h3>Controlar Reprodução</h3>
+                        <p>Use os controles de vídeo integrados para pausar, buscar, ajustar volume ou entrar no modo tela cheia para a melhor visualização.</p>
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
+
         <section class="embed-section">
-            <h2>Embed M3U8 Player</h2>
-            <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
+            <h2>Incorporar M3U8 Player no Seu Site</h2>
+            <p>Você pode facilmente incorporar nosso reprodutor M3U8 no seu próprio site usando o seguinte código HTML:</p>
             <div class="code-block">
-&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://m3u8player.co/pt/?url=SUA_URL_M3U8_AQUI" 
+        width="100%" 
+        height="500" 
+        frameborder="0" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;
             </div>
-            <p>Simply replace <code>https://your-stream-url.m3u8</code> with your actual M3U8 stream URL.</p>
+            <p>Substitua <strong>SUA_URL_M3U8_AQUI</strong> pela URL real do seu stream M3U8.</p>
         </section>
 
         <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Perguntas Frequentes</h2>
             
             <div class="faq-item">
-                <h3>How to play M3U8 files in browser?</h3>
-                <p>
-                    To play M3U8 files in your browser, you can use our online M3U8 player or any HTML5-compatible video player that supports HLS (HTTP Live Streaming). 
-                    Simply paste the M3U8 URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support M3U8 playback 
-                    through HTML5 video elements with the help of JavaScript libraries like hls.js or native HLS support.
-                </p>
-                <p>
-                    For the best experience, ensure your M3U8 stream is accessible via HTTPS and that CORS headers are properly configured if you're embedding the player on a different domain.
-                </p>
+                <h3 onclick="toggleFAQ(this)">Como reproduzir arquivos M3U8 no navegador?</h3>
+                <p>Você pode reproduzir arquivos M3U8 diretamente no seu navegador usando nosso reprodutor online. Basta colar a URL M3U8 no campo de entrada e clicar em "Reproduzir". Nosso reprodutor suporta streaming HLS nativo em navegadores modernos.</p>
             </div>
             
             <div class="faq-item">
-                <h3>How to embed M3U8 player in web page?</h3>
-                <p>
-                    You can easily embed our M3U8 player into your website using an iframe. Here's the basic code:
-                </p>
-                <div class="code-block">
-&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_M3U8_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
-                </div>
-                <p>
-                    Replace "YOUR_M3U8_URL" with your actual M3U8 stream URL. You can also customize the width and height attributes to fit your layout. 
-                    For more advanced integration, you can use JavaScript libraries like hls.js or video.js with the HLS plugin to create a custom player.
-                </p>
+                <h3 onclick="toggleFAQ(this)">Como incorporar o reprodutor M3U8 em uma página web?</h3>
+                <p>Você pode incorporar nosso reprodutor em qualquer página web usando um iframe. Use o código fornecido na seção "Incorporar" acima, substituindo a URL de exemplo pela sua URL M3U8 real.</p>
             </div>
             
             <div class="faq-item">
-                <h3>How to play M3U8 extension video?</h3>
-                <p>
-                    M3U8 files are playlist files that contain references to video segments, not actual video files themselves. To play M3U8 videos, you need a compatible player 
-                    that can parse the playlist and stream the video segments. Our online player automatically handles this process.
-                </p>
-                <p>
-                    If you have a local M3U8 file, you'll need to ensure all referenced video segments are accessible. For online streaming, simply use the M3U8 URL directly. 
-                    The player will automatically download and play the video segments in sequence, providing smooth playback with adaptive bitrate streaming when available.
-                </p>
+                <h3 onclick="toggleFAQ(this)">Como reproduzir vídeos M3U8 estendidos?</h3>
+                <p>Nosso reprodutor suporta automaticamente vídeos M3U8 estendidos com múltiplas qualidades e faixas de áudio. O reprodutor se adaptará automaticamente à melhor qualidade com base na sua velocidade de internet.</p>
             </div>
             
             <div class="faq-item">
-                <h3>Can VLC play M3U8?</h3>
-                <p>
-                    Yes, VLC Media Player has excellent support for M3U8 files and HLS streaming. You can play M3U8 streams in VLC by:
-                </p>
-                <p>
-                    1. Opening VLC and going to "Media" &gt; "Open Network Stream"<br>
-                    2. Pasting your M3U8 URL in the network URL field<br>
-                    3. Clicking "Play"
-                </p>
-                <p>
-                    VLC also supports local M3U8 playlist files. Simply drag and drop the M3U8 file into VLC or use "File" &gt; "Open File" to browse for it. 
-                    VLC's robust codec support makes it one of the most reliable options for playing various M3U8 streams and formats.
-                </p>
+                <h3 onclick="toggleFAQ(this)">O VLC pode reproduzir M3U8?</h3>
+                <p>Sim, o VLC Media Player suporta reprodução de arquivos M3U8. Você pode abrir a URL M3U8 diretamente no VLC através do menu "Mídia" > "Abrir Fluxo de Rede". No entanto, nosso reprodutor online oferece uma experiência mais conveniente sem necessidade de instalação.</p>
             </div>
         </section>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2019 - 2025 M3U8 Player Online. All rights reserved.</p>
+        <p>&copy; 2019 - 2025 M3U8 Player Online. Todos os direitos reservados.</p>
         <p>
             Links: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
         </p>
     </footer>
-    </div>
 
     <script>
-        var player = undefined;
-        
         // 暗黑模式切换功能
         function toggleTheme() {
             const html = document.documentElement;
@@ -756,82 +725,114 @@
                 localStorage.setItem('theme', 'dark');
             }
         }
-        
-        // 页面加载时恢复主题设置
+
+        // 页面加载时应用保存的主题
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
             const themeIcon = document.getElementById('theme-icon');
-            const html = document.documentElement;
-            const body = document.body;
             
             if (savedTheme === 'dark') {
-                body.setAttribute('data-theme', 'dark');
-                html.setAttribute('data-theme', 'dark');
+                document.body.setAttribute('data-theme', 'dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
                 themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
             }
-            
-            // 初始化FAQ交互功能
-            initFAQ();
         });
-        
-        // FAQ交互功能
-        function initFAQ() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const h3 = item.querySelector('h3');
-                if (h3) {
-                    h3.addEventListener('click', function() {
-                        // 切换当前项的active状态
-                        item.classList.toggle('active');
-                    });
-                }
-            });
-        }
-        
-        // 语言切换下拉框功能
+
+        // 语言选择器功能
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.classList.toggle('show');
         }
-        
-        // 点击页面其他地方时关闭下拉框
+
+        // 点击外部关闭下拉菜单
         document.addEventListener('click', function(event) {
             const languageSelector = document.querySelector('.language-selector');
             const dropdown = document.getElementById('languageDropdown');
             
-            if (languageSelector && !languageSelector.contains(event.target)) {
+            if (!languageSelector.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
         });
-        
-        function play() {
-            let url = $("#url").val()
 
-            if(player === undefined) {
-                player = TCPlayer('player-container-id', {
-                sources: [{
-                    src: url,
-                }],
-                // licenseUrl需自己去腾讯云申请
-                licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1252819296_1/v_cube.license',
-            }); 
-            }
-            player.pause();
-            console.log(url)
-            player.src(url); // url 播放地址
+        // FAQ 切换功能
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
         }
+
+        let player;
+
+        function play() {
+            const url = document.getElementById('url').value.trim();
+            if (!url) {
+                alert('Por favor, insira uma URL M3U8 válida.');
+                return;
+            }
+
+            // 验证URL格式
+            try {
+                new URL(url);
+            } catch (e) {
+                alert('Por favor, insira uma URL válida.');
+                return;
+            }
+
+            // 销毁现有播放器
+            if (player) {
+                player.destroy();
+            }
+
+            // 创建新的播放器实例
+            player = TCPlayer('player-container-id', {
+                "m3u8": url,
+                "autoplay": true,
+                "poster": "",
+                "width": '100%',
+                "height": '100%',
+                "controls": "default",
+                "systemFullscreen": true,
+                "webFullscreen": false,
+                "x5_type": "h5",
+                "x5_fullscreen": true,
+                "wording": {
+                    "2032": "Por favor, tente recarregar o vídeo",
+                    "2048": "Por favor, verifique se a URL do vídeo está correta"
+                }
+            });
+
+            // 错误处理
+            player.on('error', function(error) {
+                console.error('Erro do reprodutor:', error);
+                alert('Erro ao carregar o vídeo. Por favor, verifique a URL e tente novamente.');
+            });
+
+            // 播放成功处理
+            player.on('loadstart', function() {
+                console.log('Vídeo começou a carregar');
+            });
+
+            player.on('canplay', function() {
+                console.log('Vídeo pode ser reproduzido');
+            });
+        }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 可以在这里添加页面初始化代码
+            console.log('M3U8 Player Online carregado');
+        });
+
+        // 处理URL参数中的视频链接
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoUrl = urlParams.get('url');
+            
+            if (videoUrl) {
+                document.getElementById('url').value = decodeURIComponent(videoUrl);
+                // 自动播放URL参数中的视频
+                setTimeout(play, 1000);
+            }
+        });
     </script>
 </body>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1L0MXPWR01');
-</script>
 </html>

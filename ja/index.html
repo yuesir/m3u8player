@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <title>M3U8 Player Online - Free HLS Video Streaming Player</title>
+    <title>M3U8プレーヤーオンライン - 無料HLSビデオストリーミングプレーヤー</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free M3U8 Player Online - Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced HTML5 video player. No downloads required.">
-    <meta name="keywords" content="m3u8 player online, HLS player, video streaming, m3u8 streaming, online video player, HTML5 player">
+    <meta name="description" content="無料M3U8プレーヤーオンライン - ブラウザで直接HLSビデオをストリーミング。高度なHTML5ビデオプレーヤーで.m3u8ファイルを即座に再生。ダウンロード不要。">
+    <meta name="keywords" content="m3u8プレーヤーオンライン, HLSプレーヤー, ビデオストリーミング, m3u8ストリーミング, オンラインビデオプレーヤー, HTML5プレーヤー">
     <meta name="author" content="M3U8 Player Online">
-    <meta property="og:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta property="og:description" content="Stream M3U8 videos online with our free HLS player. Play .m3u8 files directly in your browser.">
+    <meta property="og:title" content="M3U8プレーヤーオンライン - 無料HLSビデオストリーミングプレーヤー">
+    <meta property="og:description" content="無料HLSプレーヤーでM3U8ビデオをオンラインストリーミング。ブラウザで直接.m3u8ファイルを再生。">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta name="twitter:description" content="Stream M3U8 videos online with our free HLS player.">
-    <link rel="canonical" href="https://m3u8player.co/">
+    <meta name="twitter:title" content="M3U8プレーヤーオンライン - 無料HLSビデオストリーミングプレーヤー">
+    <meta name="twitter:description" content="無料HLSプレーヤーでM3U8ビデオをオンラインストリーミング。">
+    <link rel="canonical" href="https://m3u8player.co/ja/">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
@@ -61,7 +61,7 @@
         body {
             width: 100%;
             height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
             background-color: var(--background-color);
             color: var(--text-primary);
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -550,25 +550,25 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">M3U8 Player Online</a>
+            <a href="/ja/" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
+                <a href="/ja/">ホーム</a>
+                <a href="/ja/about.html">概要</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="言語を選択">
                         <i class="fas fa-globe"></i>
-                        <span>EN</span>
+                        <span>JA</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
                         <a href="/" class="language-option">🇺🇸 English</a>
                         <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
                         <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
                         <a href="/pt/" class="language-option">🇧🇷 Português</a>
-                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <button class="theme-toggle" onclick="toggleTheme()" title="ダークモード切り替え">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
@@ -577,14 +577,14 @@
 
     <div class="main">
         <section class="hero">
-            <h1>M3U8 Player Online</h1>
-            <p>Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced video player in browser. No downloads required.</p>
+            <h1>M3U8プレーヤーオンライン</h1>
+            <p>ブラウザで直接HLSビデオをストリーミング。高度なビデオプレーヤーで.m3u8ファイルを即座に再生。ダウンロード不要。</p>
         </section>
 
         <section class="player-section">
             <div class="input-group">
-                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Enter M3U8 URL to play" autocomplete="off">
-                <button class="play-btn" onclick="play()">▶ Play</button>
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="再生するM3U8 URLを入力" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ 再生</button>
             </div>
             <div class="video-container">
                 <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
@@ -595,132 +595,132 @@
         <section class="features">
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-video"></i></div>
-                <h3>Instant Streaming</h3>
-                <p>Play M3U8 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
+                <h3>即座にストリーミング</h3>
+                <p>ダウンロードやインストールなしでM3U8ビデオを即座に再生。URLを貼り付けて視聴開始。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Mobile Friendly</h3>
-                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                <h3>モバイル対応</h3>
+                <p>デスクトップ、タブレット、モバイルデバイスで完璧に動作する完全レスポンシブデザイン。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Secure & Private</h3>
-                <p>All streaming happens directly in your browser. No data is stored on our servers.</p>
+                <h3>安全＆プライベート</h3>
+                <p>すべてのストリーミングはブラウザで直接実行。データはサーバーに保存されません。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3>High Performance</h3>
-                <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
+                <h3>高性能</h3>
+                <p>アダプティブビットレートストリーミングと複数フォーマットをサポートする最適化されたHTML5プレーヤー。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                <h3>Universal Support</h3>
-                <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
+                <h3>汎用サポート</h3>
+                <p>すべてのモダンブラウザで動作し、様々なHLSストリーミングプロトコルをサポート。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-moon"></i></div>
-                <h3>Dark Mode</h3>
-                <p>Switch between light and dark themes for comfortable viewing in any environment.</p>
+                <h3>ダークモード</h3>
+                <p>どんな環境でも快適に視聴できるよう、ライトテーマとダークテーマを切り替え可能。</p>
             </div>
         </section>
 
         <section class="usage-guide">
-            <h2>How to Use M3U8 Player Online</h2>
+            <h2>M3U8プレーヤーオンラインの使い方</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Copy M3U8 URL</h3>
-                        <p>Find and copy the M3U8 stream URL from your video source.</p>
+                        <h3>M3U8 URLをコピー</h3>
+                        <p>ビデオソースからM3U8ストリームURLを見つけてコピーします。</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Paste URL</h3>
-                        <p>Paste the M3U8 URL into the input field above.</p>
+                        <h3>URLを貼り付け</h3>
+                        <p>M3U8 URLを上の入力フィールドに貼り付けます。</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Start Playing</h3>
-                        <p>Click the "Play Video" button and enjoy your stream!</p>
+                        <h3>再生開始</h3>
+                        <p>「ビデオを再生」ボタンをクリックしてストリームをお楽しみください！</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-sliders"></i></div>
                     <div class="step-content">
-                        <h3>Control Playback</h3>
-                        <p>Use the built-in video controls to pause, seek, adjust volume, or enter fullscreen mode for the best viewing experience.</p>
+                        <h3>再生制御</h3>
+                        <p>内蔵のビデオコントロールを使用して、一時停止、シーク、音量調整、または最高の視聴体験のためのフルスクリーンモードを利用できます。</p>
                     </div>
                 </div>
             </div>
         </section> 
         <section class="embed-section">
-            <h2>Embed M3U8 Player</h2>
-            <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
+            <h2>M3U8プレーヤーの埋め込み</h2>
+            <p>以下のiframeコードを使用して、M3U8プレーヤーをウェブサイトに簡単に埋め込むことができます：</p>
             <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
             </div>
-            <p>Simply replace <code>https://your-stream-url.m3u8</code> with your actual M3U8 stream URL.</p>
+            <p><code>https://your-stream-url.m3u8</code>を実際のM3U8ストリームURLに置き換えてください。</p>
         </section>
 
         <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+            <h2>よくある質問</h2>
             
             <div class="faq-item">
-                <h3>How to play M3U8 files in browser?</h3>
+                <h3>ブラウザでM3U8ファイルを再生する方法は？</h3>
                 <p>
-                    To play M3U8 files in your browser, you can use our online M3U8 player or any HTML5-compatible video player that supports HLS (HTTP Live Streaming). 
-                    Simply paste the M3U8 URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support M3U8 playback 
-                    through HTML5 video elements with the help of JavaScript libraries like hls.js or native HLS support.
+                    ブラウザでM3U8ファイルを再生するには、当サイトのオンラインM3U8プレーヤーまたはHLS（HTTP Live Streaming）をサポートするHTML5対応のビデオプレーヤーを使用できます。
+                    上の入力フィールドにM3U8 URLを貼り付けて「再生」をクリックするだけです。Chrome、Firefox、Safari、Edgeなどのモダンブラウザは、
+                    hls.jsなどのJavaScriptライブラリやネイティブHLSサポートを通じてHTML5ビデオ要素でM3U8再生をサポートしています。
                 </p>
                 <p>
-                    For the best experience, ensure your M3U8 stream is accessible via HTTPS and that CORS headers are properly configured if you're embedding the player on a different domain.
+                    最高の体験のために、M3U8ストリームがHTTPS経由でアクセス可能であり、異なるドメインにプレーヤーを埋め込む場合はCORSヘッダーが適切に設定されていることを確認してください。
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>How to embed M3U8 player in web page?</h3>
+                <h3>ウェブページにM3U8プレーヤーを埋め込む方法は？</h3>
                 <p>
-                    You can easily embed our M3U8 player into your website using an iframe. Here's the basic code:
+                    iframeを使用してM3U8プレーヤーをウェブサイトに簡単に埋め込むことができます。基本的なコードは以下の通りです：
                 </p>
                 <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=YOUR_M3U8_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
                 </div>
                 <p>
-                    Replace "YOUR_M3U8_URL" with your actual M3U8 stream URL. You can also customize the width and height attributes to fit your layout. 
-                    For more advanced integration, you can use JavaScript libraries like hls.js or video.js with the HLS plugin to create a custom player.
+                    "YOUR_M3U8_URL"を実際のM3U8ストリームURLに置き換えてください。レイアウトに合わせて幅と高さの属性をカスタマイズすることもできます。
+                    より高度な統合には、hls.jsやHLSプラグイン付きのvideo.jsなどのJavaScriptライブラリを使用してカスタムプレーヤーを作成できます。
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>How to play M3U8 extension video?</h3>
+                <h3>M3U8拡張子のビデオを再生する方法は？</h3>
                 <p>
-                    M3U8 files are playlist files that contain references to video segments, not actual video files themselves. To play M3U8 videos, you need a compatible player 
-                    that can parse the playlist and stream the video segments. Our online player automatically handles this process.
+                    M3U8ファイルは実際のビデオファイルではなく、ビデオセグメントへの参照を含むプレイリストファイルです。M3U8ビデオを再生するには、
+                    プレイリストを解析してビデオセグメントをストリーミングできる対応プレーヤーが必要です。当サイトのオンラインプレーヤーはこのプロセスを自動的に処理します。
                 </p>
                 <p>
-                    If you have a local M3U8 file, you'll need to ensure all referenced video segments are accessible. For online streaming, simply use the M3U8 URL directly. 
-                    The player will automatically download and play the video segments in sequence, providing smooth playback with adaptive bitrate streaming when available.
+                    ローカルM3U8ファイルがある場合は、参照されているすべてのビデオセグメントがアクセス可能であることを確認する必要があります。オンラインストリーミングの場合は、
+                    M3U8 URLを直接使用してください。プレーヤーは自動的にビデオセグメントをダウンロードして順次再生し、利用可能な場合はアダプティブビットレートストリーミングでスムーズな再生を提供します。
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>Can VLC play M3U8?</h3>
+                <h3>VLCでM3U8を再生できますか？</h3>
                 <p>
-                    Yes, VLC Media Player has excellent support for M3U8 files and HLS streaming. You can play M3U8 streams in VLC by:
+                    はい、VLC Media PlayerはM3U8ファイルとHLSストリーミングを優秀にサポートしています。VLCでM3U8ストリームを再生するには：
                 </p>
                 <p>
-                    1. Opening VLC and going to "Media" &gt; "Open Network Stream"<br>
-                    2. Pasting your M3U8 URL in the network URL field<br>
-                    3. Clicking "Play"
+                    1. VLCを開いて「メディア」&gt;「ネットワークストリームを開く」に移動<br>
+                    2. ネットワークURLフィールドにM3U8 URLを貼り付け<br>
+                    3. 「再生」をクリック
                 </p>
                 <p>
-                    VLC also supports local M3U8 playlist files. Simply drag and drop the M3U8 file into VLC or use "File" &gt; "Open File" to browse for it. 
-                    VLC's robust codec support makes it one of the most reliable options for playing various M3U8 streams and formats.
+                    VLCはローカルM3U8プレイリストファイルもサポートしています。M3U8ファイルをVLCにドラッグ＆ドロップするか、「ファイル」&gt;「ファイルを開く」を使用して参照してください。
+                    VLCの堅牢なコーデックサポートにより、様々なM3U8ストリームとフォーマットを再生する最も信頼性の高いオプションの一つとなっています。
                 </p>
             </div>
         </section>
@@ -737,7 +737,7 @@
     <script>
         var player = undefined;
         
-        // 暗黑模式切换功能
+        // ダークモード切り替え機能
         function toggleTheme() {
             const html = document.documentElement;
             const body = document.body;
@@ -757,7 +757,7 @@
             }
         }
         
-        // 页面加载时恢复主题设置
+        // ページ読み込み時にテーマ設定を復元
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
             const themeIcon = document.getElementById('theme-icon');
@@ -772,11 +772,11 @@
                 themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
             }
             
-            // 初始化FAQ交互功能
+            // FAQ交互機能を初期化
             initFAQ();
         });
         
-        // FAQ交互功能
+        // FAQ交互機能
         function initFAQ() {
             const faqItems = document.querySelectorAll('.faq-item');
             
@@ -784,20 +784,44 @@
                 const h3 = item.querySelector('h3');
                 if (h3) {
                     h3.addEventListener('click', function() {
-                        // 切换当前项的active状态
+                        // 現在のアイテムのactive状態を切り替え
                         item.classList.toggle('active');
                     });
                 }
             });
         }
         
-        // 语言切换下拉框功能
+        // 言語切り替えドロップダウン機能
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.classList.toggle('show');
         }
         
-        // 点击页面其他地方时关闭下拉框
+        // 言語切り替え機能
+        function changeLanguage(lang) {
+            const currentPath = window.location.pathname;
+            const isAboutPage = currentPath.includes('about.html');
+            
+            switch(lang) {
+                case 'ja':
+                    window.location.href = isAboutPage ? '/ja/about.html' : '/ja/';
+                    break;
+                case 'en':
+                    window.location.href = isAboutPage ? '/about.html' : '/';
+                    break;
+                case 'tr':
+                    window.location.href = isAboutPage ? '/tr/about.html' : '/tr/';
+                    break;
+                case 'id':
+                    window.location.href = isAboutPage ? '/id/about.html' : '/id/';
+                    break;
+                case 'pt':
+                    window.location.href = isAboutPage ? '/pt/about.html' : '/pt/';
+                    break;
+            }
+        }
+        
+        // ページの他の場所をクリックした時にドロップダウンを閉じる
         document.addEventListener('click', function(event) {
             const languageSelector = document.querySelector('.language-selector');
             const dropdown = document.getElementById('languageDropdown');
@@ -815,13 +839,13 @@
                 sources: [{
                     src: url,
                 }],
-                // licenseUrl需自己去腾讯云申请
+                // licenseUrlは腾讯云で申請する必要があります
                 licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1252819296_1/v_cube.license',
             }); 
             }
             player.pause();
             console.log(url)
-            player.src(url); // url 播放地址
+            player.src(url); // url 再生アドレス
         }
     </script>
 </body>

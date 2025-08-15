@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <title>About Us - M3U8 Player Online | Free HLS Video Streaming Player</title>
+    <title>M3U8プレーヤーオンラインについて - 無料HLSビデオストリーミングプレーヤー</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about M3U8 Player Online - our mission, vision, and commitment to providing the best free HLS video streaming experience. Discover our privacy policy and values.">
-    <meta name="keywords" content="m3u8 player online, about us, HLS player, video streaming, mission, privacy policy">
+    <meta name="description" content="M3U8プレーヤーオンラインについて - ブラウザで直接HLSビデオをストリーミングする無料プラットフォーム。高度なHTML5ビデオプレーヤーで.m3u8ファイルを即座に再生。">
+    <meta name="keywords" content="m3u8プレーヤーについて, HLSプレーヤー情報, ビデオストリーミングプラットフォーム, オンラインビデオプレーヤー">
     <meta name="author" content="M3U8 Player Online">
-    <meta property="og:title" content="About Us - M3U8 Player Online">
-    <meta property="og:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
+    <meta property="og:title" content="M3U8プレーヤーオンラインについて">
+    <meta property="og:description" content="M3U8プレーヤーオンラインについて学び、無料HLSビデオストリーミングプラットフォームの機能を発見してください。">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us - M3U8 Player Online">
-    <meta name="twitter:description" content="Learn about our mission to provide the best free M3U8 HLS video streaming experience.">
-    <link rel="canonical" href="https://m3u8player.co/about.html">
+    <meta name="twitter:title" content="M3U8プレーヤーオンラインについて">
+    <meta name="twitter:description" content="M3U8プレーヤーオンラインについて学び、無料HLSビデオストリーミングプラットフォームの機能を発見してください。">
+    <link rel="canonical" href="https://m3u8player.co/ja/about.html">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -59,7 +59,7 @@
         body {
             width: 100%;
             height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
             background-color: var(--background-color);
             color: var(--text-primary);
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -109,11 +109,6 @@
 
         .nav-links a:hover {
             opacity: 0.8;
-        }
-
-        .nav-links a.active {
-            opacity: 0.8;
-            text-decoration: underline;
         }
 
         .theme-toggle {
@@ -205,6 +200,9 @@
         .hero {
             text-align: center;
             margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--surface-color), var(--background-color));
+            border-radius: 1rem;
         }
 
         .hero h1 {
@@ -229,31 +227,26 @@
             background: var(--surface-color);
             border-radius: 1rem;
             padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
         }
 
         .content-section h2 {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--primary-color);
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            line-height: 1.3;
+            color: var(--primary-color);
         }
 
         .content-section h3 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--primary-color);
-            margin: 2rem 0 1rem 0;
-            line-height: 1.4;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
         }
 
         .content-section p {
-            line-height: 1.6;
+            line-height: 1.7;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
@@ -266,29 +259,6 @@
         .content-section li {
             line-height: 1.6;
             margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .icon-large {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            margin: 2rem 0;
-        }
-
-        .highlight-box h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .highlight-box p {
-            color: rgba(255, 255, 255, 0.9);
         }
 
         .footer {
@@ -296,6 +266,7 @@
             border-top: 1px solid var(--border-color);
             padding: 2rem 0;
             text-align: center;
+            margin-top: 3rem;
         }
 
         .footer p {
@@ -331,9 +302,10 @@
 
             .content-section h2 {
                 font-size: 1.5rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.25rem;
             }
         }
     </style>
@@ -342,25 +314,25 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">M3U8 Player Online</a>
+            <a href="/ja/" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about.html" class="active">About</a>
+                <a href="/ja/">ホーム</a>
+                <a href="/ja/about.html">概要</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="言語を選択">
                         <i class="fas fa-globe"></i>
-                        <span>EN</span>
+                        <span>JA</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
+                        <a href="/ja/about.html" class="language-option">🇯🇵 日本語</a>
                         <a href="/about.html" class="language-option">🇺🇸 English</a>
                         <a href="/tr/about.html" class="language-option">🇹🇷 Türkçe</a>
                         <a href="/id/about.html" class="language-option">🇮🇩 Indonesia</a>
                         <a href="/pt/about.html" class="language-option">🇧🇷 Português</a>
-                        <a href="/ja/about.html" class="language-option">🇯🇵 日本語</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <button class="theme-toggle" onclick="toggleTheme()" title="ダークモード切り替え">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
@@ -369,144 +341,125 @@
 
     <div class="main">
         <section class="hero">
-            <h1>About M3U8 Player Online</h1>
-            <p>Learn more about our mission, vision, and commitment to providing the best free HLS video streaming experience.</p>
+            <h1>M3U8プレーヤーオンラインについて</h1>
+            <p>ブラウザで直接HLSビデオをストリーミングする無料プラットフォームについて学び、その機能を発見してください。</p>
         </section>
 
-        <!-- Website Introduction Section -->
         <section class="content-section">
-            <h2><i class="fas fa-info-circle icon-large"></i>Website Introduction</h2>
+            <h2>ウェブサイト紹介</h2>
             <p>
-                M3U8 Player Online is a cutting-edge web-based video streaming platform that specializes in HTTP Live Streaming (HLS) technology. 
-                Our platform enables users to play M3U8 files directly in their web browsers without requiring any software downloads or installations.
+                M3U8プレーヤーオンラインは、ブラウザで直接M3U8（HLS - HTTP Live Streaming）ビデオファイルを再生するための無料で使いやすいウェブベースのプラットフォームです。
+                ソフトウェアのダウンロードやインストールは不要で、M3U8 URLを貼り付けるだけで即座にストリーミングを開始できます。
             </p>
             <p>
-                Since our launch, we have been dedicated to providing a seamless, user-friendly experience for streaming HLS content. 
-                Our advanced HTML5 video player leverages the latest web technologies to ensure optimal performance across all devices and browsers.
+                当プラットフォームは、最新のHTML5技術と高度なJavaScriptライブラリを使用して構築されており、
+                デスクトップ、タブレット、モバイルデバイスを含むすべてのモダンブラウザでシームレスなビデオストリーミング体験を提供します。
             </p>
-            
-            <div class="highlight-box">
-                <h3><i class="fas fa-star"></i> What Makes Us Special</h3>
-                <p>
-                    We combine simplicity with powerful functionality, offering instant streaming capabilities, 
-                    mobile-responsive design, and robust security features that protect user privacy while delivering exceptional video quality.
-                </p>
-            </div>
+        </section>
 
-            <h3><i class="fas fa-cogs"></i> Key Features</h3>
+        <section class="content-section">
+            <h2>私たちの特徴</h2>
+            <p>M3U8プレーヤーオンラインが他と異なる理由：</p>
             <ul>
-                <li><strong>Instant Streaming:</strong> No downloads or installations required - just paste your M3U8 URL and play</li>
-                <li><strong>Cross-Platform Compatibility:</strong> Works seamlessly on desktop, tablet, and mobile devices</li>
-                <li><strong>Advanced Player Controls:</strong> Full-featured video controls with seek, volume, and fullscreen options</li>
-                <li><strong>Adaptive Bitrate Streaming:</strong> Automatically adjusts quality based on your internet connection</li>
-                <li><strong>Dark Mode Support:</strong> Toggle between light and dark themes for comfortable viewing</li>
-                <li><strong>Privacy-Focused:</strong> All streaming happens client-side with no data stored on our servers</li>
+                <li><strong>即座の再生：</strong> ダウンロードやインストールなしで、M3U8 URLを貼り付けるだけで即座にストリーミング開始</li>
+                <li><strong>クロスプラットフォーム対応：</strong> Windows、Mac、Linux、iOS、Androidで完璧に動作</li>
+                <li><strong>プライバシー重視：</strong> すべての処理はブラウザで実行され、データはサーバーに保存されません</li>
+                <li><strong>高性能ストリーミング：</strong> アダプティブビットレートと複数解像度をサポート</li>
+                <li><strong>ユーザーフレンドリー：</strong> 直感的なインターフェースで技術的な知識は不要</li>
+                <li><strong>完全無料：</strong> 隠れた料金、登録、制限なし</li>
             </ul>
         </section>
 
-        <!-- Mission Section -->
         <section class="content-section">
-            <h2><i class="fas fa-bullseye icon-large"></i>Our Mission</h2>
+            <h2>主要機能</h2>
+            <h3>🎥 高度なビデオ再生</h3>
             <p>
-                Our mission is to democratize access to high-quality video streaming technology by providing a free, 
-                reliable, and user-friendly M3U8 player that works for everyone, everywhere.
-            </p>
-            
-            <h3><i class="fas fa-eye"></i> Our Vision</h3>
-            <p>
-                We envision a world where accessing and streaming video content is effortless, secure, and available to all users 
-                regardless of their technical expertise or device capabilities. We strive to be the go-to platform for M3U8 streaming needs.
+                当プラットフォームは、業界標準のHTML5ビデオプレーヤーと高度なHLSサポートを使用して、
+                スムーズで高品質なビデオ再生を提供します。アダプティブビットレートストリーミングにより、
+                インターネット接続に基づいて最適な品質が自動的に調整されます。
             </p>
 
-            <h3><i class="fas fa-heart"></i> Our Values</h3>
-            <ul>
-                <li><strong>Accessibility:</strong> Making video streaming technology available to everyone, free of charge</li>
-                <li><strong>Privacy:</strong> Protecting user data and ensuring all streaming happens securely in the browser</li>
-                <li><strong>Innovation:</strong> Continuously improving our platform with the latest web technologies</li>
-                <li><strong>Simplicity:</strong> Maintaining an intuitive interface that anyone can use without technical knowledge</li>
-                <li><strong>Reliability:</strong> Providing consistent, high-quality streaming performance across all platforms</li>
-                <li><strong>Community:</strong> Building a platform that serves the global community of content creators and viewers</li>
-            </ul>
+            <h3>📱 レスポンシブデザイン</h3>
+            <p>
+                モバイルファーストのアプローチで設計された当プラットフォームは、
+                スマートフォンからデスクトップまで、あらゆる画面サイズで美しく機能します。
+                タッチコントロールとキーボードショートカットの両方をサポートしています。
+            </p>
 
-            <div class="highlight-box">
-                <h3><i class="fas fa-rocket"></i> Our Commitment</h3>
-                <p>
-                    We are committed to maintaining M3U8 Player Online as a free service while continuously enhancing 
-                    its capabilities to meet the evolving needs of our users. We believe that quality video streaming 
-                    technology should be accessible to everyone.
-                </p>
-            </div>
+            <h3>🔒 セキュリティとプライバシー</h3>
+            <p>
+                ユーザーのプライバシーを最優先に考えています。すべてのビデオ処理はブラウザで直接実行され、
+                ビデオデータやURLがサーバーに送信されることはありません。完全にクライアントサイドのソリューションです。
+            </p>
+
+            <h3>🌙 ダークモードサポート</h3>
+            <p>
+                目に優しい視聴体験のために、ライトテーマとダークテーマを切り替えることができます。
+                テーマ設定は自動的に保存され、次回の訪問時に復元されます。
+            </p>
         </section>
 
-        <!-- Privacy Policy Section -->
         <section class="content-section">
-            <h2><i class="fas fa-shield-alt icon-large"></i>Privacy Policy</h2>
-            <p><strong>Last Updated:</strong> January 2025</p>
-            
-            <h3><i class="fas fa-user-shield"></i> Information We Collect</h3>
+            <h2>私たちのミッション</h2>
             <p>
-                M3U8 Player Online is designed with privacy as a core principle. We collect minimal information to provide our service:
+                私たちのミッションは、誰もが簡単にM3U8ビデオコンテンツにアクセスできるようにすることです。
+                複雑なソフトウェアのインストールや技術的な設定の必要性を排除し、
+                シンプルで直感的なウェブベースのソリューションを提供します。
+            </p>
+            <p>
+                教育者、コンテンツクリエイター、開発者、または単にM3U8ビデオを視聴したい一般ユーザーまで、
+                すべての人にとって使いやすいプラットフォームの構築に取り組んでいます。
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>私たちのビジョン</h2>
+            <p>
+                ウェブベースのビデオストリーミングソリューションの最前線に立ち、
+                技術の進歩に合わせて継続的にプラットフォームを進化させることを目指しています。
+                私たちは、アクセシビリティ、パフォーマンス、ユーザー体験が最も重要だと信じています。
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>私たちの価値観</h2>
+            <ul>
+                <li><strong>シンプルさ：</strong> 複雑さを排除し、誰もが使いやすいツールを作る</li>
+                <li><strong>プライバシー：</strong> ユーザーデータとプライバシーを尊重し保護する</li>
+                <li><strong>アクセシビリティ：</strong> すべての人がテクノロジーにアクセスできるようにする</li>
+                <li><strong>イノベーション：</strong> 継続的に改善し、新しい機能を追加する</li>
+                <li><strong>信頼性：</strong> 一貫して高品質なサービスを提供する</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>私たちのコミットメント</h2>
+            <p>
+                M3U8プレーヤーオンラインを完全に無料で利用できるよう維持することをお約束します。
+                隠れた料金、強制的な登録、人為的な制限はありません。
+                私たちは、オープンウェブの力とすべての人にとってのアクセシビリティを信じています。
+            </p>
+            <p>
+                また、プラットフォームを定期的に更新し、新しい機能を追加し、
+                最新のウェブ標準とセキュリティのベストプラクティスに準拠することをお約束します。
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>プライバシーポリシー</h2>
+            <p>
+                私たちはユーザーのプライバシーを真剣に受け止めています。M3U8プレーヤーオンラインは：
             </p>
             <ul>
-                <li><strong>No Personal Data:</strong> We do not collect, store, or process any personal information</li>
-                <li><strong>No Video Content:</strong> All video streaming happens directly in your browser - we never access or store your video content</li>
-                <li><strong>Basic Analytics:</strong> We may collect anonymous usage statistics to improve our service (page views, browser type, general location)</li>
-                <li><strong>Local Storage:</strong> We use browser local storage only to save your theme preferences (light/dark mode)</li>
+                <li>個人情報やビデオURLを収集、保存、または送信しません</li>
+                <li>すべての処理はブラウザで直接実行されます</li>
+                <li>サードパーティのトラッキングスクリプトは使用しません</li>
+                <li>Cookieは基本的な機能（テーマ設定など）にのみ使用します</li>
+                <li>ユーザーの同意なしにデータを共有することはありません</li>
             </ul>
-
-            <h3><i class="fas fa-database"></i> How We Use Information</h3>
-            <p>The limited information we collect is used solely for:</p>
-            <ul>
-                <li>Improving the performance and functionality of our player</li>
-                <li>Understanding general usage patterns to enhance user experience</li>
-                <li>Maintaining and optimizing our service infrastructure</li>
-                <li>Remembering your theme preferences for future visits</li>
-            </ul>
-
-            <h3><i class="fas fa-share-alt"></i> Information Sharing</h3>
             <p>
-                We do not sell, trade, or share any user information with third parties. Since we don't collect personal data, 
-                there is nothing to share. All video streaming occurs directly between your browser and the video source.
+                プライバシーに関するご質問やご懸念がございましたら、お気軽にお問い合わせください。
             </p>
-
-            <h3><i class="fas fa-cookie-bite"></i> Cookies and Tracking</h3>
-            <ul>
-                <li>We use minimal cookies only for essential functionality</li>
-                <li>No tracking cookies or third-party advertising cookies are used</li>
-                <li>You can disable cookies in your browser without affecting core functionality</li>
-            </ul>
-
-            <h3><i class="fas fa-lock"></i> Data Security</h3>
-            <p>
-                Since we don't store personal data or video content, there are minimal security risks. Our website uses HTTPS encryption 
-                to protect data transmission, and all video streaming happens securely through your browser.
-            </p>
-
-            <h3><i class="fas fa-child"></i> Children's Privacy</h3>
-            <p>
-                Our service does not knowingly collect any information from children under 13. Since we don't collect personal information 
-                from any users, this policy applies to all age groups.
-            </p>
-
-            <h3><i class="fas fa-edit"></i> Changes to Privacy Policy</h3>
-            <p>
-                We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. 
-                We encourage you to review this policy periodically.
-            </p>
-
-            <h3><i class="fas fa-envelope"></i> Contact Us</h3>
-            <p>
-                If you have any questions about this privacy policy or our practices, please feel free to contact us through our website. 
-                We are committed to addressing any privacy concerns promptly and transparently.
-            </p>
-
-            <div class="highlight-box">
-                <h3><i class="fas fa-check-circle"></i> Privacy Summary</h3>
-                <p>
-                    In summary: We respect your privacy completely. We don't collect personal data, don't store your videos, 
-                    and don't track your activity. Your streaming experience is private, secure, and entirely under your control.
-                </p>
-            </div>
         </section>
     </div>
 
@@ -518,7 +471,7 @@
     </footer>
 
     <script>
-        // 暗黑模式切换功能
+        // ダークモード切り替え機能
         function toggleTheme() {
             const html = document.documentElement;
             const body = document.body;
@@ -538,35 +491,58 @@
             }
         }
         
-        // 页面加载时恢复主题设置
+        // ページ読み込み時にテーマ設定を復元
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
             const html = document.documentElement;
             const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
             
             if (savedTheme === 'dark') {
                 body.setAttribute('data-theme', 'dark');
                 html.setAttribute('data-theme', 'dark');
                 themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
             } else {
-                body.removeAttribute('data-theme');
-                html.removeAttribute('data-theme');
                 themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
             }
         });
-
-        // Language dropdown functionality
+        
+        // 言語切り替えドロップダウン機能
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.classList.toggle('show');
         }
-
-        // Close dropdown when clicking outside
+        
+        // 言語切り替え機能
+        function changeLanguage(lang) {
+            const currentPath = window.location.pathname;
+            const isAboutPage = currentPath.includes('about.html');
+            
+            switch(lang) {
+                case 'ja':
+                    window.location.href = isAboutPage ? '/ja/about.html' : '/ja/';
+                    break;
+                case 'en':
+                    window.location.href = isAboutPage ? '/about.html' : '/';
+                    break;
+                case 'tr':
+                    window.location.href = isAboutPage ? '/tr/about.html' : '/tr/';
+                    break;
+                case 'id':
+                    window.location.href = isAboutPage ? '/id/about.html' : '/id/';
+                    break;
+                case 'pt':
+                    window.location.href = isAboutPage ? '/pt/about.html' : '/pt/';
+                    break;
+            }
+        }
+        
+        // ページの他の場所をクリックした時にドロップダウンを閉じる
         document.addEventListener('click', function(event) {
             const languageSelector = document.querySelector('.language-selector');
-            if (!languageSelector.contains(event.target)) {
-                const dropdown = document.getElementById('languageDropdown');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (languageSelector && !languageSelector.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
         });

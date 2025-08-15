@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <title>M3U8 Player Online - Free HLS Video Streaming Player</title>
+    <title>M3U8 Player Online - Ücretsiz HLS Video Akış Oynatıcısı</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free M3U8 Player Online - Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced HTML5 video player. No downloads required.">
+    <meta name="description" content="Ücretsiz M3U8 Player Online - HLS videolarını doğrudan tarayıcınızda akışla izleyin. .m3u8 dosyalarını gelişmiş HTML5 video oynatıcımızla anında oynatın. İndirme gerekmez.">
     <meta name="keywords" content="m3u8 player online, HLS player, video streaming, m3u8 streaming, online video player, HTML5 player">
     <meta name="author" content="M3U8 Player Online">
-    <meta property="og:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta property="og:description" content="Stream M3U8 videos online with our free HLS player. Play .m3u8 files directly in your browser.">
+    <meta property="og:title" content="M3U8 Player Online - Ücretsiz HLS Video Akış Oynatıcısı">
+    <meta property="og:description" content="Ücretsiz HLS oynatıcımızla M3U8 videolarını çevrimiçi akışla izleyin. .m3u8 dosyalarını doğrudan tarayıcınızda oynatın.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="M3U8 Player Online - Free HLS Video Streaming Player">
-    <meta name="twitter:description" content="Stream M3U8 videos online with our free HLS player.">
+    <meta name="twitter:title" content="M3U8 Player Online - Ücretsiz HLS Video Akış Oynatıcısı">
+    <meta name="twitter:description" content="Ücretsiz HLS oynatıcımızla M3U8 videolarını çevrimiçi akışla izleyin.">
     <link rel="canonical" href="https://m3u8player.co/">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -113,20 +113,6 @@
             opacity: 0.8;
         }
 
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
         .language-selector {
             position: relative;
             display: inline-block;
@@ -191,6 +177,20 @@
 
         .language-option:last-child {
             border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .main {
@@ -550,25 +550,25 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">M3U8 Player Online</a>
+            <a href="/tr/" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
+                <a href="/tr/">Ana Sayfa</a>
+                <a href="/tr/about.html">Hakkımızda</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Dil Seçin">
                         <i class="fas fa-globe"></i>
-                        <span>EN</span>
+                        <span>TR</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
-                        <a href="/" class="language-option">🇺🇸 English</a>
                         <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/" class="language-option">🇺🇸 English</a>
                         <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
                         <a href="/pt/" class="language-option">🇧🇷 Português</a>
                         <a href="/ja/" class="language-option">🇯🇵 日本語</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Karanlık modu aç/kapat">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>
@@ -578,13 +578,13 @@
     <div class="main">
         <section class="hero">
             <h1>M3U8 Player Online</h1>
-            <p>Stream HLS videos directly in your browser. Play .m3u8 files instantly with our advanced video player in browser. No downloads required.</p>
+            <p>HLS videolarını doğrudan tarayıcınızda akışla izleyin. .m3u8 dosyalarını gelişmiş video oynatıcımızla anında oynatın. İndirme gerekmez.</p>
         </section>
 
         <section class="player-section">
             <div class="input-group">
-                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Enter M3U8 URL to play" autocomplete="off">
-                <button class="play-btn" onclick="play()">▶ Play</button>
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Oynatmak için M3U8 URL'sini girin" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Oynat</button>
             </div>
             <div class="video-container">
                 <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
@@ -595,149 +595,177 @@
         <section class="features">
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-video"></i></div>
-                <h3>Instant Streaming</h3>
-                <p>Play M3U8 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
+                <h3>Anında Akış</h3>
+                <p>M3U8 videolarını herhangi bir indirme veya kurulum olmadan anında oynatın. Sadece URL'yi yapıştırın ve izlemeye başlayın.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Mobile Friendly</h3>
-                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                <h3>Mobil Dostu</h3>
+                <p>Masaüstü, tablet ve mobil cihazlarda mükemmel çalışan tamamen duyarlı tasarım.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Secure & Private</h3>
-                <p>All streaming happens directly in your browser. No data is stored on our servers.</p>
+                <h3>Güvenli ve Özel</h3>
+                <p>Tüm akış doğrudan tarayıcınızda gerçekleşir. Sunucularımızda hiçbir veri saklanmaz.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3>High Performance</h3>
-                <p>Optimized HTML5 player with support for adaptive bitrate streaming and multiple formats.</p>
+                <h3>Yüksek Performans</h3>
+                <p>Uyarlanabilir bit hızı akışı ve çoklu format desteği ile optimize edilmiş HTML5 oynatıcı.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                <h3>Universal Support</h3>
-                <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
+                <h3>Evrensel Destek</h3>
+                <p>Tüm modern tarayıcılarla çalışır ve çeşitli HLS akış protokollerini destekler.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-moon"></i></div>
-                <h3>Dark Mode</h3>
-                <p>Switch between light and dark themes for comfortable viewing in any environment.</p>
+                <h3>Karanlık Mod</h3>
+                <p>Herhangi bir ortamda rahat görüntüleme için açık ve koyu temalar arasında geçiş yapın.</p>
             </div>
         </section>
 
         <section class="usage-guide">
-            <h2>How to Use M3U8 Player Online</h2>
+            <h2>M3U8 Player Online Nasıl Kullanılır</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Copy M3U8 URL</h3>
-                        <p>Find and copy the M3U8 stream URL from your video source.</p>
+                        <h3>M3U8 URL'sini Kopyalayın</h3>
+                        <p>Video kaynağınızdan M3U8 akış URL'sini bulun ve kopyalayın.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Paste URL</h3>
-                        <p>Paste the M3U8 URL into the input field above.</p>
+                        <h3>URL'yi Yapıştırın</h3>
+                        <p>M3U8 URL'sini yukarıdaki giriş alanına yapıştırın.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Start Playing</h3>
-                        <p>Click the "Play Video" button and enjoy your stream!</p>
+                        <h3>Oynatmaya Başlayın</h3>
+                        <p>"Video Oynat" düğmesine tıklayın ve akışınızın keyfini çıkarın!</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-sliders"></i></div>
                     <div class="step-content">
-                        <h3>Control Playback</h3>
-                        <p>Use the built-in video controls to pause, seek, adjust volume, or enter fullscreen mode for the best viewing experience.</p>
+                        <h3>Oynatmayı Kontrol Edin</h3>
+                        <p>En iyi görüntüleme deneyimi için yerleşik video kontrollerini kullanarak duraklatın, arayın, ses seviyesini ayarlayın veya tam ekran moduna geçin.</p>
                     </div>
                 </div>
             </div>
         </section> 
         <section class="embed-section">
-            <h2>Embed M3U8 Player</h2>
-            <p>You can easily embed our M3U8 player into your website using the following iframe code:</p>
+            <h2>M3U8 Player Gömme</h2>
+            <p>Aşağıdaki iframe kodunu kullanarak M3U8 oynatıcımızı web sitenize kolayca gömebilirsiniz:</p>
             <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
             </div>
-            <p>Simply replace <code>https://your-stream-url.m3u8</code> with your actual M3U8 stream URL.</p>
+            <p>Sadece <code>https://your-stream-url.m3u8</code> kısmını gerçek M3U8 akış URL'nizle değiştirin.</p>
         </section>
 
         <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Sık Sorulan Sorular</h2>
             
             <div class="faq-item">
-                <h3>How to play M3U8 files in browser?</h3>
+                <h3>Tarayıcıda M3U8 dosyaları nasıl oynatılır?</h3>
                 <p>
-                    To play M3U8 files in your browser, you can use our online M3U8 player or any HTML5-compatible video player that supports HLS (HTTP Live Streaming). 
-                    Simply paste the M3U8 URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support M3U8 playback 
-                    through HTML5 video elements with the help of JavaScript libraries like hls.js or native HLS support.
+                    M3U8 dosyalarını tarayıcınızda oynatmak için çevrimiçi M3U8 oynatıcımızı veya HLS (HTTP Live Streaming) destekleyen herhangi bir HTML5 uyumlu video oynatıcısını kullanabilirsiniz. 
+                    Sadece M3U8 URL'sini yukarıdaki giriş alanına yapıştırın ve "Oynat"a tıklayın. Chrome, Firefox, Safari ve Edge gibi modern tarayıcıların tümü 
+                    hls.js gibi JavaScript kütüphaneleri veya yerel HLS desteği yardımıyla HTML5 video öğeleri aracılığıyla M3U8 oynatmayı destekler.
                 </p>
                 <p>
-                    For the best experience, ensure your M3U8 stream is accessible via HTTPS and that CORS headers are properly configured if you're embedding the player on a different domain.
+                    En iyi deneyim için M3U8 akışınızın HTTPS üzerinden erişilebilir olduğundan ve oynatıcıyı farklı bir etki alanına gömerken CORS başlıklarının düzgün yapılandırıldığından emin olun.
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>How to embed M3U8 player in web page?</h3>
+                <h3>Web sayfasına M3U8 oynatıcı nasıl gömülür?</h3>
                 <p>
-                    You can easily embed our M3U8 player into your website using an iframe. Here's the basic code:
+                    Bir iframe kullanarak M3U8 oynatıcımızı web sitenize kolayca gömebilirsiniz. İşte temel kod:
                 </p>
                 <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=YOUR_M3U8_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
                 </div>
                 <p>
-                    Replace "YOUR_M3U8_URL" with your actual M3U8 stream URL. You can also customize the width and height attributes to fit your layout. 
-                    For more advanced integration, you can use JavaScript libraries like hls.js or video.js with the HLS plugin to create a custom player.
+                    "YOUR_M3U8_URL" kısmını gerçek M3U8 akış URL'nizle değiştirin. Ayrıca düzeninize uyması için genişlik ve yükseklik özniteliklerini özelleştirebilirsiniz. 
+                    Daha gelişmiş entegrasyon için özel bir oynatıcı oluşturmak üzere HLS eklentisi ile hls.js veya video.js gibi JavaScript kütüphanelerini kullanabilirsiniz.
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>How to play M3U8 extension video?</h3>
+                <h3>M3U8 uzantılı video nasıl oynatılır?</h3>
                 <p>
-                    M3U8 files are playlist files that contain references to video segments, not actual video files themselves. To play M3U8 videos, you need a compatible player 
-                    that can parse the playlist and stream the video segments. Our online player automatically handles this process.
+                    M3U8 dosyası aslında bir video dosyası değil, video segmentlerinin listesini içeren bir oynatma listesi dosyasıdır. M3U8 uzantılı videoları oynatmak için:
                 </p>
                 <p>
-                    If you have a local M3U8 file, you'll need to ensure all referenced video segments are accessible. For online streaming, simply use the M3U8 URL directly. 
-                    The player will automatically download and play the video segments in sequence, providing smooth playback with adaptive bitrate streaming when available.
+                    1. <strong>Çevrimiçi Oynatıcılar:</strong> M3U8 Player Online gibi web tabanlı oynatıcıları kullanın<br>
+                    2. <strong>Masaüstü Uygulamaları:</strong> VLC Media Player, PotPlayer veya MPC-HC kullanın<br>
+                    3. <strong>Mobil Uygulamalar:</strong> VLC for Mobile, MX Player veya Kodi kullanın<br>
+                    4. <strong>Tarayıcı Uzantıları:</strong> HLS destekli video oynatıcı uzantıları yükleyin
+                </p>
+                <p>
+                    En kolay yöntem, M3U8 URL'sini kopyalayıp yukarıdaki oynatıcımıza yapıştırmaktır. Herhangi bir yazılım kurulumu gerektirmez ve tüm cihazlarda çalışır.
                 </p>
             </div>
             
             <div class="faq-item">
-                <h3>Can VLC play M3U8?</h3>
+                <h3>VLC M3U8 oynatmayı destekliyor mu?</h3>
                 <p>
-                    Yes, VLC Media Player has excellent support for M3U8 files and HLS streaming. You can play M3U8 streams in VLC by:
+                    Evet, VLC Media Player M3U8 dosyalarını ve HLS akışlarını tam olarak destekler. VLC'de M3U8 oynatmak için:
                 </p>
                 <p>
-                    1. Opening VLC and going to "Media" &gt; "Open Network Stream"<br>
-                    2. Pasting your M3U8 URL in the network URL field<br>
-                    3. Clicking "Play"
+                    <strong>Masaüstü VLC'de:</strong><br>
+                    1. VLC'yi açın<br>
+                    2. "Medya" menüsüne gidin ve "Ağ Akışı Aç"ı seçin (Ctrl+N)<br>
+                    3. M3U8 URL'sini girin<br>
+                    4. "Oynat"a tıklayın
                 </p>
                 <p>
-                    VLC also supports local M3U8 playlist files. Simply drag and drop the M3U8 file into VLC or use "File" &gt; "Open File" to browse for it. 
-                    VLC's robust codec support makes it one of the most reliable options for playing various M3U8 streams and formats.
+                    <strong>Mobil VLC'de:</strong><br>
+                    1. VLC uygulamasını açın<br>
+                    2. "Akış" sekmesine dokunun<br>
+                    3. M3U8 URL'sini girin<br>
+                    4. Oynatmaya başlamak için URL'ye dokunun
+                </p>
+                <p>
+                    VLC ayrıca yerel M3U8 dosyalarını da açabilir ve çeşitli HLS özelliklerini destekler. Güçlü codec desteği ve çapraz platform uyumluluğu nedeniyle M3U8 oynatma için popüler bir seçimdir.
                 </p>
             </div>
         </section>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2019 - 2025 M3U8 Player Online. All rights reserved.</p>
+        <p>&copy; 2019 - 2025 M3U8 Player Online. Tüm hakları saklıdır.</p>
         <p>
-            Links: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
+            Bağlantılar: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
         </p>
     </footer>
-    </div>
 
     <script>
-        var player = undefined;
+        // Dil açılır menüsü geçiş fonksiyonu
+        function toggleLanguageDropdown() {
+            const dropdown = document.querySelector('.language-dropdown');
+            dropdown.classList.toggle('show');
+        }
         
-        // 暗黑模式切换功能
+        // Sayfa dışında tıklandığında açılır menüyü kapat
+        window.onclick = function(event) {
+            if (!event.target.matches('.language-btn')) {
+                const dropdowns = document.getElementsByClassName('language-dropdown');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+        // Karanlık mod geçiş fonksiyonu
         function toggleTheme() {
             const html = document.documentElement;
             const body = document.body;
@@ -757,81 +785,52 @@
             }
         }
         
-        // 页面加载时恢复主题设置
+        // Sayfa yüklendiğinde tema ayarını geri yükle
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
-            const themeIcon = document.getElementById('theme-icon');
             const html = document.documentElement;
             const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
             
             if (savedTheme === 'dark') {
                 body.setAttribute('data-theme', 'dark');
                 html.setAttribute('data-theme', 'dark');
                 themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
             } else {
+                body.removeAttribute('data-theme');
+                html.removeAttribute('data-theme');
                 themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
             }
-            
-            // 初始化FAQ交互功能
-            initFAQ();
         });
         
-        // FAQ交互功能
-        function initFAQ() {
-            const faqItems = document.querySelectorAll('.faq-item');
+        // FAQ etkileşim fonksiyonları
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item h3');
             
             faqItems.forEach(item => {
-                const h3 = item.querySelector('h3');
-                if (h3) {
-                    h3.addEventListener('click', function() {
-                        // 切换当前项的active状态
-                        item.classList.toggle('active');
-                    });
-                }
+                item.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
             });
-        }
-        
-        // 语言切换下拉框功能
-        function toggleLanguageDropdown() {
-            const dropdown = document.getElementById('languageDropdown');
-            dropdown.classList.toggle('show');
-        }
-        
-        // 点击页面其他地方时关闭下拉框
-        document.addEventListener('click', function(event) {
-            const languageSelector = document.querySelector('.language-selector');
-            const dropdown = document.getElementById('languageDropdown');
-            
-            if (languageSelector && !languageSelector.contains(event.target)) {
-                dropdown.classList.remove('show');
-            }
         });
         
+        // Video oynatma fonksiyonu
         function play() {
-            let url = $("#url").val()
-
-            if(player === undefined) {
-                player = TCPlayer('player-container-id', {
-                sources: [{
-                    src: url,
-                }],
-                // licenseUrl需自己去腾讯云申请
-                licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1252819296_1/v_cube.license',
-            }); 
+            const url = document.getElementById('url').value.trim();
+            if (!url) {
+                alert('Lütfen geçerli bir M3U8 URL girin');
+                return;
             }
-            player.pause();
-            console.log(url)
-            player.src(url); // url 播放地址
+            
+            const player = TCPlayer('player-container-id', {
+                "m3u8": url,
+                "autoplay": true,
+                "poster": "",
+                "width": '100%',
+                "height": '100%'
+            });
         }
     </script>
 </body>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1L0MXPWR01');
-</script>
 </html>

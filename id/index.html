@@ -29,13 +29,17 @@
                 <a href="/id/">Beranda</a>
                 <a href="/id/about.html">Tentang</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()">Bahasa Indonesia ▼</button>
-                    <div class="language-dropdown">
-                        <a href="/">English</a>
-                        <a href="/tr/">Türkçe</a>
-                        <a href="/id/" class="active">Bahasa Indonesia</a>
-                        <a href="/pt/">Português</a>
-                        <a href="/ja/">日本語</a>
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="言語を選択">
+                        <i class="fas fa-globe"></i>
+                        <span>JA</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/" class="language-option">🇧🇷 Português</a>
                     </div>
                 </div>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Beralih mode gelap">

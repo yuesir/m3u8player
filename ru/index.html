@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>M3U8 Плеер Онлайн | Бесплатный HLS Видео Стриминг Плеер</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бесплатный M3U8 плеер онлайн для воспроизведения HLS видео потоков. Никаких загрузок не требуется - просто вставьте URL M3U8 и начните смотреть мгновенно в вашем браузере.">
+    <meta name="keywords" content="m3u8 плеер, hls плеер, видео стриминг, онлайн плеер, бесплатный плеер, http live streaming">
+    <meta name="author" content="M3U8 Плеер Онлайн">
+    <meta property="og:title" content="M3U8 Плеер Онлайн - Бесплатный HLS Видео Плеер">
+    <meta property="og:description" content="Воспроизводите M3U8 HLS видео потоки мгновенно в вашем браузере. Никаких загрузок не требуется!">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M3U8 Плеер Онлайн">
+    <meta name="twitter:description" content="Бесплатный онлайн плеер для M3U8 HLS видео потоков">
+    <link rel="canonical" href="https://m3u8player.co/ru/">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/hls.js/1.4.10/hls.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/ru/" class="logo">M3U8 Плеер Онлайн</a>
+            <div class="nav-links">
+                <a href="/ru/" class="active">Главная</a>
+                <a href="/ru/about.html">О нас</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Выбрать язык">
+                        <i class="fas fa-globe"></i>
+                        <span>RU</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Переключить темную тему">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>M3U8 Плеер Онлайн</h1>
+            <p>Воспроизводите HLS видео потоки мгновенно в вашем браузере. Никаких загрузок не требуется!</p>
+        </section>
+
+        <section class="player-section">
+            <div class="player-container">
+                <div class="url-input-container">
+                    <input type="text" id="m3u8Url" placeholder="Вставьте ваш M3U8 URL здесь..." class="url-input">
+                    <button onclick="loadVideo()" class="load-btn">
+                        <i class="fas fa-play"></i>
+                        Загрузить видео
+                    </button>
+                </div>
+                <div class="video-container">
+                    <video id="videoPlayer" controls class="video-player">
+                        Ваш браузер не поддерживает видео элемент.
+                    </video>
+                    <div class="video-placeholder" id="videoPlaceholder">
+                        <i class="fas fa-video"></i>
+                        <p>Вставьте M3U8 URL выше и нажмите "Загрузить видео" для начала</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Основные возможности</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Мгновенное воспроизведение</h3>
+                    <p>Никаких загрузок или установок не требуется. Просто вставьте ваш M3U8 URL и начните смотреть немедленно.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Кроссплатформенность</h3>
+                    <p>Работает безупречно на всех устройствах - настольных компьютерах, планшетах и мобильных телефонах.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Безопасный и приватный</h3>
+                    <p>Все потоки обрабатываются в вашем браузере. Мы не сохраняем ваши URL или видео контент.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Расширенные элементы управления</h3>
+                    <p>Полнофункциональные элементы управления видео с навигацией, громкостью и опциями полноэкранного режима.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to-use">
+            <h2>Как использовать</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Получите M3U8 URL</h3>
+                        <p>Найдите M3U8 URL видео потока, который вы хотите воспроизвести.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Вставьте URL</h3>
+                        <p>Скопируйте и вставьте M3U8 URL в поле ввода выше.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Начните смотреть</h3>
+                        <p>Нажмите кнопку "Загрузить видео" и наслаждайтесь вашим контентом!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="embed-section">
+            <h2>Встроить плеер</h2>
+            <p>Вы можете встроить наш M3U8 плеер на свой веб-сайт, используя следующий код:</p>
+            <div class="code-block">
+                <code>&lt;iframe src="https://m3u8player.co/?url=YOUR_M3U8_URL" width="800" height="450" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code>
+                <button class="copy-btn" onclick="copyEmbedCode()">
+                    <i class="fas fa-copy"></i>
+                    Копировать
+                </button>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Что такое M3U8?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>M3U8 - это формат файла плейлиста, используемый для HTTP Live Streaming (HLS). Он содержит список медиа сегментов, которые составляют видео поток.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Безопасно ли использовать этот плеер?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, наш плеер полностью безопасен. Все потоки обрабатываются в вашем браузере, и мы не сохраняем никаких ваших данных или видео контента на наших серверах.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие браузеры поддерживаются?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Наш плеер работает во всех современных браузерах, включая Chrome, Firefox, Safari, Edge и Opera. Мы используем HTML5 и HLS.js для максимальной совместимости.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Могу ли я использовать это на мобильных устройствах?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Абсолютно! Наш плеер полностью адаптивен и отлично работает на всех мобильных устройствах и планшетах.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 M3U8 Плеер Онлайн. Все права защищены.</p>
+        <p>
+            Ссылки: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Плеер</a>
+        </p>
+    </footer>
+
+    <script>
+        let hls;
+
+        function loadVideo() {
+            const url = document.getElementById('m3u8Url').value.trim();
+            const video = document.getElementById('videoPlayer');
+            const placeholder = document.getElementById('videoPlaceholder');
+
+            if (!url) {
+                alert('Пожалуйста, введите действительный M3U8 URL');
+                return;
+            }
+
+            // Показать видео плеер и скрыть заглушку
+            video.style.display = 'block';
+            placeholder.style.display = 'none';
+
+            if (Hls.isSupported()) {
+                if (hls) {
+                    hls.destroy();
+                }
+                hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+                hls.on(Hls.Events.ERROR, function(event, data) {
+                    console.error('HLS ошибка:', data);
+                    alert('Ошибка загрузки видео. Пожалуйста, проверьте URL и попробуйте снова.');
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play();
+                });
+                video.addEventListener('error', function() {
+                    alert('Ошибка загрузки видео. Пожалуйста, проверьте URL и попробуйте снова.');
+                });
+            } else {
+                alert('Ваш браузер не поддерживает HLS воспроизведение.');
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                html.removeAttribute('data-theme');
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function copyEmbedCode() {
+            const code = document.querySelector('.code-block code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Закрыть выпадающий список при клике вне его
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Загрузить видео при нажатии Enter
+        document.getElementById('m3u8Url').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loadVideo();
+            }
+        });
+
+        // Применить сохраненную тему при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const html = document.documentElement;
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

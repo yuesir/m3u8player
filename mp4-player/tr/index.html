@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>MP4 Video Oynatıcı Online - Ücretsiz MP4 Medya Oynatıcı</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MP4 dosyalarını ücretsiz MP4 video oynatıcımızla anında çevrimiçi oynatın—herhangi bir MP4 filmi veya müzik klibini bırakın ve indirmeden yüksek kalitede yayınlayın.">
+    <meta name="keywords" content="mp4 oynatıcı online, MP4 oynatıcı, video akışı, mp4 akışı, çevrimiçi video oynatıcı, HTML5 oynatıcı">
+    <meta name="author" content="MP4 Web Oynatıcı Online">
+    <meta property="og:title" content="MP4 Web Oynatıcı Online - Ücretsiz MP4 Video Akış Oynatıcı">
+    <meta property="og:description" content="MP4 dosyalarını ücretsiz MP4 video oynatıcımızla anında çevrimiçi oynatın—herhangi bir MP4 filmi veya müzik klibini bırakın ve indirmeden yüksek kalitede yayınlayın.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MP4 Web Oynatıcı Online - Ücretsiz MP4 Video Akış Oynatıcı">
+    <meta name="twitter:description" content="MP4 dosyalarını ücretsiz MP4 video oynatıcımızla anında çevrimiçi oynatın—herhangi bir MP4 filmi veya müzik klibini bırakın ve indirmeden yüksek kalitede yayınlayın.">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player/tr">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/mp4-player/tr" class="logo">MP4 Oynatıcı Online</a>
+            <div class="nav-links">
+                <a href="/mp4-player/tr">Ana Sayfa</a>
+                <a href="/tr/about.html">Hakkında</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Dil Seç">
+                        <i class="fas fa-globe"></i>
+                        <span>TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Karanlık modu aç/kapat">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>MP4 Video Oynatıcı Online</h1>
+            <p>MP4 dosyalarını ücretsiz MP4 video oynatıcımızla anında çevrimiçi oynatın—herhangi bir MP4 filmi veya müzik klibini bırakın ve kayıt olmadan yüksek kalitede yayınlayın.</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="Oynatmak için M3U8 URL'sini girin" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Oynat</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>Anında Akış</h3>
+                <p>MP4 videolarını herhangi bir indirme veya kurulum olmadan çevrimiçi oynatın. Sadece URL'yi yapıştırın ve izlemeye başlayın.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobil Dostu</h3>
+                <p>PC, tablet ve mobil cihazlarda mükemmel çalışan tamamen duyarlı tasarım.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Güvenli ve Özel</h3>
+                <p>Tüm akış doğrudan tarayıcınızda gerçekleşir. Sunucularımızda hiçbir veri saklanmaz.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Yüksek Performans</h3>
+                <p>Uyarlanabilir bit hızı akışı ve çoklu format desteği ile optimize edilmiş MP4 oynatıcı.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Evrensel Destek</h3>
+                <p>Tüm modern tarayıcılarla çalışır ve çeşitli MP4 akış protokollerini destekler.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>Karanlık Mod</h3>
+                <p>Herhangi bir ortamda rahat görüntüleme için açık ve koyu temalar arasında geçiş yapın.</p>
+            </div>
+        </section>
+
+        <section class="usage-guide">
+            <h2>MP4 Oynatıcı Online Nasıl Kullanılır</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 Video URL'sini Kopyala</h3>
+                        <p>Video kaynağınızdan MP4 video akış URL'sini bulun ve kopyalayın.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 Video URL'sini Yapıştır</h3>
+                        <p>MP4 video akış URL'sini yukarıdaki giriş alanına yapıştırın.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-play"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 Video Oynatmaya Başla</h3>
+                        <p>"Video Oynat" düğmesine tıklayın ve MP4 video akışınızın keyfini çıkarın!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 Video Oynatımını Kontrol Et</h3>
+                        <p>En iyi görüntüleme deneyimi için yerleşik video kontrollerini kullanarak duraklatın, arayın, ses seviyesini ayarlayın veya tam ekran moduna girin.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>MP4 Video Oynatıcı Gömme</h2>
+            <p>Aşağıdaki iframe kodunu kullanarak MP4 video oynatıcımızı web sitenize kolayca gömebilirsiniz:</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p><code>https://your-stream-url.mp4</code> kısmını gerçek MP4 akış URL'nizle değiştirin.</p>
+        </section>
+
+        <section class="faq-section">
+            <h2>Sık Sorulan Sorular</h2>
+            
+            <div class="faq-item">
+                <h3>MP4 video dosyaları çevrimiçi nasıl oynatılır?</h3>
+                <p>
+                    MP4 video dosyalarını çevrimiçi oynatmak için çevrimiçi MP4 video oynatıcımızı veya MP4 oynatımını destekleyen herhangi bir HTML5 uyumlu video oynatıcı kullanabilirsiniz. 
+                    MP4 video akış URL'sini yukarıdaki giriş alanına yapıştırın ve "Oynat"a tıklayın. Chrome, Firefox, Safari ve Edge gibi modern tarayıcılar 
+                    hls.js gibi JavaScript kütüphaneleri veya yerel HLS desteği yardımıyla HTML5 video öğeleri aracılığıyla MP4 oynatımını destekler.
+                </p>
+                <p>
+                    En iyi deneyim için MP4 akışınızın HTTPS üzerinden erişilebilir olduğundan ve oynatıcıyı farklı bir etki alanına gömerken CORS başlıklarının düzgün yapılandırıldığından emin olun.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>MP4 video oynatıcı web sayfasına nasıl gömülür?</h3>
+                <p>
+                    Bir iframe kullanarak MP4 video oynatıcımızı web sitenize kolayca gömebilirsiniz. İşte temel kod:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    "YOUR_MP4_URL" kısmını gerçek MP4 akış URL'nizle değiştirin. Düzeninize uyması için genişlik ve yükseklik özniteliklerini de özelleştirebilirsiniz. 
+                    Daha gelişmiş entegrasyon için özel bir oynatıcı oluşturmak üzere HLS eklentisi ile hls.js veya video.js gibi JavaScript kütüphanelerini kullanabilirsiniz.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>MP4 uzantılı video dosyaları nasıl oynatılır?</h3>
+                <p>
+                    MP4 dosyaları video, ses ve diğer medya verilerini içerebilen konteyner dosyalarıdır. MP4 video dosyalarını oynatmak için 
+                    MP4 dosyasını ayrıştırabilecek ve medya verilerini çıkarabilecek uyumlu bir oynatıcıya ihtiyacınız vardır. Çevrimiçi oynatıcımız bu işlemi otomatik olarak halleder.
+                </p>
+                <p>
+                    Yerel bir MP4 dosyanız varsa, erişilebilir olduğundan emin olmanız gerekir. Çevrimiçi akış için MP4 URL'sini doğrudan kullanın. 
+                    Oynatıcı video segmentlerini otomatik olarak indirecek ve sırayla oynatacak, mevcut olduğunda uyarlanabilir bit hızı akışı ile pürüzsüz oynatım sağlayacaktır.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 MP4 Oynatıcı Online. Tüm hakları saklıdır.</p>
+        <p>
+            Bağlantılar: <a href="https://m3u8player.co/mp4-player" target="_blank" rel="noopener">MP4 Oynatıcı</a>
+        </p>
+    </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1L0MXPWR01');
+</script>
+</html>

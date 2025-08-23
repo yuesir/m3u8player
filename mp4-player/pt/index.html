@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Reprodutor de Vídeo MP4 Online - Reprodutor de Mídia MP4 Gratuito</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reproduza arquivos MP4 online instantaneamente com nosso reprodutor de vídeo MP4 gratuito—solte qualquer filme MP4 ou clipe de música e transmita em alta qualidade sem downloads.">
+    <meta name="keywords" content="reprodutor mp4 online, reprodutor MP4, streaming de vídeo, streaming mp4, reprodutor de vídeo online, reprodutor HTML5">
+    <meta name="author" content="Reprodutor Web MP4 Online">
+    <meta property="og:title" content="Reprodutor Web MP4 Online - Reprodutor de Streaming de Vídeo MP4 Gratuito">
+    <meta property="og:description" content="Reproduza arquivos MP4 online instantaneamente com nosso reprodutor de vídeo MP4 gratuito—solte qualquer filme MP4 ou clipe de música e transmita em alta qualidade sem downloads.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reprodutor Web MP4 Online - Reprodutor de Streaming de Vídeo MP4 Gratuito">
+    <meta name="twitter:description" content="Reproduza arquivos MP4 online instantaneamente com nosso reprodutor de vídeo MP4 gratuito—solte qualquer filme MP4 ou clipe de música e transmita em alta qualidade sem downloads.">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player/pt">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/mp4-player/pt" class="logo">Reprodutor MP4 Online</a>
+            <div class="nav-links">
+                <a href="/mp4-player/pt">Início</a>
+                <a href="/pt/about.html">Sobre</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Selecionar Idioma">
+                        <i class="fas fa-globe"></i>
+                        <span>PT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>Reprodutor de Vídeo MP4 Online</h1>
+            <p>Reproduza arquivos MP4 online instantaneamente com nosso reprodutor de vídeo MP4 gratuito—solte qualquer filme MP4 ou clipe de música e transmita em alta qualidade sem necessidade de cadastro.</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="Digite a URL M3U8 para reproduzir" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Reproduzir</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>Streaming Instantâneo</h3>
+                <p>Reproduza vídeos MP4 online sem downloads ou instalações. Apenas cole a URL e comece a assistir.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Compatível com Mobile</h3>
+                <p>Design totalmente responsivo que funciona perfeitamente em PC, tablet e dispositivos móveis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Seguro e Privado</h3>
+                <p>Todo o streaming acontece diretamente no seu navegador. Nenhum dado é armazenado em nossos servidores.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Alto Desempenho</h3>
+                <p>Reprodutor MP4 otimizado com suporte para streaming de taxa de bits adaptativa e múltiplos formatos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Suporte Universal</h3>
+                <p>Funciona com todos os navegadores modernos e suporta vários protocolos de streaming MP4.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>Modo Escuro</h3>
+                <p>Alterne entre temas claro e escuro para visualização confortável em qualquer ambiente.</p>
+            </div>
+        </section>
+
+        <section class="usage-guide">
+            <h2>Como Usar o Reprodutor MP4 Online</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
+                    <div class="step-content">
+                        <h3>Copiar URL do Vídeo MP4</h3>
+                        <p>Encontre e copie a URL do stream de vídeo MP4 da sua fonte de vídeo.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
+                    <div class="step-content">
+                        <h3>Colar URL do Vídeo MP4</h3>
+                        <p>Cole a URL do stream de vídeo MP4 no campo de entrada acima.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-play"></i></div>
+                    <div class="step-content">
+                        <h3>Começar a Reproduzir Vídeo MP4</h3>
+                        <p>Clique no botão "Reproduzir Vídeo" e aproveite seu stream de vídeo MP4!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>Controlar Reprodução do Vídeo MP4</h3>
+                        <p>Use os controles de vídeo integrados para pausar, buscar, ajustar volume ou entrar no modo tela cheia para a melhor experiência de visualização.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>Incorporar Reprodutor de Vídeo MP4</h2>
+            <p>Você pode facilmente incorporar nosso reprodutor de vídeo MP4 em seu site usando o seguinte código iframe:</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p>Simplesmente substitua <code>https://your-stream-url.mp4</code> pela sua URL de stream MP4 real.</p>
+        </section>
+
+        <section class="faq-section">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <h3>Como reproduzir arquivos de vídeo MP4 online?</h3>
+                <p>
+                    Para reproduzir arquivos de vídeo MP4 online, você pode usar nosso reprodutor de vídeo MP4 online ou qualquer reprodutor de vídeo compatível com HTML5 que suporte reprodução MP4. 
+                    Simplesmente cole a URL do stream de vídeo MP4 no campo de entrada acima e clique em "Reproduzir". Navegadores modernos como Chrome, Firefox, Safari e Edge todos suportam reprodução MP4 
+                    através de elementos de vídeo HTML5 com a ajuda de bibliotecas JavaScript como hls.js ou suporte HLS nativo.
+                </p>
+                <p>
+                    Para a melhor experiência, certifique-se de que seu stream MP4 seja acessível via HTTPS e que os cabeçalhos CORS estejam configurados adequadamente se você estiver incorporando o reprodutor em um domínio diferente.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Como incorporar reprodutor de vídeo MP4 em página web?</h3>
+                <p>
+                    Você pode facilmente incorporar nosso reprodutor de vídeo MP4 em seu site usando um iframe. Aqui está o código básico:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    Substitua "YOUR_MP4_URL" pela sua URL de stream MP4 real. Você também pode personalizar os atributos de largura e altura para se adequar ao seu layout. 
+                    Para integração mais avançada, você pode usar bibliotecas JavaScript como hls.js ou video.js com o plugin HLS para criar um reprodutor personalizado.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Como reproduzir arquivos de vídeo com extensão MP4?</h3>
+                <p>
+                    Arquivos MP4 são arquivos contêiner que podem conter vídeo, áudio e outros dados de mídia. Para reproduzir arquivos de vídeo MP4, você precisa de um reprodutor compatível 
+                    que possa analisar o arquivo MP4 e extrair os dados de mídia. Nosso reprodutor online lida automaticamente com esse processo.
+                </p>
+                <p>
+                    Se você tem um arquivo MP4 local, você precisa garantir que ele seja acessível. Para streaming online, simplesmente use a URL MP4 diretamente. 
+                    O reprodutor irá automaticamente baixar e reproduzir os segmentos de vídeo em sequência, fornecendo reprodução suave com streaming de taxa de bits adaptativa quando disponível.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 Reprodutor MP4 Online. Todos os direitos reservados.</p>
+        <p>
+            Links: <a href="https://m3u8player.co/mp4-player" target="_blank" rel="noopener">Reprodutor MP4</a>
+        </p>
+    </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1L0MXPWR01');
+</script>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>MP4動画プレーヤーオンライン - 無料MP4メディアプレーヤー</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="無料のMP4動画プレーヤーでMP4ファイルを即座にオンライン再生—MP4映画や音楽クリップをドロップして、ダウンロードなしで高品質でストリーミング。">
+    <meta name="keywords" content="mp4プレーヤー オンライン, MP4プレーヤー, 動画ストリーミング, mp4ストリーミング, オンライン動画プレーヤー, HTML5プレーヤー">
+    <meta name="author" content="MP4ウェブプレーヤーオンライン">
+    <meta property="og:title" content="MP4ウェブプレーヤーオンライン - 無料MP4動画ストリーミングプレーヤー">
+    <meta property="og:description" content="無料のMP4動画プレーヤーでMP4ファイルを即座にオンライン再生—MP4映画や音楽クリップをドロップして、ダウンロードなしで高品質でストリーミング。">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MP4ウェブプレーヤーオンライン - 無料MP4動画ストリーミングプレーヤー">
+    <meta name="twitter:description" content="無料のMP4動画プレーヤーでMP4ファイルを即座にオンライン再生—MP4映画や音楽クリップをドロップして、ダウンロードなしで高品質でストリーミング。">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player/ja">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/mp4-player/ja" class="logo">MP4プレーヤーオンライン</a>
+            <div class="nav-links">
+                <a href="/mp4-player/ja">ホーム</a>
+                <a href="/ja/about.html">概要</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="言語を選択">
+                        <i class="fas fa-globe"></i>
+                        <span>JA</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="ダークモード切り替え">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>MP4動画プレーヤーオンライン</h1>
+            <p>無料のMP4動画プレーヤーでMP4ファイルを即座にオンライン再生—MP4映画や音楽クリップをドロップして、サインアップなしで高品質でストリーミング。</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="再生するM3U8 URLを入力" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ 再生</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>即座ストリーミング</h3>
+                <p>ダウンロードやインストールなしでMP4動画をオンライン再生。URLを貼り付けて視聴開始。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>モバイル対応</h3>
+                <p>PC、タブレット、モバイルデバイスで完璧に動作する完全レスポンシブデザイン。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>安全・プライベート</h3>
+                <p>すべてのストリーミングはブラウザで直接実行。サーバーにデータは保存されません。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>高性能</h3>
+                <p>アダプティブビットレートストリーミングと複数フォーマット対応の最適化されたMP4プレーヤー。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>ユニバーサルサポート</h3>
+                <p>すべてのモダンブラウザで動作し、様々なMP4ストリーミングプロトコルをサポート。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>ダークモード</h3>
+                <p>どんな環境でも快適な視聴のためにライトテーマとダークテーマを切り替え。</p>
+            </div>
+        </section>
+
+        <section class="usage-guide">
+            <h2>MP4プレーヤーオンラインの使い方</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
+                    <div class="step-content">
+                        <h3>MP4動画URLをコピー</h3>
+                        <p>動画ソースからMP4動画ストリームURLを見つけてコピーします。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
+                    <div class="step-content">
+                        <h3>MP4動画URLを貼り付け</h3>
+                        <p>MP4動画ストリームURLを上の入力フィールドに貼り付けます。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-play"></i></div>
+                    <div class="step-content">
+                        <h3>MP4動画再生開始</h3>
+                        <p>「動画再生」ボタンをクリックしてMP4動画ストリームをお楽しみください！</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>MP4動画再生制御</h3>
+                        <p>最高の視聴体験のために内蔵動画コントロールを使用して一時停止、シーク、音量調整、フルスクリーンモードに入ります。</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>MP4動画プレーヤーの埋め込み</h2>
+            <p>以下のiframeコードを使用してMP4動画プレーヤーをウェブサイトに簡単に埋め込むことができます：</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p><code>https://your-stream-url.mp4</code>を実際のMP4ストリームURLに置き換えてください。</p>
+        </section>
+
+        <section class="faq-section">
+            <h2>よくある質問</h2>
+            
+            <div class="faq-item">
+                <h3>MP4動画ファイルをオンラインで再生する方法は？</h3>
+                <p>
+                    MP4動画ファイルをオンラインで再生するには、オンラインMP4動画プレーヤーまたはMP4再生をサポートするHTML5対応動画プレーヤーを使用できます。
+                    上の入力フィールドにMP4動画ストリームURLを貼り付けて「再生」をクリックするだけです。Chrome、Firefox、Safari、Edgeなどのモダンブラウザは
+                    hls.jsなどのJavaScriptライブラリまたはネイティブHLSサポートの助けを借りてHTML5動画要素を通じてMP4再生をサポートします。
+                </p>
+                <p>
+                    最高の体験のために、MP4ストリームがHTTPS経由でアクセス可能であり、異なるドメインにプレーヤーを埋め込む場合はCORSヘッダーが適切に設定されていることを確認してください。
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>ウェブページにMP4動画プレーヤーを埋め込む方法は？</h3>
+                <p>
+                    iframeを使用してMP4動画プレーヤーをウェブサイトに簡単に埋め込むことができます。基本的なコードは以下の通りです：
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    "YOUR_MP4_URL"を実際のMP4ストリームURLに置き換えてください。レイアウトに合わせて幅と高さの属性をカスタマイズすることもできます。
+                    より高度な統合のために、HLSプラグインを使用したhls.jsやvideo.jsなどのJavaScriptライブラリを使用してカスタムプレーヤーを作成できます。
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>MP4拡張子の動画ファイルを再生する方法は？</h3>
+                <p>
+                    MP4ファイルは動画、音声、その他のメディアデータを含むことができるコンテナファイルです。MP4動画ファイルを再生するには
+                    MP4ファイルを解析してメディアデータを抽出できる互換性のあるプレーヤーが必要です。オンラインプレーヤーはこのプロセスを自動的に処理します。
+                </p>
+                <p>
+                    ローカルMP4ファイルがある場合は、アクセス可能であることを確認する必要があります。オンラインストリーミングの場合は、MP4 URLを直接使用してください。
+                    プレーヤーは動画セグメントを自動的にダウンロードして順次再生し、利用可能な場合はアダプティブビットレートストリーミングでスムーズな再生を提供します。
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 MP4プレーヤーオンライン. 全著作権所有.</p>
+        <p>
+            リンク: <a href="https://m3u8player.co/mp4-player" target="_blank" rel="noopener">MP4プレーヤー</a>
+        </p>
+    </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1L0MXPWR01');
+</script>
+</html>

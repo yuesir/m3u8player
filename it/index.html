@@ -14,10 +14,11 @@
     <meta name="twitter:title" content="Lettore M3U8 Online - Lettore Video HLS Gratuito">
     <meta name="twitter:description" content="Il miglior lettore M3U8 online gratuito. Riproduci video HLS direttamente nel browser senza download.">
     <link rel="canonical" href="https://m3u8player.co/it/">
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
 </head>
 
 <body>
@@ -57,26 +58,21 @@
         <section class="hero">
             <h1>Lettore M3U8 Online</h1>
             <p>Il lettore video HLS gratuito più potente. Riproduci file M3U8 direttamente nel tuo browser senza download o installazioni.</p>
-            <div class="url-input-container">
-                <input type="url" id="m3u8Url" placeholder="Incolla qui il tuo URL M3U8..." class="url-input">
-                <button onclick="loadVideo()" class="play-btn">
-                    <i class="fas fa-play"></i>
-                    Riproduci
-                </button>
-            </div>
         </section>
 
-        <section class="video-container" id="videoContainer" style="display: none;">
-            <video id="videoPlayer" controls class="video-player">
-                Il tuo browser non supporta l'elemento video.
-            </video>
-            <div class="video-info" id="videoInfo"></div>
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Inserisci URL M3U8 da riprodurre" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Riproduci</button>
+            </div>
+            <div class="video-container">
+                 <video id="player-container-id" preload="auto" playsinline webkit-playsinline">
+                 </video>
+             </div>
         </section>
 
         <section class="features">
-            <h2>Caratteristiche Principali</h2>
-            <div class="features-grid">
-                <div class="feature-card">
+            <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -121,109 +117,104 @@
             </div>
         </section>
 
-        <section class="how-to-use">
-            <h2>Come Utilizzare il Lettore M3U8</h2>
+        <section class="usage-guide">
+            <h2>Come Utilizzare il Lettore M3U8 Online</h2>
             <div class="steps">
                 <div class="step">
-                    <div class="step-number">1</div>
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Ottieni il Tuo URL M3U8</h3>
-                        <p>Trova l'URL del file M3U8 che vuoi riprodurre. Questo di solito termina con .m3u8 ed è fornito dal servizio di streaming.</p>
+                        <h3>Copia URL M3U8</h3>
+                        <p>Trova e copia l'URL del flusso M3U8 dalla tua fonte video.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Incolla l'URL</h3>
-                        <p>Copia e incolla l'URL M3U8 nel campo di input sopra. Assicurati che l'URL sia completo e corretto.</p>
+                        <h3>Incolla URL</h3>
+                        <p>Incolla l'URL M3U8 nel campo di input sopra.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
+                    <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Inizia a Guardare</h3>
-                        <p>Clicca sul pulsante "Riproduci" e goditi il tuo video. Il lettore caricherà automaticamente e inizierà lo streaming.</p>
+                        <h3>Inizia la Riproduzione</h3>
+                        <p>Clicca sul pulsante "Riproduci Video" e goditi il tuo flusso!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>Controlla la Riproduzione</h3>
+                        <p>Usa i controlli video integrati per mettere in pausa, cercare, regolare il volume o entrare in modalità schermo intero per la migliore esperienza di visione.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="embed-section">
-            <h2>Incorpora nel Tuo Sito Web</h2>
-            <p>Vuoi incorporare il nostro lettore M3U8 nel tuo sito web? Usa questo codice:</p>
+            <h2>Incorpora Lettore M3U8</h2>
+            <p>Puoi facilmente incorporare il nostro lettore M3U8 nel tuo sito web utilizzando il seguente codice iframe:</p>
             <div class="code-block">
-                <code id="embedCode">
-&lt;iframe src="https://m3u8player.co/?url=IL_TUO_URL_M3U8_QUI" 
-        width="800" 
-        height="450" 
-        frameborder="0" 
-        allowfullscreen&gt;
-&lt;/iframe&gt;
-                </code>
-                <button onclick="copyEmbedCode()" class="copy-btn" title="Copia codice">
-                    <i class="fas fa-copy"></i>
-                </button>
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.m3u8" width="100%" height="400"&gt;&lt;/iframe&gt;
             </div>
-            <p class="embed-note">Sostituisci "IL_TUO_URL_M3U8_QUI" con il tuo URL M3U8 effettivo.</p>
+            <p>Sostituisci semplicemente <code>https://your-stream-url.m3u8</code> con il tuo URL di flusso M3U8 effettivo.</p>
         </section>
 
-        <section class="faq">
+        <section class="faq-section">
             <h2>Domande Frequenti</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>Cos'è un file M3U8?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Un file M3U8 è un file playlist utilizzato per lo streaming HTTP Live Streaming (HLS). Contiene un elenco di segmenti video che possono essere riprodotti in sequenza per creare un flusso video continuo. È comunemente utilizzato per lo streaming video su internet.</p>
-                    </div>
+            
+            <div class="faq-item">
+                <h3>Come riprodurre file M3U8 nel browser?</h3>
+                <p>
+                    Per riprodurre file M3U8 nel tuo browser, puoi utilizzare il nostro lettore M3U8 online o qualsiasi lettore video compatibile con HTML5 che supporta HLS (HTTP Live Streaming). 
+                    Basta incollare l'URL M3U8 nel campo di input sopra e cliccare "Riproduci". I browser moderni come Chrome, Firefox, Safari ed Edge supportano tutti la riproduzione M3U8 
+                    attraverso elementi video HTML5 con l'aiuto di librerie JavaScript come hls.js o supporto HLS nativo.
+                </p>
+                <p>
+                    Per la migliore esperienza, assicurati che il tuo flusso M3U8 sia accessibile tramite HTTPS e che le intestazioni CORS siano configurate correttamente se stai incorporando il lettore su un dominio diverso.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Come incorporare il lettore M3U8 nella pagina web?</h3>
+                <p>
+                    Puoi facilmente incorporare il nostro lettore M3U8 nel tuo sito web utilizzando un iframe. Ecco il codice base:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=IL_TUO_URL_M3U8" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>È gratuito utilizzare questo lettore?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sì, il nostro lettore M3U8 online è completamente gratuito da utilizzare. Non ci sono costi nascosti, abbonamenti o limitazioni. Puoi riprodurre tutti i file M3U8 che vuoi senza alcun costo.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>Devo scaricare qualche software?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No, non è necessario scaricare o installare alcun software. Il nostro lettore funziona direttamente nel tuo browser web utilizzando le tecnologie web moderne. Basta visitare il nostro sito web e iniziare a riprodurre i tuoi file M3U8.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>Su quali dispositivi funziona?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Il nostro lettore M3U8 funziona su tutti i dispositivi moderni inclusi computer desktop, laptop, tablet e smartphone. È compatibile con tutti i principali browser web come Chrome, Firefox, Safari, Edge e altri.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>I miei video sono sicuri?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Assolutamente. Tutto lo streaming video avviene direttamente nel tuo browser. Non memorizziamo, registriamo o accediamo ai tuoi file video o URL. La tua privacy e sicurezza sono le nostre priorità principali.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <h3>Cosa faccio se il mio video non si carica?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Se il tuo video non si carica, verifica che l'URL M3U8 sia corretto e accessibile. Assicurati che il server che ospita il file M3U8 consenta l'accesso dal tuo dominio. Prova anche ad aggiornare la pagina o utilizzare un browser diverso.</p>
-                    </div>
-                </div>
+                <p>
+                    Sostituisci "IL_TUO_URL_M3U8" con il tuo URL di flusso M3U8 effettivo. Puoi anche personalizzare gli attributi width e height per adattarli al tuo layout. 
+                    Per un'integrazione più avanzata, puoi utilizzare librerie JavaScript come hls.js o video.js con il plugin HLS per creare un lettore personalizzato.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Come riprodurre video con estensione M3U8?</h3>
+                <p>
+                    I file M3U8 sono file playlist che contengono riferimenti a segmenti video, non file video veri e propri. Per riprodurre video M3U8, hai bisogno di un lettore compatibile 
+                    che possa analizzare la playlist e trasmettere i segmenti video. Il nostro lettore online gestisce automaticamente questo processo.
+                </p>
+                <p>
+                    Se hai un file M3U8 locale, dovrai assicurarti che tutti i segmenti video referenziati siano accessibili. Per lo streaming online, utilizza direttamente l'URL M3U8. 
+                    Il lettore scaricherà e riprodurrà automaticamente i segmenti video in sequenza, fornendo una riproduzione fluida con streaming a bitrate adattivo quando disponibile.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>VLC può riprodurre M3U8?</h3>
+                <p>
+                    Sì, VLC Media Player ha un eccellente supporto per file M3U8 e streaming HLS. Puoi riprodurre flussi M3U8 in VLC:
+                </p>
+                <p>
+                    1. Aprendo VLC e andando su "Media" &gt; "Apri Flusso di Rete"<br>
+                    2. Incollando il tuo URL M3U8 nel campo URL di rete<br>
+                    3. Cliccando "Riproduci"
+                </p>
+                <p>
+                    VLC supporta anche file playlist M3U8 locali. Basta trascinare e rilasciare il file M3U8 in VLC o utilizzare "File" &gt; "Apri File" per cercarlo. 
+                    Il robusto supporto codec di VLC lo rende una delle opzioni più affidabili per riprodurre vari flussi e formati M3U8.
+                </p>
             </div>
         </section>
     </div>
@@ -235,7 +226,7 @@
         </p>
     </footer>
 
-    <script src="../js/player.js"></script>
+    <script src="../js/index.js"></script>
     <script>
         // Funzione per attivare/disattivare la modalità scura
         function toggleTheme() {

@@ -60,104 +60,73 @@
         </section>
 
         <section class="player-section">
-            <div class="input-container">
-                <div class="input-group">
-                    <input type="url" id="m3u8Input" placeholder="Убаците M3U8 URL овде..." class="url-input">
-                    <button onclick="loadVideo()" class="load-btn">
-                        <i class="fas fa-play"></i>
-                        Учитај видео
-                    </button>
-                </div>
-                <div class="input-help">
-                    <i class="fas fa-info-circle"></i>
-                    Убаците валидан M3U8 URL да започнете стримовање
-                </div>
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Убаците M3U8 URL овде..." autocomplete="off">
+                <button id="play-btn" class="play-btn" onclick="play()">▶ Учитај видео</button>
             </div>
-
-            <div class="video-container" id="videoContainer" style="display: none;">
-                <video id="videoPlayer" controls class="video-player">
+            <div id="error-message" style="display: none; color: red; margin-top: 10px;"></div>
+            <div id="video-container" class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
                     Ваш браузер не подржава HTML5 видео.
                 </video>
-                <div class="video-info" id="videoInfo"></div>
-            </div>
-
-            <div class="error-message" id="errorMessage" style="display: none;">
-                <i class="fas fa-exclamation-triangle"></i>
-                <span id="errorText"></span>
             </div>
         </section>
 
         <section class="features">
-            <h2><i class="fas fa-star"></i> Зашто изабрати наш M3U8 Player?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Тренутно стримовање</h3>
-                    <p>Нема чекања, нема преузимања. Само убаците ваш M3U8 URL и почните да гледате тренутно.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Сигурно и приватно</h3>
-                    <p>Све се обрађује у вашем браузеру. Не чувамо ваше URL-ове или видео садржај.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Мобилно пријатељски</h3>
-                    <p>Савршено функционише на свим уређајима - десктоп, таблет и мобилни телефон.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Напредне контроле</h3>
-                    <p>Пуне контроле плејера укључујући seek, јачину звука и режим пуног екрана.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Адаптивни битрејт</h3>
-                    <p>Аутоматски се прилагођава квалитету на основу ваше интернет везе за најбоље искуство.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Универзална подршка</h3>
-                    <p>Подржава све стандардне HLS формате и функционише у свим модерним браузерима.</p>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>Тренутно стримовање</h3>
+                <p>Репродукујте M3U8 видео тренутно без преузимања или инсталација. Само налепите URL и почните да гледате.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Мобилно пријатељски</h3>
+                <p>Потпуно респонзивни дизајн који савршено функционише на десктопу, таблету и мобилним уређајима.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Сигурно и приватно</h3>
+                <p>Све стримовање се дешава директно у вашем браузеру. Никакви подаци се не чувају на нашим серверима.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Високе перформансе</h3>
+                <p>Оптимизовани HTML5 плејер са подршком за адаптивни битрејт стримовање и више формата.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Универзална подршка</h3>
+                <p>Ради са свим модерним браузерима и подржава различите HLS стримовање протоколе.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>Тамни режим</h3>
+                <p>Пребацујте између светлих и тамних тема за удобно гледање у било ком окружењу.</p>
             </div>
         </section>
 
-        <section class="how-to-use">
-            <h2><i class="fas fa-question-circle"></i> Како користити M3U8 Player</h2>
+        <section class="usage-guide">
+            <h2>Како користити</h2>
             <div class="steps">
                 <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Пронађите M3U8 URL</h3>
-                        <p>Добијте M3U8 линк од вашег провајдера садржаја или стриминг сервиса.</p>
-                    </div>
+                    <div class="step-icon"><i class="fas fa-copy"></i></div>
+                    <h3>Копирајте M3U8 URL</h3>
+                    <p>Пронађите M3U8 линк стрима који желите да гледате</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Убаците URL</h3>
-                        <p>Копирајте и налепите M3U8 URL у поље за унос изнад.</p>
-                    </div>
+                    <div class="step-icon"><i class="fas fa-paste"></i></div>
+                    <h3>Налепите у плејер</h3>
+                    <p>Налепите URL у поље за унос изнад</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Почните стримовање</h3>
-                        <p>Кликните "Учитај видео" и уживајте у вашем садржају!</p>
-                    </div>
+                    <div class="step-icon"><i class="fas fa-play"></i></div>
+                    <h3>Почните да гледате</h3>
+                    <p>Кликните на дугме за репродукцију и уживајте</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-cog"></i></div>
+                    <h3>Прилагодите подешавања</h3>
+                    <p>Користите контроле плејера за најбоље искуство</p>
                 </div>
             </div>
         </section>
@@ -175,54 +144,61 @@
             </div>
         </section>
 
-        <section class="faq">
-            <h2><i class="fas fa-question-circle"></i> Често постављана питања</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Шта је M3U8 фајл?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>M3U8 је формат плејлисте који се користи за HTTP Live Streaming (HLS). Садржи листу видео сегмената који се могу стримовати преко интернета.</p>
-                    </div>
+        <section class="faq-section">
+            <h2>Често постављана питања</h2>
+            
+            <div class="faq-item">
+                <h3>Како да репродукујем M3U8 фајлове у браузеру?</h3>
+                <p>
+                    Да бисте репродуковали M3U8 фајлове у вашем браузеру, можете користити наш онлајн M3U8 плејер или било који HTML5-компатибилни видео плејер који подржава HLS (HTTP Live Streaming). 
+                    Једноставно налепите M3U8 URL у поље за унос изнад и кликните "Репродукуј". Модерни браузери као што су Chrome, Firefox, Safari и Edge сви подржавају M3U8 репродукцију 
+                    кроз HTML5 видео елементе уз помоћ JavaScript библиотека као што је hls.js или нативну HLS подршку.
+                </p>
+                <p>
+                    За најбоље искуство, уверите се да је ваш M3U8 стрим доступан преко HTTPS-а и да су CORS заглавља правилно конфигурисана ако уграђујете плејер на другом домену.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Како да угрдим M3U8 плејер у веб страницу?</h3>
+                <p>
+                    Можете лако угрдити наш M3U8 плејер у ваш веб сајт користећи iframe. Ево основног кода:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=VAŠ_M3U8_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Да ли је бесплатно коришћење?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Да! Наш M3U8 плејер је потпуно бесплатан за коришћење. Нема скривених трошкова или ограничења.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Које формате подржава?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Подржавамо све стандардне HLS формате укључујући M3U8 плејлисте са TS, MP4 и други видео сегменти.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Да ли чувате моје видео фајлове?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Не, не чувамо никакве видео фајлове или URL-ове. Све се обрађује директно у вашем браузеру за максималну приватност.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Шта ако мој видео неће да се учита?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Проверите да ли је URL исправан и да ли је доступан. Неки стримови могу имати географска ограничења или захтевати аутентификацију.</p>
-                    </div>
-                </div>
+                <p>
+                    Замените "VAŠ_M3U8_URL" са вашим стварним M3U8 стрим URL-ом. Такође можете прилагодити атрибуте ширине и висине да одговарају вашем распореду. 
+                    За напреднију интеграцију, можете користити JavaScript библиотеке као што су hls.js или video.js са HLS додатком да направите прилагођени плејер.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Како да репродукујем видео са M3U8 екстензијом?</h3>
+                <p>
+                    M3U8 фајлови су фајлови плејлисте који садрже референце на видео сегменте, а не стварне видео фајлове. Да бисте репродуковали M3U8 видеове, потребан вам је компатибилни плејер 
+                    који може да парсира плејлисту и стримује видео сегменте. Наш онлајн плејер аутоматски обрађује овај процес.
+                </p>
+                <p>
+                    Ако имате локални M3U8 фајл, мораћете да се уверите да су сви референцирани видео сегменти доступни. За онлајн стримовање, једноставно користите M3U8 URL директно. 
+                    Плејер ће аутоматски преузети и репродуковати видео сегменте у секвенци, пружајући глатку репродукцију са адаптивним битрејт стримовањем када је доступно.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Може ли VLC да репродукује M3U8?</h3>
+                <p>
+                    Да, VLC Media Player има одличну подршку за M3U8 фајлове и HLS стримовање. Можете репродуковати M3U8 стримове у VLC-у тако што ћете:
+                </p>
+                <p>
+                    1. Отворити VLC и ићи на "Media" &gt; "Open Network Stream"<br>
+                    2. Налепити ваш M3U8 URL у поље за мрежни URL<br>
+                    3. Кликнути "Play"
+                </p>
+                <p>
+                    VLC такође подржава локалне M3U8 фајлове плејлисте. Једноставно превуците и спустите M3U8 фајл у VLC или користите "File" &gt; "Open File" да га пронађете. 
+                    VLC-ова робусна подршка за кодеке чини га једном од најпоузданијих опција за репродукцију различитих M3U8 стримова и формата.
+                </p>
             </div>
         </section>
     </div>
@@ -234,7 +210,7 @@
         </p>
     </footer>
 
-    <script src="../js/player.js"></script>
+    <script src="../js/index.js"></script>
     <script>
         // Функција за укључивање/искључивање тамног режима
         function toggleTheme() {
@@ -285,22 +261,7 @@
             }
         });
 
-        // Функција за укључивање/искључивање FAQ
-        function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = element.querySelector('i');
-            
-            faqItem.classList.toggle('active');
-            
-            if (faqItem.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.style.maxHeight = '0';
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
+
 
         // Копирај код за уграђивање
         function copyEmbedCode() {

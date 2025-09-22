@@ -16,6 +16,7 @@
     <link rel="canonical" href="https://m3u8player.co/sr/about.html">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -342,14 +343,14 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/sr/" class="logo">M3U8 Player Online</a>
+            <a href="/sr" class="logo">M3U8 Player Online</a>
             <div class="nav-links">
-                <a href="/sr/">Почетна</a>
-                <a href="/sr/about.html" class="active">О нама</a>
+                <a href="/sr">Home</a>
+                <a href="/sr/about.html" class="active">About</a>
                 <div class="language-selector">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Изаберите језик">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
                         <i class="fas fa-globe"></i>
-                        <span>SR</span>
+                        <span>EN</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
@@ -365,7 +366,7 @@
                         <a href="/sr/about.html" class="language-option">🇷🇸 Српски</a>
                     </div>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Укључи/искључи тамни режим">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
                     <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
             </div>

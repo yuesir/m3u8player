@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>M3U8 Player Online - Free HLS Video Streaming Player</title>
+    <title>MP4 Video Player Online - Free MP4 Media Player</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free MP4 Player Online - Stream MP4 videos directly in your browser. Play .mp4 files instantly with our advanced HTML5 video player. No downloads required.">
+    <meta name="description" content="Instantly play MP4 files online with our free MP4 video player—drop any MP4 movie or music clip, and stream in high quality without downloads.">
     <meta name="keywords" content="mp4 player online, MP4 player, video streaming, mp4 streaming, online video player, HTML5 player">
-    <meta name="author" content="MP4 Player Online">
-    <meta property="og:title" content="MP4 Player Online - Free MP4 Video Streaming Player">
-    <meta property="og:description" content="Stream MP4 videos online with our free MP4 player. Play .mp4 files directly in your browser.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="author" content="MP4 Web Player Online">
+    <meta property="og:title" content="MP4 Web Player Online - Free MP4 Video Streaming Player">
+    <meta property="og:description" content="Instantly play MP4 files online with our free MP4 video player—drop any MP4 movie or music clip, and stream in high quality without downloads.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://m3u8player.co/mp4-player">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MP4 Player Online - Free MP4 Video Streaming Player">
-    <meta name="twitter:description" content="Stream MP4 videos online with our free MP4 player. Play .mp4 files directly in your browser.">
-    <link rel="canonical" href="https://m3u8player.co/">
-    <link rel="stylesheet" href="./css/index.css">
+    <meta name="twitter:title" content="MP4 Web Player Online - Free MP4 Video Streaming Player">
+    <meta name="twitter:description" content="Instantly play MP4 files online with our free MP4 video player—drop any MP4 movie or music clip, and stream in high quality without downloads.">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player">
+    <link rel="stylesheet" href="../css/index.css">
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
@@ -24,10 +29,9 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">MP4 Player Online</a>
+            <a href="/mp4-player" class="logo">MP4 Player Online</a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/about.html">About</a>
                 <div class="language-selector">
                     <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
                         <i class="fas fa-globe"></i>
@@ -35,11 +39,13 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="language-dropdown" id="languageDropdown">
-                        <a href="/" class="language-option">🇺🇸 English</a>
-                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
-                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
-                        <a href="/pt/" class="language-option">🇧🇷 Português</a>
-                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
                     </div>
                 </div>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
@@ -51,13 +57,13 @@
 
     <div class="main">
         <section class="hero">
-            <h1>MP4 Player Online</h1>
-            <p>Stream MP4 videos directly in your browser. Play .mp4 files instantly with our advanced video player in browser. No downloads required.</p>
+            <h1>MP4 Video Player Online</h1>
+            <p>Instantly play MP4 files online with our free MP4 video player—drop any MP4 movie or music clip, and stream in high quality without any sign-ups.</p>
         </section>
 
         <section class="player-section">
             <div class="input-group">
-                <input type="text" id="url" class="url-input" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Enter M3U8 URL to play" autocomplete="off">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="Enter M3U8 URL to play" autocomplete="off">
                 <button class="play-btn" onclick="play()">▶ Play</button>
             </div>
             <div class="video-container">
@@ -70,12 +76,12 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-video"></i></div>
                 <h3>Instant Streaming</h3>
-                <p>Play MP4 videos instantly without any downloads or installations. Just paste the URL and start watching.</p>
+                <p>Play MP4 videos online without any downloads or installations. Just paste the URL and start watching.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                 <h3>Mobile Friendly</h3>
-                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                <p>Fully responsive design that works perfectly on pc, tablet, and mobile devices.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
@@ -90,7 +96,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-globe"></i></div>
                 <h3>Universal Support</h3>
-                <p>Works with all modern browsers and supports various HLS streaming protocols.</p>
+                <p>Works with all modern browsers and supports various MP4 streaming protocols.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-moon"></i></div>
@@ -105,36 +111,36 @@
                 <div class="step">
                     <div class="step-number"><i class="fas fa-copy"></i></div>
                     <div class="step-content">
-                        <h3>Copy MP4 URL</h3>
-                        <p>Find and copy the MP4 stream URL from your video source.</p>
+                        <h3>Copy MP4 Video URL</h3>
+                        <p>Find and copy the MP4 video stream URL from your video source.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-paste"></i></div>
                     <div class="step-content">
-                        <h3>Paste URL</h3>
-                        <p>Paste the MP4 URL into the input field above.</p>
+                        <h3>Paste MP4 Video URL</h3>
+                        <p>Paste the MP4 video stream URL into the input field above.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-play"></i></div>
                     <div class="step-content">
-                        <h3>Start Playing</h3>
-                        <p>Click the "Play Video" button and enjoy your stream!</p>
+                        <h3>Start Playing MP4 Video</h3>
+                        <p>Click the "Play Video" button and enjoy your MP4 video stream!</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number"><i class="fas fa-sliders"></i></div>
                     <div class="step-content">
-                        <h3>Control Playback</h3>
+                        <h3>Control MP4 Video Playback</h3>
                         <p>Use the built-in video controls to pause, seek, adjust volume, or enter fullscreen mode for the best viewing experience.</p>
                     </div>
                 </div>
             </div>
         </section> 
         <section class="embed-section">
-            <h2>Embed MP4 Player</h2>
-            <p>You can easily embed our MP4 player into your website using the following iframe code:</p>
+            <h2>Embed MP4 Video Player</h2>
+            <p>You can easily embed our MP4 video player into your website using the following iframe code:</p>
             <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
             </div>
@@ -145,10 +151,10 @@
             <h2>Frequently Asked Questions</h2>
             
             <div class="faq-item">
-                <h3>How to play MP4 files in browser?</h3>
+                <h3>How to play MP4 video files online?</h3>
                 <p>
-                    To play MP4 files in your browser, you can use our online MP4 player or any HTML5-compatible video player that supports MP4 playback. 
-                    Simply paste the MP4 URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support MP4 playback 
+                    To play MP4 video files online, you can use our online MP4 video player or any HTML5-compatible video player that supports MP4 playback. 
+                    Simply paste the MP4 video stream URL into the input field above and click "Play". Modern browsers like Chrome, Firefox, Safari, and Edge all support MP4 playback 
                     through HTML5 video elements with the help of JavaScript libraries like hls.js or native HLS support.
                 </p>
                 <p>
@@ -157,9 +163,9 @@
             </div>
             
             <div class="faq-item">
-                <h3>How to embed M3U8 player in web page?</h3>
+                <h3>How to embed MP4 video player in web page?</h3>
                 <p>
-                    You can easily embed our M3U8 player into your website using an iframe. Here's the basic code:
+                    You can easily embed our MP4 video player into your website using an iframe. Here's the basic code:
                 </p>
                 <div class="code-block">
 &lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
@@ -171,9 +177,9 @@
             </div>
             
             <div class="faq-item">
-                <h3>How to play MP4 extension video?</h3>
+                <h3>How to play MP4 extension video files?</h3>
                 <p>
-                    MP4 files are container files that can contain video, audio, and other media data. To play MP4 videos, you need a compatible player 
+                    MP4 files are container files that can contain video, audio, and other media data. To play MP4 video files, you need a compatible player 
                     that can parse the MP4 file and extract the media data. Our online player automatically handles this process.
                 </p>
                 <p>

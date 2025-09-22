@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>MP4 비디오 플레이어 온라인 - 무료 MP4 미디어 플레이어</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="무료 MP4 비디오 플레이어로 MP4 파일을 즉시 온라인 재생—MP4 영화나 음악 클립을 드롭하고 다운로드 없이 고품질로 스트리밍하세요.">
+    <meta name="keywords" content="mp4 플레이어 온라인, MP4 플레이어, 비디오 스트리밍, mp4 스트리밍, 온라인 비디오 플레이어, HTML5 플레이어">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="author" content="MP4 웹 플레이어 온라인">
+    <meta property="og:title" content="MP4 웹 플레이어 온라인 - 무료 MP4 비디오 스트리밍 플레이어">
+    <meta property="og:description" content="무료 MP4 비디오 플레이어로 MP4 파일을 즉시 온라인 재생—MP4 영화나 음악 클립을 드롭하고 다운로드 없이 고품질로 스트리밍하세요.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MP4 웹 플레이어 온라인 - 무료 MP4 비디오 스트리밍 플레이어">
+    <meta name="twitter:description" content="무료 MP4 비디오 플레이어로 MP4 파일을 즉시 온라인 재생—MP4 영화나 음악 클립을 드롭하고 다운로드 없이 고품질로 스트리밍하세요.">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player/ko">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/mp4-player/ko" class="logo">MP4 플레이어 온라인</a>
+            <div class="nav-links">
+                <a href="/mp4-player/ko/">홈</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="언어 선택">
+                        <i class="fas fa-globe"></i>
+                        <span>KO</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="다크 모드 전환">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>MP4 비디오 플레이어 온라인</h1>
+            <p>무료 MP4 비디오 플레이어로 MP4 파일을 즉시 온라인 재생—MP4 영화나 음악 클립을 드롭하고 가입 없이 고품질로 스트리밍하세요.</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="재생할 M3U8 URL을 입력하세요" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ 재생</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>즉시 스트리밍</h3>
+                <p>다운로드나 설치 없이 MP4 비디오를 온라인으로 재생하세요. URL을 붙여넣고 시청을 시작하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>모바일 친화적</h3>
+                <p>PC, 태블릿, 모바일 기기에서 완벽하게 작동하는 완전 반응형 디자인.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>안전하고 비공개</h3>
+                <p>모든 스트리밍은 브라우저에서 직접 이루어집니다. 서버에 데이터가 저장되지 않습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>고성능</h3>
+                <p>적응형 비트레이트 스트리밍과 다중 형식 지원으로 최적화된 MP4 플레이어.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>범용 지원</h3>
+                <p>모든 최신 브라우저에서 작동하며 다양한 MP4 스트리밍 프로토콜을 지원합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>다크 모드</h3>
+                <p>어떤 환경에서든 편안한 시청을 위해 라이트 테마와 다크 테마 간 전환.</p>
+            </div>
+        </section>
+
+        <section class="usage-guide">
+            <h2>MP4 플레이어 온라인 사용법</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 비디오 URL 복사</h3>
+                        <p>비디오 소스에서 MP4 비디오 스트림 URL을 찾아 복사하세요.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 비디오 URL 붙여넣기</h3>
+                        <p>MP4 비디오 스트림 URL을 위의 입력 필드에 붙여넣으세요.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-play"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 비디오 재생 시작</h3>
+                        <p>"비디오 재생" 버튼을 클릭하고 MP4 비디오 스트림을 즐기세요!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>MP4 비디오 재생 제어</h3>
+                        <p>최고의 시청 경험을 위해 내장 비디오 컨트롤을 사용하여 일시정지, 탐색, 볼륨 조절 또는 전체화면 모드로 전환하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>MP4 비디오 플레이어 임베드</h2>
+            <p>다음 iframe 코드를 사용하여 MP4 비디오 플레이어를 웹사이트에 쉽게 임베드할 수 있습니다:</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p><code>https://your-stream-url.mp4</code>를 실제 MP4 스트림 URL로 바꾸세요.</p>
+        </section>
+
+        <section class="faq-section">
+            <h2>자주 묻는 질문</h2>
+            
+            <div class="faq-item">
+                <h3>MP4 비디오 파일을 온라인으로 재생하는 방법은?</h3>
+                <p>
+                    MP4 비디오 파일을 온라인으로 재생하려면 온라인 MP4 비디오 플레이어나 MP4 재생을 지원하는 HTML5 호환 비디오 플레이어를 사용할 수 있습니다. 
+                    위의 입력 필드에 MP4 비디오 스트림 URL을 붙여넣고 "재생"을 클릭하기만 하면 됩니다. Chrome, Firefox, Safari, Edge와 같은 최신 브라우저는 
+                    hls.js와 같은 JavaScript 라이브러리나 네이티브 HLS 지원의 도움으로 HTML5 비디오 요소를 통해 MP4 재생을 지원합니다.
+                </p>
+                <p>
+                    최상의 경험을 위해 MP4 스트림이 HTTPS를 통해 접근 가능하고 다른 도메인에 플레이어를 임베드하는 경우 CORS 헤더가 적절히 구성되어 있는지 확인하세요.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>웹 페이지에 MP4 비디오 플레이어를 임베드하는 방법은?</h3>
+                <p>
+                    iframe을 사용하여 MP4 비디오 플레이어를 웹사이트에 쉽게 임베드할 수 있습니다. 기본 코드는 다음과 같습니다:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    "YOUR_MP4_URL"을 실제 MP4 스트림 URL로 바꾸세요. 레이아웃에 맞게 너비와 높이 속성을 사용자 정의할 수도 있습니다. 
+                    더 고급 통합을 위해서는 HLS 플러그인과 함께 hls.js나 video.js와 같은 JavaScript 라이브러리를 사용하여 사용자 정의 플레이어를 만들 수 있습니다.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>MP4 확장자 비디오 파일을 재생하는 방법은?</h3>
+                <p>
+                    MP4 파일은 비디오, 오디오 및 기타 미디어 데이터를 포함할 수 있는 컨테이너 파일입니다. MP4 비디오 파일을 재생하려면 
+                    MP4 파일을 파싱하고 미디어 데이터를 추출할 수 있는 호환 플레이어가 필요합니다. 온라인 플레이어는 이 과정을 자동으로 처리합니다.
+                </p>
+                <p>
+                    로컬 MP4 파일이 있는 경우 접근 가능한지 확인해야 합니다. 온라인 스트리밍의 경우 MP4 URL을 직접 사용하세요. 
+                    플레이어는 비디오 세그먼트를 자동으로 다운로드하고 순차적으로 재생하여 사용 가능한 경우 적응형 비트레이트 스트리밍으로 부드러운 재생을 제공합니다.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 MP4 플레이어 온라인. 모든 권리 보유.</p>
+        <p>
+            링크: <a href="https://m3u8player.co/mp4-player" target="_blank" rel="noopener">MP4 플레이어</a>
+        </p>
+    </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1L0MXPWR01');
+</script>
+</html>

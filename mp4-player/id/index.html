@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Pemutar Video MP4 Online - Pemutar Media MP4 Gratis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Putar file MP4 secara online dengan pemutar video MP4 gratis kami—jatuhkan film MP4 atau klip musik apa pun, dan streaming dalam kualitas tinggi tanpa unduhan.">
+    <meta name="keywords" content="pemutar mp4 online, pemutar MP4, streaming video, streaming mp4, pemutar video online, pemutar HTML5">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="author" content="Pemutar Web MP4 Online">
+    <meta property="og:title" content="Pemutar Web MP4 Online - Pemutar Streaming Video MP4 Gratis">
+    <meta property="og:description" content="Putar file MP4 secara online dengan pemutar video MP4 gratis kami—jatuhkan film MP4 atau klip musik apa pun, dan streaming dalam kualitas tinggi tanpa unduhan.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pemutar Web MP4 Online - Pemutar Streaming Video MP4 Gratis">
+    <meta name="twitter:description" content="Putar file MP4 secara online dengan pemutar video MP4 gratis kami—jatuhkan film MP4 atau klip musik apa pun, dan streaming dalam kualitas tinggi tanpa unduhan.">
+    <link rel="canonical" href="https://m3u8player.co/mp4-player/id">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
+    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/mp4-player/id" class="logo">Pemutar MP4 Online</a>
+            <div class="nav-links">
+                <a href="/mp4-player/id/">Beranda</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Pilih Bahasa">
+                        <i class="fas fa-globe"></i>
+                        <span>ID</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/mp4-player" class="language-option">🇺🇸 English</a>
+                        <a href="/mp4-player/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/mp4-player/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/mp4-player/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/mp4-player/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/mp4-player/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/mp4-player/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Beralih mode gelap">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>Pemutar Video MP4 Online</h1>
+            <p>Putar file MP4 secara online dengan pemutar video MP4 gratis kami—jatuhkan film MP4 atau klip musik apa pun, dan streaming dalam kualitas tinggi tanpa perlu mendaftar.</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-group">
+                <input type="text" id="url" class="url-input" value="https://1500009007.vod2.myqcloud.com/6c9c6038vodcq1500009007/2fb02795387702305297108918/w3C7ZwlsPNYA.mp4" placeholder="Masukkan URL M3U8 untuk diputar" autocomplete="off">
+                <button class="play-btn" onclick="play()">▶ Putar</button>
+            </div>
+            <div class="video-container">
+                <video id="player-container-id" preload="auto" playsinline webkit-playsinline>
+                </video>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3>Streaming Instan</h3>
+                <p>Putar video MP4 online tanpa unduhan atau instalasi. Cukup tempel URL dan mulai menonton.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Ramah Mobile</h3>
+                <p>Desain responsif penuh yang bekerja sempurna di PC, tablet, dan perangkat mobile.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Aman & Privat</h3>
+                <p>Semua streaming terjadi langsung di browser Anda. Tidak ada data yang disimpan di server kami.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Performa Tinggi</h3>
+                <p>Pemutar MP4 yang dioptimalkan dengan dukungan streaming bitrate adaptif dan berbagai format.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Dukungan Universal</h3>
+                <p>Bekerja dengan semua browser modern dan mendukung berbagai protokol streaming MP4.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h3>Mode Gelap</h3>
+                <p>Beralih antara tema terang dan gelap untuk kenyamanan menonton di lingkungan apa pun.</p>
+            </div>
+        </section>
+
+        <section class="usage-guide">
+            <h2>Cara Menggunakan Pemutar MP4 Online</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-copy"></i></div>
+                    <div class="step-content">
+                        <h3>Salin URL Video MP4</h3>
+                        <p>Temukan dan salin URL stream video MP4 dari sumber video Anda.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-paste"></i></div>
+                    <div class="step-content">
+                        <h3>Tempel URL Video MP4</h3>
+                        <p>Tempel URL stream video MP4 ke dalam field input di atas.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-play"></i></div>
+                    <div class="step-content">
+                        <h3>Mulai Memutar Video MP4</h3>
+                        <p>Klik tombol "Putar Video" dan nikmati stream video MP4 Anda!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-sliders"></i></div>
+                    <div class="step-content">
+                        <h3>Kontrol Pemutaran Video MP4</h3>
+                        <p>Gunakan kontrol video bawaan untuk jeda, cari, sesuaikan volume, atau masuk mode layar penuh untuk pengalaman menonton terbaik.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="embed-section">
+            <h2>Sematkan Pemutar Video MP4</h2>
+            <p>Anda dapat dengan mudah menyematkan pemutar video MP4 kami ke dalam website Anda menggunakan kode iframe berikut:</p>
+            <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=https://your-stream-url.mp4" width="100%" height="400"&gt;&lt;/iframe&gt;
+            </div>
+            <p>Cukup ganti <code>https://your-stream-url.mp4</code> dengan URL stream MP4 Anda yang sebenarnya.</p>
+        </section>
+
+        <section class="faq-section">
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+            
+            <div class="faq-item">
+                <h3>Bagaimana cara memutar file video MP4 online?</h3>
+                <p>
+                    Untuk memutar file video MP4 online, Anda dapat menggunakan pemutar video MP4 online kami atau pemutar video yang kompatibel dengan HTML5 yang mendukung pemutaran MP4. 
+                    Cukup tempel URL stream video MP4 ke dalam field input di atas dan klik "Putar". Browser modern seperti Chrome, Firefox, Safari, dan Edge semuanya mendukung pemutaran MP4 
+                    melalui elemen video HTML5 dengan bantuan pustaka JavaScript seperti hls.js atau dukungan HLS asli.
+                </p>
+                <p>
+                    Untuk pengalaman terbaik, pastikan stream MP4 Anda dapat diakses melalui HTTPS dan header CORS dikonfigurasi dengan benar jika Anda menyematkan pemutar di domain yang berbeda.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Bagaimana cara menyematkan pemutar video MP4 di halaman web?</h3>
+                <p>
+                    Anda dapat dengan mudah menyematkan pemutar video MP4 kami ke dalam website Anda menggunakan iframe. Berikut kode dasarnya:
+                </p>
+                <div class="code-block">
+&lt;iframe src="https://m3u8player.co/player.html?url=YOUR_MP4_URL" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;
+                </div>
+                <p>
+                    Ganti "YOUR_MP4_URL" dengan URL stream MP4 Anda yang sebenarnya. Anda juga dapat menyesuaikan atribut lebar dan tinggi agar sesuai dengan tata letak Anda. 
+                    Untuk integrasi yang lebih canggih, Anda dapat menggunakan pustaka JavaScript seperti hls.js atau video.js dengan plugin HLS untuk membuat pemutar kustom.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Bagaimana cara memutar file video dengan ekstensi MP4?</h3>
+                <p>
+                    File MP4 adalah file kontainer yang dapat berisi video, audio, dan data media lainnya. Untuk memutar file video MP4, Anda memerlukan pemutar yang kompatibel 
+                    yang dapat mengurai file MP4 dan mengekstrak data media. Pemutar online kami secara otomatis menangani proses ini.
+                </p>
+                <p>
+                    Jika Anda memiliki file MP4 lokal, Anda perlu memastikan file tersebut dapat diakses. Untuk streaming online, cukup gunakan URL MP4 secara langsung. 
+                    Pemutar akan secara otomatis mengunduh dan memutar segmen video secara berurutan, memberikan pemutaran yang mulus dengan streaming bitrate adaptif ketika tersedia.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 Pemutar MP4 Online. Semua hak dilindungi.</p>
+        <p>
+            Tautan: <a href="https://m3u8player.co/mp4-player" target="_blank" rel="noopener">Pemutar MP4</a>
+        </p>
+    </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L0MXPWR01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1L0MXPWR01');
+</script>
+</html>

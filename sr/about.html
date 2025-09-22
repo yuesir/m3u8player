@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <title>О нама - M3U8 Player Online | Бесплатан HLS Video Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сазнајте више о M3U8 Player Online - нашој мисији, визији и посвећености пружању најбољег бесплатног HLS стриминг искуства. Откријте нашу политику приватности и вредности.">
+    <meta name="keywords" content="m3u8 player online, о нама, hls player, видео стриминг, мисија, политика приватности">
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="О нама - M3U8 Player Online">
+    <meta property="og:description" content="Откријте нашу мисију пружања најбољег бесплатног M3U8 HLS стриминг искуства.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="О нама - M3U8 Player Online">
+    <meta name="twitter:description" content="Откријте нашу мисију пружања најбољег бесплатног M3U8 HLS стриминг искуства.">
+    <link rel="canonical" href="https://m3u8player.co/sr/about.html">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 150px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+        }
+
+        .language-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .language-option:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .language-option:first-child {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .language-option:last-child {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            line-height: 1.4;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .icon-large {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/sr/" class="logo">M3U8 Player Online</a>
+            <div class="nav-links">
+                <a href="/sr/">Почетна</a>
+                <a href="/sr/about.html" class="active">О нама</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Изаберите језик">
+                        <i class="fas fa-globe"></i>
+                        <span>SR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/about.html" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/about.html" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/about.html" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/about.html" class="language-option">🇧🇷 Português</a>
+                        <a href="/ja/about.html" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/about.html" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/about.html" class="language-option">🇷🇺 Русский</a>
+                        <a href="/bn/about.html" class="language-option">🇧🇩 বাংলা</a>
+                        <a href="/it/about.html" class="language-option">🇮🇹 Italiano</a>
+                        <a href="/sr/about.html" class="language-option">🇷🇸 Српски</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Укључи/искључи тамни режим">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>О нама - M3U8 Player Online</h1>
+            <p>Сазнајте више о нашој мисији, визији и посвећености пружању најбољег бесплатног HLS стриминг искуства.</p>
+        </section>
+
+        <!-- Website Introduction Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-info-circle icon-large"></i>Увод у веб сајт</h2>
+            <p>
+                M3U8 Player Online је најсавременија веб-базирана платформа за стриминг видеа, специјализована за HTTP Live Streaming (HLS) технологију.
+                Наша платформа омогућава корисницима да репродукују M3U8 фајлове директно у својим веб браузерима без потребе за преузимањем или инсталирањем било ког софтвера.
+            </p>
+            <p>
+                Од нашег покретања, посветили смо се пружању беспрекорног и корисничког искуства за стриминг HLS садржаја.
+                Наш напредни HTML5 видео плејер користи најновије веб технологије да обезбеди оптималне перформансе на свим уређајима и браузерима.
+            </p>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-star"></i> Наша специјалност</h3>
+                <p>
+                    Комбинујемо једноставност са моћним функционалностима, нудећи тренутне стриминг могућности,
+                    респонзивни дизајн за мобилне уређаје и робусне безбедносне функције које штите приватност корисника и пружају изузетан квалитет видеа.
+                </p>
+            </div>
+
+            <h3><i class="fas fa-cogs"></i> Кључне карактеристике</h3>
+            <ul>
+                <li><strong>Тренутно стриминг:</strong> Нема преузимања или инсталације - само налепите ваш M3U8 URL и репродукујте</li>
+                <li><strong>Кросс-платформска компатибилност:</strong> Савршено функционише на десктоп, таблет и мобилним уређајима</li>
+                <li><strong>Напредне контроле плејера:</strong> Потпуне видео контроле са seek, јачином звука и опцијама пуног екрана</li>
+                <li><strong>Адаптивно стриминг битрејта:</strong> Аутоматски се прилагођава квалитету на основу ваше интернет везе</li>
+                <li><strong>Подршка за тамни режим:</strong> Пребацујте између светлих и тамних тема за удобно гледање</li>
+                <li><strong>Фокус на приватност:</strong> Све стриминг се дешава на клијентској страни и никакви подаци се не чувају на нашим серверима</li>
+            </ul>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-bullseye icon-large"></i>Наша мисија</h2>
+            <p>
+                Наша мисија је да демократизујемо приступ високо квалитетној технологији стриминг видеа пружањем бесплатног, поузданог и корисничког M3U8 плејера
+                који функционише за све, свугде.
+            </p>
+            
+            <h3><i class="fas fa-eye"></i> Наша визија</h3>
+            <p>
+                Замишљамо свет где је приступ и стриминг видео садржаја једноставан, сигуран и доступан свим корисницима
+                независно од њихових техничких вештина или могућности уређаја. Тежимо да будемо водећа платформа за M3U8 стриминг потребе.
+            </p>
+
+            <h3><i class="fas fa-heart"></i> Наше вредности</h3>
+            <ul>
+                <li><strong>Приступачност:</strong> Чинимо технологију стриминг видеа доступном свима, бесплатно</li>
+                <li><strong>Приватност:</strong> Штитимо корисничке податке и обезбеђујемо да се све стриминг дешава безбедно у браузеру</li>
+                <li><strong>Иновација:</strong> Континуирано побољшавамо нашу платформу најновијим веб технологијама</li>
+                <li><strong>Једноставност:</strong> Одржавамо интуитивни интерфејс који свако може користити без техничког знања</li>
+                <li><strong>Поузданост:</strong> Пружамо доследне и високо квалитетне стриминг перформансе на свим платформама</li>
+                <li><strong>Заједница:</strong> Градимо платформу која служи глобалној заједници креатора садржаја и гледалаца</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-rocket"></i> Наша посвећеност</h3>
+                <p>
+                    Посвећени смо одржавању M3U8 Player Online као бесплатног сервиса док настављамо
+                    да проширујемо његове могућности да задовољимо растуће потребе наших корисника. Верујемо да квалитетна технologija стриминг видеа
+                    треба да буде доступна свима.
+                </p>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section class="content-section">
+            <h2><i class="fas fa-shield-alt icon-large"></i>Политика приватности</h2>
+            <p><strong>Последње ажурирање:</strong> Јануар 2025</p>
+            
+            <h3><i class="fas fa-user-shield"></i> Информације које прикупљамо</h3>
+            <p>
+                M3U8 Player Online је дизајниран са приватношћу као основним принципом. Прикупљамо минималне информације за пружање нашег сервиса:
+            </p>
+            <ul>
+                <li><strong>Нема личних података:</strong> Не прикупљамо, чувамо или обрађујемо никакве личне информације</li>
+                <li><strong>Нема видео садржаја:</strong> Све стриминг видеа се дешава директно у вашем браузеру - никада не приступамо или чувамо ваш видео садржај</li>
+                <li><strong>Основне аналитике:</strong> Можемо прикупљати анонимне статистике коришћења за побољшање нашег сервиса (прегледи страница, тип браузера, општа локација)</li>
+                <li><strong>Локално складиштење:</strong> Користимо само локално складиштење браузера за чување ваших подешавања теме (светли/тамни режим)</li>
+            </ul>
+
+            <h3><i class="fas fa-database"></i> Како користимо информације</h3>
+            <p>Ограничене информације које прикупљамо користе се само за:</p>
+            <ul>
+                <li>Побољшање перформанси и функционалности нашег плејера</li>
+                <li>Разумевање општих образаца коришћења за побољшање корисничког искуства</li>
+                <li>Одржавање и оптимизацију наше сервисне инфраструктуре</li>
+                <li>Памћење ваших подешавања теме за будуће посете</li>
+            </ul>
+
+            <h3><i class="fas fa-share-alt"></i> Дељење информација</h3>
+            <p>
+                Не продајемо, размењујемо или делимо никакве корисничке информације са трећим странама. Пошто не прикупљамо личне податке,
+                нема ничега за дељење. Све стриминг видеа се дешава директно између вашег браузера и извора видеа.
+            </p>
+
+            <h3><i class="fas fa-cookie-bite"></i> Колачићи и праћење</h3>
+            <ul>
+                <li>Користимо само минималне колачиће потребне за основну функционалност</li>
+                <li>Не користе се колачићи за праћење или рекламни колачићи трећих страна</li>
+                <li>Можете онемогућити колачиће у вашем браузеру без утицаја на основну функционалност</li>
+            </ul>
+
+            <h3><i class="fas fa-lock"></i> Безбедност података</h3>
+            <p>
+                Пошто не чувамо личне податке или видео садржај, постоји минималан безбедносни ризик. Наш веб сајт користи HTTPS енкрипцију за заштиту преноса података,
+                и све стриминг видеа се дешава безбедно кроз ваш браузер.
+            </p>
+
+            <h3><i class="fas fa-child"></i> Приватност деце</h3>
+            <p>
+                Наш сервис свесно не прикупља никакве информације од деце млађе од 13 година. Пошто не прикупљамо личне информације од било ког корисника,
+                ова политика се примењује на све старосне групе.
+            </p>
+
+            <h3><i class="fas fa-edit"></i> Промене политике приватности</h3>
+            <p>
+                Можемо повремено ажурирати ову политику приватности. Све промене ће бити објављене на овој страници са ажурираним датумом ревизије.
+                Подстичемо вас да периодично прегледате ову политику.
+            </p>
+
+            <h3><i class="fas fa-envelope"></i> Контактирајте нас</h3>
+            <p>
+                Ако имате питања о овој политици приватности или нашим праксама, молимо вас да нас контактирате преко нашег веб сајта.
+                Посвећени смо решавању свих питања приватности брзо и транспарентно.
+            </p>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-check-circle"></i> Резиме приватности</h3>
+                <p>
+                    Укратко: Потпуно поштујемо вашу приватност. Не прикупљамо личне податке, не чувамо ваше видео записе,
+                    и не пратимо ваше активности. Ваше стриминг искуство је приватно, сигурно и потпуно под вашом контролом.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 M3U8 Player Online. Сва права задржана.</p>
+        <p>
+            Линк: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
+        </p>
+    </footer>
+
+    <script>
+        // Функција за укључивање/искључивање тамног режима
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Ажурирај икону
+            const themeIcon = document.getElementById('theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Укључи/искључи падајући мени за језик
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Затвори падајући мени када се кликне ван њега
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Примени сачувану тему при учитавању странице
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.setAttribute('data-theme', savedTheme);
+            
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

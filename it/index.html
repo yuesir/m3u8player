@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Lettore M3U8 Online | Lettore Video HLS Gratuito - Riproduci File M3U8 nel Browser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lettore M3U8 online gratuito per riprodurre video HLS nel browser. Nessun download richiesto. Supporta streaming adattivo, controlli completi e funziona su tutti i dispositivi. Riproduci file M3U8 istantaneamente.">
+    <meta name="keywords" content="lettore m3u8 online, lettore hls, streaming video, lettore m3u8 gratuito, riproduci m3u8, streaming hls, lettore video online">
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="Lettore M3U8 Online - Lettore Video HLS Gratuito">
+    <meta property="og:description" content="Il miglior lettore M3U8 online gratuito. Riproduci video HLS direttamente nel browser senza download. Supporta tutti i dispositivi e formati.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lettore M3U8 Online - Lettore Video HLS Gratuito">
+    <meta name="twitter:description" content="Il miglior lettore M3U8 online gratuito. Riproduci video HLS direttamente nel browser senza download.">
+    <link rel="canonical" href="https://m3u8player.co/it/">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/it/" class="logo">Lettore M3U8 Online</a>
+            <div class="nav-links">
+                <a href="/it/" class="active">Home</a>
+                <a href="/it/about.html">Chi Siamo</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Seleziona lingua">
+                        <i class="fas fa-globe"></i>
+                        <span>IT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/" class="language-option">🇷🇺 Русский</a>
+                        <a href="/bn/" class="language-option">🇧🇩 বাংলা</a>
+                        <a href="/it/" class="language-option">🇮🇹 Italiano</a>
+                        <a href="/sr/" class="language-option">🇷🇸 Српски</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Attiva/disattiva modalità scura">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>Lettore M3U8 Online</h1>
+            <p>Il lettore video HLS gratuito più potente. Riproduci file M3U8 direttamente nel tuo browser senza download o installazioni.</p>
+            <div class="url-input-container">
+                <input type="url" id="m3u8Url" placeholder="Incolla qui il tuo URL M3U8..." class="url-input">
+                <button onclick="loadVideo()" class="play-btn">
+                    <i class="fas fa-play"></i>
+                    Riproduci
+                </button>
+            </div>
+        </section>
+
+        <section class="video-container" id="videoContainer" style="display: none;">
+            <video id="videoPlayer" controls class="video-player">
+                Il tuo browser non supporta l'elemento video.
+            </video>
+            <div class="video-info" id="videoInfo"></div>
+        </section>
+
+        <section class="features">
+            <h2>Caratteristiche Principali</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Streaming Istantaneo</h3>
+                    <p>Nessun download o installazione richiesta. Basta incollare il tuo URL M3U8 e iniziare a guardare immediatamente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Compatibilità Universale</h3>
+                    <p>Funziona perfettamente su desktop, tablet e dispositivi mobili. Compatibile con tutti i browser moderni.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sicuro e Privato</h3>
+                    <p>Tutto lo streaming avviene nel tuo browser. Non memorizziamo i tuoi video o dati personali.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Controlli Avanzati</h3>
+                    <p>Controlli completi del lettore video con seek, volume, schermo intero e streaming a bitrate adattivo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Streaming Adattivo</h3>
+                    <p>Si adatta automaticamente alla tua velocità di connessione internet per un'esperienza di visione ottimale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Modalità Scura</h3>
+                    <p>Passa tra temi chiari e scuri per un'esperienza di visione confortevole in qualsiasi condizione di illuminazione.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to-use">
+            <h2>Come Utilizzare il Lettore M3U8</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Ottieni il Tuo URL M3U8</h3>
+                        <p>Trova l'URL del file M3U8 che vuoi riprodurre. Questo di solito termina con .m3u8 ed è fornito dal servizio di streaming.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Incolla l'URL</h3>
+                        <p>Copia e incolla l'URL M3U8 nel campo di input sopra. Assicurati che l'URL sia completo e corretto.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Inizia a Guardare</h3>
+                        <p>Clicca sul pulsante "Riproduci" e goditi il tuo video. Il lettore caricherà automaticamente e inizierà lo streaming.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="embed-section">
+            <h2>Incorpora nel Tuo Sito Web</h2>
+            <p>Vuoi incorporare il nostro lettore M3U8 nel tuo sito web? Usa questo codice:</p>
+            <div class="code-block">
+                <code id="embedCode">
+&lt;iframe src="https://m3u8player.co/?url=IL_TUO_URL_M3U8_QUI" 
+        width="800" 
+        height="450" 
+        frameborder="0" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+                </code>
+                <button onclick="copyEmbedCode()" class="copy-btn" title="Copia codice">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+            <p class="embed-note">Sostituisci "IL_TUO_URL_M3U8_QUI" con il tuo URL M3U8 effettivo.</p>
+        </section>
+
+        <section class="faq">
+            <h2>Domande Frequenti</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Cos'è un file M3U8?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Un file M3U8 è un file playlist utilizzato per lo streaming HTTP Live Streaming (HLS). Contiene un elenco di segmenti video che possono essere riprodotti in sequenza per creare un flusso video continuo. È comunemente utilizzato per lo streaming video su internet.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>È gratuito utilizzare questo lettore?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì, il nostro lettore M3U8 online è completamente gratuito da utilizzare. Non ci sono costi nascosti, abbonamenti o limitazioni. Puoi riprodurre tutti i file M3U8 che vuoi senza alcun costo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Devo scaricare qualche software?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, non è necessario scaricare o installare alcun software. Il nostro lettore funziona direttamente nel tuo browser web utilizzando le tecnologie web moderne. Basta visitare il nostro sito web e iniziare a riprodurre i tuoi file M3U8.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Su quali dispositivi funziona?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Il nostro lettore M3U8 funziona su tutti i dispositivi moderni inclusi computer desktop, laptop, tablet e smartphone. È compatibile con tutti i principali browser web come Chrome, Firefox, Safari, Edge e altri.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>I miei video sono sicuri?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente. Tutto lo streaming video avviene direttamente nel tuo browser. Non memorizziamo, registriamo o accediamo ai tuoi file video o URL. La tua privacy e sicurezza sono le nostre priorità principali.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Cosa faccio se il mio video non si carica?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Se il tuo video non si carica, verifica che l'URL M3U8 sia corretto e accessibile. Assicurati che il server che ospita il file M3U8 consenta l'accesso dal tuo dominio. Prova anche ad aggiornare la pagina o utilizzare un browser diverso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 Lettore M3U8 Online. Tutti i diritti riservati.</p>
+        <p>
+            Link: <a href="https://m3u8player.co/" target="_blank" rel="noopener">Lettore M3U8</a>
+        </p>
+    </footer>
+
+    <script src="../js/player.js"></script>
+    <script>
+        // Funzione per attivare/disattivare la modalità scura
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Aggiorna l'icona
+            const themeIcon = document.getElementById('theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Attiva/disattiva il menu a discesa della lingua
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Chiudi il menu a discesa quando si clicca fuori
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Applica il tema salvato al caricamento della pagina
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.setAttribute('data-theme', savedTheme);
+            
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Funzione per attivare/disattivare le FAQ
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Funzione per copiare il codice di incorporamento
+        function copyEmbedCode() {
+            const embedCode = document.getElementById('embedCode');
+            const textArea = document.createElement('textarea');
+            textArea.value = embedCode.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Mostra feedback
+            const copyBtn = document.querySelector('.copy-btn');
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+            copyBtn.style.color = '#10b981';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+                copyBtn.style.color = '';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

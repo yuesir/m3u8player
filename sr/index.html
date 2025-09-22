@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <title>M3U8 Player Online | Бесплатан HLS Video Player - Стримујте M3U8 фајлове</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бесплатан M3U8 Player Online за стримовање HLS видео фајлова директно у вашем браузеру. Нема преузимања - само убаците URL и репродукујте M3U8 плејлисте тренутно.">
+    <meta name="keywords" content="m3u8 player, hls player, видео стример, m3u8 стример, бесплатан видео плејер, онлајн медија плејер">
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="M3U8 Player Online - Бесплатан HLS Video Streamer">
+    <meta property="og:description" content="Стримујте M3U8 HLS видео фајлове директно у вашем браузеру. Брз, сигуран и потпуно бесплатан.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M3U8 Player Online - Бесплатан HLS Video Streamer">
+    <meta name="twitter:description" content="Стримујте M3U8 HLS видео фајлове директно у вашем браузеру. Брз, сигуран и потпуно бесплатан.">
+    <link rel="canonical" href="https://m3u8player.co/sr/">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/sr/" class="logo">M3U8 Player Online</a>
+            <div class="nav-links">
+                <a href="/sr/" class="active">Почетна</a>
+                <a href="/sr/about.html">О нама</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Изаберите језик">
+                        <i class="fas fa-globe"></i>
+                        <span>SR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/" class="language-option">🇧🇷 Português</a>
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/" class="language-option">🇷🇺 Русский</a>
+                        <a href="/bn/" class="language-option">🇧🇩 বাংলা</a>
+                        <a href="/it/" class="language-option">🇮🇹 Italiano</a>
+                        <a href="/sr/" class="language-option">🇷🇸 Српски</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Укључи/искључи тамни режим">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>M3U8 Player Online</h1>
+            <p>Стримујте HLS видео фајлове директно у вашем браузеру - брзо, сигурно и потпуно бесплатно</p>
+        </section>
+
+        <section class="player-section">
+            <div class="input-container">
+                <div class="input-group">
+                    <input type="url" id="m3u8Input" placeholder="Убаците M3U8 URL овде..." class="url-input">
+                    <button onclick="loadVideo()" class="load-btn">
+                        <i class="fas fa-play"></i>
+                        Учитај видео
+                    </button>
+                </div>
+                <div class="input-help">
+                    <i class="fas fa-info-circle"></i>
+                    Убаците валидан M3U8 URL да започнете стримовање
+                </div>
+            </div>
+
+            <div class="video-container" id="videoContainer" style="display: none;">
+                <video id="videoPlayer" controls class="video-player">
+                    Ваш браузер не подржава HTML5 видео.
+                </video>
+                <div class="video-info" id="videoInfo"></div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="errorText"></span>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2><i class="fas fa-star"></i> Зашто изабрати наш M3U8 Player?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Тренутно стримовање</h3>
+                    <p>Нема чекања, нема преузимања. Само убаците ваш M3U8 URL и почните да гледате тренутно.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Сигурно и приватно</h3>
+                    <p>Све се обрађује у вашем браузеру. Не чувамо ваше URL-ове или видео садржај.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Мобилно пријатељски</h3>
+                    <p>Савршено функционише на свим уређајима - десктоп, таблет и мобилни телефон.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Напредне контроле</h3>
+                    <p>Пуне контроле плејера укључујући seek, јачину звука и режим пуног екрана.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Адаптивни битрејт</h3>
+                    <p>Аутоматски се прилагођава квалитету на основу ваше интернет везе за најбоље искуство.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Универзална подршка</h3>
+                    <p>Подржава све стандардне HLS формате и функционише у свим модерним браузерима.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to-use">
+            <h2><i class="fas fa-question-circle"></i> Како користити M3U8 Player</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Пронађите M3U8 URL</h3>
+                        <p>Добијте M3U8 линк од вашег провајдера садржаја или стриминг сервиса.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Убаците URL</h3>
+                        <p>Копирајте и налепите M3U8 URL у поље за унос изнад.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Почните стримовање</h3>
+                        <p>Кликните "Учитај видео" и уживајте у вашем садржају!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="embed-section">
+            <h2><i class="fas fa-code"></i> Угради на ваш сајт</h2>
+            <p>Желите да угрдите овај плејер на ваш сајт? Користите овај код:</p>
+            <div class="code-block">
+                <code id="embedCode">
+&lt;iframe src="https://m3u8player.co/sr/" width="800" height="600" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+                </code>
+                <button onclick="copyEmbedCode()" class="copy-btn" title="Копирај код">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2><i class="fas fa-question-circle"></i> Често постављана питања</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Шта је M3U8 фајл?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>M3U8 је формат плејлисте који се користи за HTTP Live Streaming (HLS). Садржи листу видео сегмената који се могу стримовати преко интернета.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Да ли је бесплатно коришћење?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да! Наш M3U8 плејер је потпуно бесплатан за коришћење. Нема скривених трошкова или ограничења.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Које формате подржава?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Подржавамо све стандардне HLS формате укључујући M3U8 плејлисте са TS, MP4 и други видео сегменти.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Да ли чувате моје видео фајлове?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Не, не чувамо никакве видео фајлове или URL-ове. Све се обрађује директно у вашем браузеру за максималну приватност.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Шта ако мој видео неће да се учита?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Проверите да ли је URL исправан и да ли је доступан. Неки стримови могу имати географска ограничења или захтевати аутентификацију.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 - 2025 M3U8 Player Online. Сва права задржана.</p>
+        <p>
+            Линк: <a href="https://m3u8player.co/" target="_blank" rel="noopener">M3U8 Player</a>
+        </p>
+    </footer>
+
+    <script src="../js/player.js"></script>
+    <script>
+        // Функција за укључивање/искључивање тамног режима
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Ажурирај икону
+            const themeIcon = document.getElementById('theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Укључи/искључи падајући мени за језик
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Затвори падајући мени када се кликне ван њега
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Примени сачувану тему при учитавању странице
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.setAttribute('data-theme', savedTheme);
+            
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Функција за укључивање/искључивање FAQ
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Копирај код за уграђивање
+        function copyEmbedCode() {
+            const embedCode = document.getElementById('embedCode');
+            const textArea = document.createElement('textarea');
+            textArea.value = embedCode.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Прикажи поруку о успеху
+            const copyBtn = document.querySelector('.copy-btn');
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+            copyBtn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+                copyBtn.style.background = '';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

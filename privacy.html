@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Privacy Policy - M3U8 Player Online | Free HLS Video Streaming Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for M3U8 Player Online - Learn how we protect your privacy while providing free HLS video streaming services. Comprehensive privacy information and data protection policies.">
+    <meta name="keywords" content="m3u8 player privacy policy, HLS player privacy, video streaming privacy, data protection, privacy policy">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">  
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="Privacy Policy - M3U8 Player Online">
+    <meta property="og:description" content="Learn about our privacy practices and how we protect your data while providing free M3U8 HLS video streaming services.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy - M3U8 Player Online">
+    <meta name="twitter:description" content="Learn about our privacy practices and how we protect your data while providing free M3U8 HLS video streaming services.">
+    <meta name="google-adsense-account" content="ca-pub-3161682431818340">
+    <link rel="canonical" href="https://m3u8player.co/privacy.html">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3161682431818340"
+     crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 150px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+        }
+
+        .language-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .language-option:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .language-option:first-child {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .language-option:last-child {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            line-height: 1.4;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .icon-large {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">M3U8 Player Online</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/mp4-player">MP4 Player</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()" title="Select Language">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/privacy.html" class="language-option">🇺🇸 English</a>
+                        <a href="/tr/privacy.html" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/privacy.html" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/privacy.html" class="language-option">🇧🇷 Português</a>
+                        <a href="/ja/privacy.html" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/privacy.html" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/privacy.html" class="language-option">🇷🇺 Русский</a>
+                        <a href="/bn/privacy.html" class="language-option">🇧🇩 বাংলা</a>
+                        <a href="/it/privacy.html" class="language-option">🇮🇹 Italiano</a>
+                        <a href="/sr/privacy.html" class="language-option">🇷🇸 Српски</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <section class="hero">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Learn how we protect your data and respect your privacy while providing free HLS video streaming services.</p>
+        </section>
+
+        <!-- Privacy Policy Content -->
+        <section class="content-section">
+            <h2><i class="fas fa-shield-alt icon-large"></i>Privacy Policy</h2>
+            <p><strong>Effective Date:</strong> January 2025</p>
+            <p><strong>Last Updated:</strong> January 2025</p>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-info-circle"></i> Privacy Summary</h3>
+                <p>
+                    M3U8 Player Online is designed with privacy as a fundamental principle. We collect minimal information, 
+                    do not store personal data or video content, and all streaming happens directly in your browser. 
+                    Your privacy and data security are our top priorities.
+                </p>
+            </div>
+
+            <h3><i class="fas fa-user-shield"></i> Information We Collect</h3>
+            <p>
+                M3U8 Player Online is designed with privacy as a core principle. We are committed to collecting only the minimal information necessary to provide our service effectively:
+            </p>
+            <ul>
+                <li><strong>No Personal Data Collection:</strong> We do not collect, store, process, or have access to any personally identifiable information (PII) including names, email addresses, phone numbers, or physical addresses</li>
+                <li><strong>No Video Content Storage:</strong> All video streaming occurs directly between your browser and the video source. We never access, intercept, store, or process your video content or M3U8 URLs</li>
+                <li><strong>Anonymous Usage Analytics:</strong> We may collect anonymous, aggregated usage statistics to improve our service, including:
+                    <ul>
+                        <li>Page views and session duration</li>
+                        <li>Browser type and version (for compatibility purposes)</li>
+                        <li>General geographic location (country/region level only)</li>
+                        <li>Device type (desktop, mobile, tablet) for responsive design optimization</li>
+                    </ul>
+                </li>
+                <li><strong>Local Browser Storage:</strong> We use browser local storage exclusively to save your preferences:
+                    <ul>
+                        <li>Theme preferences (light/dark mode)</li>
+                        <li>Language selection</li>
+                        <li>Player settings and configurations</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3><i class="fas fa-database"></i> How We Use Information</h3>
+            <p>The limited, anonymous information we collect is used solely for the following legitimate purposes:</p>
+            <ul>
+                <li><strong>Service Improvement:</strong> Analyzing usage patterns to enhance player performance, fix bugs, and optimize user experience</li>
+                <li><strong>Technical Optimization:</strong> Understanding browser compatibility and device usage to ensure our player works across all platforms</li>
+                <li><strong>Infrastructure Maintenance:</strong> Monitoring service performance and maintaining reliable streaming capabilities</li>
+                <li><strong>User Experience Enhancement:</strong> Remembering your preferences (theme, language) for future visits to provide a personalized experience</li>
+                <li><strong>Security and Fraud Prevention:</strong> Detecting and preventing abuse, spam, or malicious activities that could harm our service or users</li>
+            </ul>
+
+            <h3><i class="fas fa-share-alt"></i> Information Sharing and Disclosure</h3>
+            <p>
+                We maintain a strict no-sharing policy regarding user information. Since we don't collect personal data, there is fundamentally nothing personal to share. However, we want to be completely transparent:
+            </p>
+            <ul>
+                <li><strong>No Third-Party Sales:</strong> We do not sell, rent, lease, or trade any user information to third parties</li>
+                <li><strong>No Marketing Partnerships:</strong> We do not share data with marketing companies or advertising networks for targeting purposes</li>
+                <li><strong>No Data Brokers:</strong> We do not work with data brokers or participate in data marketplaces</li>
+                <li><strong>Service Providers:</strong> We may share anonymous, aggregated statistics with essential service providers (hosting, analytics) who are contractually bound to protect data privacy</li>
+                <li><strong>Legal Compliance:</strong> We may disclose information only when required by law, court order, or to protect our legal rights and the safety of our users</li>
+            </ul>
+
+            <h3><i class="fas fa-cookie-bite"></i> Cookies and Tracking Technologies</h3>
+            <p>We use minimal cookies and tracking technologies, prioritizing your privacy:</p>
+            <ul>
+                <li><strong>Essential Cookies Only:</strong> We use only essential cookies required for basic website functionality</li>
+                <li><strong>No Advertising Cookies:</strong> We do not use cookies for advertising, marketing, or behavioral tracking</li>
+                <li><strong>No Third-Party Tracking:</strong> We do not allow third-party tracking cookies or scripts that could compromise your privacy</li>
+                <li><strong>Local Storage:</strong> We use browser local storage to remember your preferences (theme, language) - this data never leaves your device</li>
+                <li><strong>Cookie Control:</strong> You can disable cookies in your browser settings without affecting core streaming functionality</li>
+                <li><strong>Session Management:</strong> Any session cookies are automatically deleted when you close your browser</li>
+            </ul>
+
+            <h3><i class="fas fa-lock"></i> Data Security and Protection</h3>
+            <p>
+                We implement comprehensive security measures to protect the minimal data we do collect:
+            </p>
+            <ul>
+                <li><strong>HTTPS Encryption:</strong> All data transmission is protected using industry-standard SSL/TLS encryption</li>
+                <li><strong>Secure Infrastructure:</strong> Our servers and infrastructure follow security best practices and are regularly updated</li>
+                <li><strong>No Data Storage Risk:</strong> Since we don't store personal data or video content, there's minimal risk of data breaches affecting personal information</li>
+                <li><strong>Client-Side Processing:</strong> All video streaming and processing happens directly in your browser, ensuring your content never passes through our servers</li>
+                <li><strong>Regular Security Audits:</strong> We conduct regular security assessments to identify and address potential vulnerabilities</li>
+                <li><strong>Access Controls:</strong> Strict access controls limit who can access our systems and anonymous usage data</li>
+            </ul>
+
+            <h3><i class="fas fa-child"></i> Children's Privacy Protection</h3>
+            <p>
+                We are committed to protecting children's privacy online:
+            </p>
+            <ul>
+                <li><strong>COPPA Compliance:</strong> Our service complies with the Children's Online Privacy Protection Act (COPPA)</li>
+                <li><strong>No Data Collection from Minors:</strong> We do not knowingly collect any information from children under 13 years of age</li>
+                <li><strong>Universal Privacy Protection:</strong> Since we don't collect personal information from any users, children are automatically protected</li>
+                <li><strong>Parental Rights:</strong> Parents who believe their child has provided information to us can contact us for immediate removal</li>
+                <li><strong>Age-Neutral Service:</strong> Our service is designed to be safe for users of all ages without requiring age verification</li>
+            </ul>
+
+            <h3><i class="fas fa-globe"></i> International Data Transfers</h3>
+            <p>
+                For our international users, we want to clarify our data handling practices:
+            </p>
+            <ul>
+                <li><strong>Minimal Cross-Border Data:</strong> Since we collect minimal anonymous data, international transfers are extremely limited</li>
+                <li><strong>GDPR Compliance:</strong> We comply with European Union General Data Protection Regulation (GDPR) requirements</li>
+                <li><strong>Local Processing:</strong> Video streaming happens locally in your browser, regardless of your location</li>
+                <li><strong>Data Protection Standards:</strong> Any data transfers follow international data protection standards and regulations</li>
+            </ul>
+
+            <h3><i class="fas fa-user-cog"></i> Your Privacy Rights</h3>
+            <p>
+                Even though we collect minimal data, you have important rights regarding your privacy:
+            </p>
+            <ul>
+                <li><strong>Right to Information:</strong> You have the right to know what data we collect (outlined in this policy)</li>
+                <li><strong>Right to Access:</strong> You can request information about any data we may have collected</li>
+                <li><strong>Right to Deletion:</strong> You can request deletion of any data associated with your usage</li>
+                <li><strong>Right to Portability:</strong> You can request a copy of your data in a portable format</li>
+                <li><strong>Right to Object:</strong> You can object to data processing for legitimate interests</li>
+                <li><strong>Browser Controls:</strong> You can control cookies, local storage, and JavaScript through your browser settings</li>
+            </ul>
+
+            <h3><i class="fas fa-edit"></i> Changes to This Privacy Policy</h3>
+            <p>
+                We may update this privacy policy periodically to reflect changes in our practices, technology, or legal requirements:
+            </p>
+            <ul>
+                <li><strong>Notification of Changes:</strong> We will post any changes to this privacy policy on this page with an updated revision date</li>
+                <li><strong>Material Changes:</strong> For significant changes that affect your privacy rights, we will provide additional notice</li>
+                <li><strong>Regular Review:</strong> We encourage you to review this policy periodically to stay informed about our privacy practices</li>
+                <li><strong>Continued Use:</strong> Your continued use of our service after policy changes constitutes acceptance of the updated terms</li>
+                <li><strong>Version History:</strong> Previous versions of this policy are available upon request</li>
+            </ul>
+
+            <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+            <p>
+                If you have any questions, concerns, or requests regarding this privacy policy or our privacy practices, we encourage you to contact us:
+            </p>
+            <ul>
+                <li><strong>Privacy Inquiries:</strong> We are committed to addressing any privacy concerns promptly and transparently</li>
+                <li><strong>Data Requests:</strong> For any data-related requests (access, deletion, portability), please contact us through our website</li>
+                <li><strong>Security Issues:</strong> If you discover any security vulnerabilities, please report them to us immediately</li>
+                <li><strong>Response Time:</strong> We aim to respond to all privacy-related inquiries within 30 days</li>
+                <li><strong>Feedback:</strong> We welcome feedback on how we can improve our privacy practices and this policy</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-heart"></i> Our Privacy Commitment</h3>
+                <p>
+                    At M3U8 Player Online, privacy isn't just a policy—it's a core value. We believe that providing excellent video streaming services and protecting user privacy are not mutually exclusive. 
+                    We will continue to innovate and improve our service while maintaining the highest standards of privacy protection.
+                </p>
+            </div>
+
+            <p><strong>Document Version:</strong> 1.0</p>
+            <p><strong>Policy Language:</strong> This privacy policy is originally written in English. Translations may be provided for convenience, but the English version shall prevail in case of any discrepancies.</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="nav-container">
+            <p>&copy; 2025 M3U8 Player Online. All rights reserved.</p>
+            <p>
+                <a href="/">Home</a> | 
+                <a href="/about.html">About</a> | 
+                <a href="/privacy.html">Privacy Policy</a>
+            </p>
+            <p>Free M3U8 HLS Video Player - Stream Anywhere, Anytime</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                html.removeAttribute('data-theme');
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Language dropdown functionality
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+        });
+    </script>
+</body>
+</html>

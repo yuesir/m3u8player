@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How to Embed M3U8 Player in Web Page - Complete Developer Guide | M3U8 Player Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to embed M3U8 players in web pages with our comprehensive developer guide. Step-by-step instructions using HLS.js, Video.js, and native HTML5. Code examples included.">
+    <meta name="keywords" content="embed M3U8 player, M3U8 web player, HLS.js, Video.js, HTML5 video, M3U8 streaming, web development, JavaScript player">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">  
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="How to Embed M3U8 Player in Web Page - Complete Developer Guide">
+    <meta property="og:description" content="Learn how to embed M3U8 players in web pages with our comprehensive developer guide. Code examples and best practices included.">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Embed M3U8 Player in Web Page - Developer Guide">
+    <meta name="twitter:description" content="Learn how to embed M3U8 players in web pages with our comprehensive developer guide. Code examples and best practices included.">
+    <meta name="google-adsense-account" content="ca-pub-3161682431818340">
+    <link rel="canonical" href="https://m3u8player.co/post/how-to-embed-m3u8-player-in-web-page.html">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3161682431818340"
+     crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 150px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+        }
+
+        .language-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .language-option:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .language-option:first-child {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .language-option:last-child {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            background: var(--surface-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            line-height: 1.4;
+        }
+
+        .content-section h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+            line-height: 1.4;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section ol li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .icon-large {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .highlight-box ul {
+            color: white;
+        }
+
+        .highlight-box li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .code-example {
+            background: var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        [data-theme="dark"] .code-example {
+            background: #1a1a1a;
+            color: #e5e5e5;
+        }
+
+        .code-example pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .code-title {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 1rem 0 0 0;
+        }
+
+        .code-example.with-title {
+            margin-top: 0;
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .info-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .method-card {
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .method-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--background-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--surface-color);
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 0.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .main {
+                padding: 1rem 0.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-play-circle"></i> M3U8 Player
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/privacy.html">Privacy</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="language-selector">
+                    <button class="language-btn" id="languageBtn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/tr/" class="language-option">🇹🇷 Türkçe</a>
+                        <a href="/id/" class="language-option">🇮🇩 Indonesia</a>
+                        <a href="/pt/" class="language-option">🇵🇹 Português</a>
+                        <a href="/ja/" class="language-option">🇯🇵 日本語</a>
+                        <a href="/ko/" class="language-option">🇰🇷 한국어</a>
+                        <a href="/ru/" class="language-option">🇷🇺 Русский</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="content-section">
+            <h2><i class="fas fa-tools icon-large"></i>Required Tools and Libraries</h2>
+            <p>To embed M3U8 players in web pages, you'll need specific JavaScript libraries that handle HLS streaming. Here are the most popular and reliable options:</p>
+
+            <h3><i class="fas fa-star"></i> Popular M3U8 Player Libraries</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Library</th>
+                        <th>Size</th>
+                        <th>Browser Support</th>
+                        <th>Features</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>HLS.js</strong></td>
+                        <td>~200KB</td>
+                        <td>All modern browsers</td>
+                        <td>Lightweight, MSE-based</td>
+                        <td>Custom implementations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Video.js + HLS</strong></td>
+                        <td>~300KB</td>
+                        <td>All browsers</td>
+                        <td>Full-featured player</td>
+                        <td>Complete solutions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plyr</strong></td>
+                        <td>~150KB</td>
+                        <td>Modern browsers</td>
+                        <td>Beautiful UI, accessible</td>
+                        <td>Modern designs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>JW Player</strong></td>
+                        <td>~250KB</td>
+                        <td>All browsers</td>
+                        <td>Commercial, analytics</td>
+                        <td>Enterprise solutions</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-trophy"></i> Recommended Approach</h3>
+                <p>For most web developers, we recommend starting with <strong>HLS.js</strong> for its simplicity and performance, or <strong>Video.js with HLS plugin</strong> for a complete player solution with extensive customization options.</p>
+            </div>
+
+            <h3><i class="fas fa-download"></i> Installation Methods</h3>
+            <p>You can include these libraries in your project using various methods:</p>
+
+            <div class="method-card">
+                <h4><i class="fas fa-link"></i> CDN Links (Recommended for Testing)</h4>
+                <div class="code-title">CDN Installation</div>
+                <div class="code-example with-title">
+<pre>&lt;!-- HLS.js --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/hls.js@latest"&gt;&lt;/script&gt;
+
+&lt;!-- Video.js with HLS --&gt;
+&lt;link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet"&gt;
+&lt;script src="https://vjs.zencdn.net/8.6.1/video.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@3.0.2/dist/videojs-http-streaming.min.js"&gt;&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h4><i class="fas fa-terminal"></i> NPM Installation (Recommended for Production)</h4>
+                <div class="code-title">NPM Commands</div>
+                <div class="code-example with-title">
+<pre># HLS.js
+npm install hls.js
+
+# Video.js with HLS
+npm install video.js @videojs/http-streaming
+
+# Plyr
+npm install plyr</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-code icon-large"></i>Method 1: Using HLS.js (Lightweight Solution)</h2>
+            <p>HLS.js is a lightweight JavaScript library that enables HLS playback in browsers that don't natively support it. It's perfect for custom implementations and offers excellent performance.</p>
+
+            <h3><i class="fas fa-play-circle"></i> Basic HLS.js Implementation</h3>
+            
+            <div class="code-title">HTML Structure</div>
+            <div class="code-example with-title">
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;M3U8 Player with HLS.js&lt;/title&gt;
+    &lt;style&gt;
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .controls {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        input[type="url"] {
+            width: 70%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 0.5rem;
+        }
+        
+        button:hover {
+            background: #1d4ed8;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="video-container"&gt;
+        &lt;video id="video" controls&gt;&lt;/video&gt;
+        &lt;div class="controls"&gt;
+            &lt;input type="url" id="m3u8Input" placeholder="Enter M3U8 URL here..."&gt;
+            &lt;button onclick="loadStream()"&gt;Load Stream&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/hls.js@latest"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Your JavaScript code goes here
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+
+            <div class="code-title">JavaScript Implementation</div>
+            <div class="code-example with-title">
+<pre>// Initialize HLS.js player
+function initializePlayer() {
+    const video = document.getElementById('video');
+    
+    if (Hls.isSupported()) {
+        const hls = new Hls({
+            // Configuration options
+            debug: false,
+            enableWorker: true,
+            lowLatencyMode: true,
+            backBufferLength: 90
+        });
+        
+        // Bind HLS to video element
+        hls.attachMedia(video);
+        
+        // Handle HLS events
+        hls.on(Hls.Events.MEDIA_ATTACHED, function() {
+            console.log('Video and HLS.js are now bound together');
+        });
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
+            console.log('Manifest loaded, found ' + data.levels.length + ' quality levels');
+            video.play();
+        });
+        
+        hls.on(Hls.Events.ERROR, function(event, data) {
+            console.error('HLS Error:', data);
+            if (data.fatal) {
+                switch(data.type) {
+                    case Hls.ErrorTypes.NETWORK_ERROR:
+                        console.log('Fatal network error encountered, try to recover');
+                        hls.startLoad();
+                        break;
+                    case Hls.ErrorTypes.MEDIA_ERROR:
+                        console.log('Fatal media error encountered, try to recover');
+                        hls.recoverMediaError();
+                        break;
+                    default:
+                        console.log('Fatal error, cannot recover');
+                        hls.destroy();
+                        break;
+                }
+            }
+        });
+        
+        return hls;
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Native HLS support (Safari)
+        console.log('Native HLS support detected');
+        return null;
+    } else {
+        console.error('HLS is not supported in this browser');
+        return null;
+    }
+}
+
+// Load M3U8 stream
+function loadStream() {
+    const video = document.getElementById('video');
+    const input = document.getElementById('m3u8Input');
+    const url = input.value.trim();
+    
+    if (!url) {
+        alert('Please enter a valid M3U8 URL');
+        return;
+    }
+    
+    if (window.hls) {
+        window.hls.destroy();
+    }
+    
+    window.hls = initializePlayer();
+    
+    if (window.hls) {
+        // Use HLS.js
+        window.hls.loadSource(url);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Native support
+        video.src = url;
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Load a default stream (optional)
+    const defaultUrl = 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8';
+    document.getElementById('m3u8Input').value = defaultUrl;
+    loadStream();
+});</pre>
+            </div>
+
+            <div class="success-box">
+                <p><strong>Pro Tip:</strong> This implementation automatically detects browser capabilities and falls back to native HLS support on Safari while using HLS.js on other browsers.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-video icon-large"></i>Method 2: Using Video.js with HLS Plugin</h2>
+            <p>Video.js is a comprehensive HTML5 video player that provides a complete solution with extensive customization options, plugins, and themes.</p>
+
+            <h3><i class="fas fa-cogs"></i> Complete Video.js Implementation</h3>
+            
+            <div class="code-title">HTML with Video.js</div>
+            <div class="code-example with-title">
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;M3U8 Player with Video.js&lt;/title&gt;
+    
+    &lt;!-- Video.js CSS --&gt;
+    &lt;link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet"&gt;
+    
+    &lt;style&gt;
+        .video-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        
+        .video-js {
+            width: 100%;
+            height: 500px;
+        }
+        
+        .player-controls {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .url-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .load-btn {
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .load-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .quality-selector {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="video-container"&gt;
+        &lt;video-js
+            id="videojs-player"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            data-setup="{}"&gt;
+            &lt;p class="vjs-no-js"&gt;
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                &lt;a href="https://videojs.com/html5-video-support/" target="_blank"&gt;supports HTML5 video&lt;/a&gt;.
+            &lt;/p&gt;
+        &lt;/video-js&gt;
+        
+        &lt;div class="player-controls"&gt;
+            &lt;input type="url" class="url-input" id="videoUrl" placeholder="Enter M3U8 URL..."&gt;
+            &lt;button class="load-btn" onclick="loadVideo()"&gt;Load Video&lt;/button&gt;
+            &lt;select class="quality-selector" id="qualitySelector" onchange="changeQuality()"&gt;
+                &lt;option value="auto"&gt;Auto Quality&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Video.js JavaScript --&gt;
+    &lt;script src="https://vjs.zencdn.net/8.6.1/video.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@3.0.2/dist/videojs-http-streaming.min.js"&gt;&lt;/script&gt;
+    
+    &lt;script&gt;
+        // Video.js implementation code
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+
+            <div class="code-title">Video.js JavaScript Configuration</div>
+            <div class="code-example with-title">
+<pre>// Initialize Video.js player
+let player;
+
+function initializeVideoJS() {
+    player = videojs('videojs-player', {
+        // Player options
+        fluid: true,
+        responsive: true,
+        playbackRates: [0.5, 1, 1.25, 1.5, 2],
+        plugins: {
+            // Add plugins here
+        },
+        html5: {
+            vhs: {
+                // HLS-specific options
+                overrideNative: !videojs.browser.IS_SAFARI,
+                enableLowInitialPlaylist: true,
+                smoothQualityChange: true,
+                useBandwidthFromLocalStorage: true
+            }
+        }
+    });
+
+    // Player ready event
+    player.ready(function() {
+        console.log('Video.js player is ready');
+        
+        // Add custom controls or event listeners
+        setupPlayerEvents();
+    });
+
+    return player;
+}
+
+function setupPlayerEvents() {
+    // Track quality changes
+    player.on('loadedmetadata', function() {
+        updateQualitySelector();
+    });
+
+    // Handle errors
+    player.on('error', function() {
+        const error = player.error();
+        console.error('Video.js Error:', error);
+        
+        // Display user-friendly error message
+        showErrorMessage('Failed to load video. Please check the URL and try again.');
+    });
+
+    // Track playback events
+    player.on('play', function() {
+        console.log('Playback started');
+    });
+
+    player.on('pause', function() {
+        console.log('Playback paused');
+    });
+
+    player.on('ended', function() {
+        console.log('Playback ended');
+    });
+}
+
+function loadVideo() {
+    const urlInput = document.getElementById('videoUrl');
+    const url = urlInput.value.trim();
+    
+    if (!url) {
+        alert('Please enter a valid M3U8 URL');
+        return;
+    }
+    
+    // Validate URL format
+    if (!isValidM3U8Url(url)) {
+        alert('Please enter a valid M3U8 URL (should end with .m3u8)');
+        return;
+    }
+    
+    // Load the source
+    player.src({
+        src: url,
+        type: 'application/x-mpegURL'
+    });
+    
+    // Optional: Start playback automatically
+    player.ready(function() {
+        player.play().catch(function(error) {
+            console.log('Autoplay prevented:', error);
+        });
+    });
+}
+
+function updateQualitySelector() {
+    const qualitySelector = document.getElementById('qualitySelector');
+    const qualityLevels = player.qualityLevels();
+    
+    // Clear existing options (except auto)
+    while (qualitySelector.children.length &gt; 1) {
+        qualitySelector.removeChild(qualitySelector.lastChild);
+    }
+    
+    // Add quality options
+    for (let i = 0; i &lt; qualityLevels.length; i++) {
+        const level = qualityLevels[i];
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `${level.height}p (${Math.round(level.bandwidth / 1000)}k)`;
+        qualitySelector.appendChild(option);
+    }
+}
+
+function changeQuality() {
+    const qualitySelector = document.getElementById('qualitySelector');
+    const selectedValue = qualitySelector.value;
+    const qualityLevels = player.qualityLevels();
+    
+    if (selectedValue === 'auto') {
+        // Enable auto quality selection
+        for (let i = 0; i &lt; qualityLevels.length; i++) {
+            qualityLevels[i].enabled = true;
+        }
+    } else {
+        // Disable all levels except selected
+        for (let i = 0; i &lt; qualityLevels.length; i++) {
+            qualityLevels[i].enabled = (i == selectedValue);
+        }
+    }
+}
+
+function isValidM3U8Url(url) {
+    try {
+        const urlObj = new URL(url);
+        return urlObj.pathname.toLowerCase().includes('.m3u8') || 
+               urlObj.search.toLowerCase().includes('m3u8');
+    } catch {
+        return false;
+    }
+}
+
+function showErrorMessage(message) {
+    // Create and show error notification
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ef4444;
+        color: white;
+        padding: 1rem;
+        border-radius: 6px;
+        z-index: 9999;
+        max-width: 300px;
+    `;
+    errorDiv.textContent = message;
+    document.body.appendChild(errorDiv);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        document.body.removeChild(errorDiv);
+    }, 5000);
+}
+
+// Initialize player when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initializeVideoJS();
+    
+    // Load default video (optional)
+    const defaultUrl = 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8';
+    document.getElementById('videoUrl').value = defaultUrl;
+});</pre>
+            </div>
+
+            <div class="method-card">
+                <h4><i class="fas fa-star"></i> Video.js Advantages</h4>
+                <ul>
+                    <li><strong>Complete Solution:</strong> Full-featured player with controls, themes, and plugins</li>
+                    <li><strong>Accessibility:</strong> Built-in keyboard navigation and screen reader support</li>
+                    <li><strong>Customizable:</strong> Extensive theming and plugin ecosystem</li>
+                    <li><strong>Quality Control:</strong> Built-in quality level selection</li>
+                    <li><strong>Analytics:</strong> Easy integration with analytics services</li>
+                    <li><strong>Mobile Optimized:</strong> Touch-friendly controls and responsive design</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-mobile-alt icon-large"></i>Cross-Browser Compatibility Best Practices</h2>
+            <p>Ensuring your M3U8 player works across all browsers and devices requires careful consideration of different capabilities and limitations.</p>
+
+            <h3><i class="fas fa-browser"></i> Browser Support Matrix</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Native HLS</th>
+                        <th>MSE Support</th>
+                        <th>Recommended Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Safari (Desktop/Mobile)</strong></td>
+                        <td>✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>Native HLS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chrome</strong></td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                        <td>HLS.js / Video.js</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firefox</strong></td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                        <td>HLS.js / Video.js</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Edge</strong></td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                        <td>HLS.js / Video.js</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internet Explorer 11</strong></td>
+                        <td>❌ No</td>
+                        <td>✅ Limited</td>
+                        <td>Polyfills required</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3><i class="fas fa-code-branch"></i> Universal Compatibility Implementation</h3>
+            
+            <div class="code-title">Cross-Browser Detection and Fallback</div>
+            <div class="code-example with-title">
+<pre>function createUniversalPlayer(videoElement, m3u8Url) {
+    // Feature detection
+    const hasNativeHLS = videoElement.canPlayType('application/vnd.apple.mpegurl');
+    const hasMSE = 'MediaSource' in window;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
+    console.log('Browser capabilities:', {
+        hasNativeHLS: !!hasNativeHLS,
+        hasMSE: hasMSE,
+        isIOS: isIOS,
+        isSafari: isSafari
+    });
+    
+    if (hasNativeHLS && (isSafari || isIOS)) {
+        // Use native HLS on Safari and iOS
+        console.log('Using native HLS support');
+        return setupNativeHLS(videoElement, m3u8Url);
+    } else if (hasMSE && typeof Hls !== 'undefined' && Hls.isSupported()) {
+        // Use HLS.js on other modern browsers
+        console.log('Using HLS.js');
+        return setupHLSjs(videoElement, m3u8Url);
+    } else {
+        // Fallback for older browsers
+        console.log('Using fallback method');
+        return setupFallback(videoElement, m3u8Url);
+    }
+}
+
+function setupNativeHLS(video, url) {
+    video.src = url;
+    
+    video.addEventListener('loadstart', () =&gt; console.log('Native HLS: Load started'));
+    video.addEventListener('canplay', () =&gt; console.log('Native HLS: Can play'));
+    video.addEventListener('error', (e) =&gt; console.error('Native HLS Error:', e));
+    
+    return {
+        destroy: () =&gt; {
+            video.src = '';
+        },
+        type: 'native'
+    };
+}
+
+function setupHLSjs(video, url) {
+    const hls = new Hls({
+        debug: false,
+        enableWorker: true,
+        lowLatencyMode: true,
+        backBufferLength: 90,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 600,
+        maxBufferSize: 60 * 1000 * 1000,
+        maxBufferHole: 0.5,
+        highBufferWatchdogPeriod: 2,
+        nudgeOffset: 0.1,
+        nudgeMaxRetry: 3,
+        maxFragLookUpTolerance: 0.25,
+        liveSyncDurationCount: 3,
+        liveMaxLatencyDurationCount: Infinity,
+        liveDurationInfinity: false,
+        enableSoftwareAES: true,
+        manifestLoadingTimeOut: 10000,
+        manifestLoadingMaxRetry: 1,
+        manifestLoadingRetryDelay: 1000,
+        levelLoadingTimeOut: 10000,
+        levelLoadingMaxRetry: 4,
+        levelLoadingRetryDelay: 1000,
+        fragLoadingTimeOut: 20000,
+        fragLoadingMaxRetry: 6,
+        fragLoadingRetryDelay: 1000,
+        startFragPrefetch: false,
+        testBandwidth: true
+    });
+    
+    hls.attachMedia(video);
+    hls.loadSource(url);
+    
+    // Enhanced error handling
+    hls.on(Hls.Events.ERROR, function(event, data) {
+        console.error('HLS.js Error:', data);
+        
+        if (data.fatal) {
+            switch(data.type) {
+                case Hls.ErrorTypes.NETWORK_ERROR:
+                    console.log('Fatal network error, attempting recovery...');
+                    hls.startLoad();
+                    break;
+                case Hls.ErrorTypes.MEDIA_ERROR:
+                    console.log('Fatal media error, attempting recovery...');
+                    hls.recoverMediaError();
+                    break;
+                default:
+                    console.log('Fatal error, destroying HLS instance');
+                    hls.destroy();
+                    // Attempt fallback to native
+                    setupNativeHLS(video, url);
+                    break;
+            }
+        }
+    });
+    
+    return {
+        destroy: () =&gt; hls.destroy(),
+        hls: hls,
+        type: 'hlsjs'
+    };
+}
+
+function setupFallback(video, url) {
+    console.warn('HLS not supported, attempting direct playback');
+    
+    // Try direct URL first
+    video.src = url;
+    
+    // If that fails, show error message
+    video.addEventListener('error', function() {
+        showUnsupportedMessage(video);
+    });
+    
+    return {
+        destroy: () =&gt; {
+            video.src = '';
+        },
+        type: 'fallback'
+    };
+}
+
+function showUnsupportedMessage(video) {
+    const container = video.parentElement;
+    const message = document.createElement('div');
+    message.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+    `;
+    message.innerHTML = `
+        &lt;h3&gt;Browser Not Supported&lt;/h3&gt;
+        &lt;p&gt;Your browser doesn't support HLS streaming. Please try:&lt;/p&gt;
+        &lt;ul style="text-align: left; margin-top: 1rem;"&gt;
+            &lt;li&gt;Updating your browser&lt;/li&gt;
+            &lt;li&gt;Using Chrome, Firefox, or Safari&lt;/li&gt;
+            &lt;li&gt;Enabling JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+    `;
+    
+    container.style.position = 'relative';
+    container.appendChild(message);
+}</pre>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> Always test your implementation across different browsers and devices. Consider using automated testing tools like BrowserStack or Sauce Labs for comprehensive coverage.</p>
+            </div>
+
+            <h3><i class="fas fa-mobile"></i> Mobile Optimization</h3>
+            <p>Mobile devices have specific requirements and limitations for video playback:</p>
+
+            <div class="method-card">
+                <h4><i class="fas fa-smartphone"></i> Mobile Best Practices</h4>
+                <ul>
+                    <li><strong>Autoplay Policies:</strong> Most mobile browsers block autoplay with sound</li>
+                    <li><strong>Fullscreen Handling:</strong> iOS forces fullscreen for video playback</li>
+                    <li><strong>Touch Controls:</strong> Ensure controls are touch-friendly (minimum 44px)</li>
+                    <li><strong>Network Awareness:</strong> Adapt quality based on connection type</li>
+                    <li><strong>Battery Optimization:</strong> Use hardware acceleration when available</li>
+                </ul>
+            </div>
+
+            <div class="code-title">Mobile-Optimized Configuration</div>
+            <div class="code-example with-title">
+<pre>function createMobileOptimizedPlayer(video, url) {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Mobile-specific settings
+        video.setAttribute('playsinline', ''); // Prevent fullscreen on iOS
+        video.setAttribute('webkit-playsinline', ''); // Legacy iOS support
+        video.preload = 'metadata'; // Reduce initial data usage
+        
+        // Detect connection type
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        let initialQuality = 'auto';
+        
+        if (connection) {
+            switch(connection.effectiveType) {
+                case 'slow-2g':
+                case '2g':
+                    initialQuality = 'low';
+                    break;
+                case '3g':
+                    initialQuality = 'medium';
+                    break;
+                case '4g':
+                    initialQuality = 'high';
+                    break;
+            }
+        }
+        
+        console.log('Mobile device detected, initial quality:', initialQuality);
+    }
+    
+    // Create player with mobile optimizations
+    const player = createUniversalPlayer(video, url);
+    
+    // Add mobile-specific event handlers
+    if (isMobile) {
+        setupMobileEventHandlers(video);
+    }
+    
+    return player;
+}
+
+function setupMobileEventHandlers(video) {
+    // Handle orientation changes
+    window.addEventListener('orientationchange', function() {
+        setTimeout(() =&gt; {
+            if (video.requestFullscreen && screen.orientation.angle !== 0) {
+                video.requestFullscreen();
+            }
+        }, 500);
+    });
+    
+    // Handle visibility changes (app backgrounding)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            video.pause();
+        }
+    });
+    
+    // Optimize for touch interactions
+    video.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent zoom on double-tap
+    });
+}</pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-exclamation-triangle icon-large"></i>Troubleshooting Common Issues</h2>
+            <p>Even with proper implementation, you may encounter various issues when embedding M3U8 players. Here are the most common problems and their solutions:</p>
+
+            <h3><i class="fas fa-bug"></i> Common Error Types and Solutions</h3>
+
+            <div class="method-card">
+                <h4><i class="fas fa-network-wired"></i> Network and Loading Errors</h4>
+                <p><strong>Symptoms:</strong> "Failed to load resource", "Network error", or infinite loading</p>
+                
+                <div class="code-title">Network Error Handling</div>
+                <div class="code-example with-title">
+<pre>function handleNetworkErrors(hls) {
+    hls.on(Hls.Events.ERROR, function(event, data) {
+        if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+            console.log('Network error details:', data);
+            
+            switch(data.details) {
+                case Hls.ErrorDetails.MANIFEST_LOAD_ERROR:
+                    console.log('Failed to load playlist');
+                    showUserError('Unable to load video playlist. Please check the URL.');
+                    break;
+                    
+                case Hls.ErrorDetails.MANIFEST_LOAD_TIMEOUT:
+                    console.log('Playlist load timeout');
+                    showUserError('Loading timeout. Please check your internet connection.');
+                    break;
+                    
+                case Hls.ErrorDetails.FRAG_LOAD_ERROR:
+                    console.log('Fragment load error, attempting retry...');
+                    if (data.frag && data.frag.loadCounter &lt; 3) {
+                        hls.startLoad();
+                    } else {
+                        showUserError('Video segments failed to load. Stream may be unavailable.');
+                    }
+                    break;
+                    
+                default:
+                    console.log('Other network error:', data.details);
+                    showUserError('Network error occurred. Please try again later.');
+            }
+        }
+    });
+}
+
+function showUserError(message) {
+    // Create user-friendly error display
+    const errorContainer = document.createElement('div');
+    errorContainer.className = 'error-overlay';
+    errorContainer.innerHTML = `
+        &lt;div class="error-content"&gt;
+            &lt;i class="fas fa-exclamation-circle"&gt;&lt;/i&gt;
+            &lt;h3&gt;Playback Error&lt;/h3&gt;
+            &lt;p&gt;${message}&lt;/p&gt;
+            &lt;button onclick="retryPlayback()"&gt;Try Again&lt;/button&gt;
+        &lt;/div&gt;
+    `;
+    
+    document.querySelector('.video-container').appendChild(errorContainer);
+}</pre>
+                </div>
+
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Verify the M3U8 URL is accessible and returns valid content</li>
+                    <li>Check for CORS (Cross-Origin Resource Sharing) issues</li>
+                    <li>Implement retry logic with exponential backoff</li>
+                    <li>Provide fallback URLs or alternative streams</li>
+                    <li>Test with different CDN endpoints</li>
+                </ul>
+            </div>
+
+            <div class="method-card">
+                <h4><i class="fas fa-shield-alt"></i> CORS (Cross-Origin) Issues</h4>
+                <p><strong>Symptoms:</strong> "Access blocked by CORS policy" errors in browser console</p>
+                
+                <div class="code-title">CORS Detection and Handling</div>
+                <div class="code-example with-title">
+<pre>function checkCORSSupport(url) {
+    return new Promise((resolve, reject) =&gt; {
+        const xhr = new XMLHttpRequest();
+        xhr.open('HEAD', url, true);
+        
+        xhr.onload = function() {
+            if (xhr.status &gt;= 200 && xhr.status &lt; 300) {
+                resolve(true);
+            } else {
+                reject(new Error(`HTTP ${xhr.status}: ${xhr.statusText}`));
+            }
+        };
+        
+        xhr.onerror = function() {
+            reject(new Error('CORS request failed'));
+        };
+        
+        xhr.ontimeout = function() {
+            reject(new Error('Request timeout'));
+        };
+        
+        xhr.timeout = 10000; // 10 second timeout
+        xhr.send();
+    });
+}
+
+async function loadWithCORSCheck(video, url) {
+    try {
+        await checkCORSSupport(url);
+        console.log('CORS check passed, loading stream...');
+        return createUniversalPlayer(video, url);
+    } catch (error) {
+        console.error('CORS check failed:', error);
+        
+        // Try alternative approaches
+        if (error.message.includes('CORS')) {
+            showCORSError();
+            return tryProxyApproach(video, url);
+        } else {
+            throw error;
+        }
+    }
+}
+
+function showCORSError() {
+    console.warn('CORS issue detected. This may prevent playback.');
+    // Inform user about CORS limitations
+    const warning = document.createElement('div');
+    warning.className = 'cors-warning';
+    warning.innerHTML = `
+        &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This stream may have CORS restrictions. 
+        If playback fails, the stream provider needs to enable CORS headers.&lt;/p&gt;
+    `;
+    document.querySelector('.video-container').appendChild(warning);
+}
+
+function tryProxyApproach(video, url) {
+    // Note: Using proxy services should be done carefully and with proper authorization
+    console.warn('Attempting proxy approach for CORS-restricted stream');
+    
+    // This is just an example - implement your own proxy solution
+    const proxyUrl = `https://your-proxy-service.com/proxy?url=${encodeURIComponent(url)}`;
+    return createUniversalPlayer(video, proxyUrl);
+}</pre>
+                </div>
+
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Contact the stream provider to enable CORS headers</li>
+                    <li>Use a proxy server (with proper authorization)</li>
+                    <li>Serve your application from the same domain as the stream</li>
+                    <li>Use server-side streaming solutions</li>
+                </ul>
+            </div>
+
+            <div class="method-card">
+                <h4><i class="fas fa-play-circle"></i> Playback and Media Errors</h4>
+                <p><strong>Symptoms:</strong> Black screen, audio without video, or codec errors</p>
+                
+                <div class="code-title">Media Error Recovery</div>
+                <div class="code-example with-title">
+<pre>function handleMediaErrors(hls) {
+    let mediaErrorRecoveryCount = 0;
+    const maxRecoveryAttempts = 3;
+    
+    hls.on(Hls.Events.ERROR, function(event, data) {
+        if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+            console.log('Media error detected:', data.details);
+            
+            if (mediaErrorRecoveryCount < maxRecoveryAttempts) {
+                mediaErrorRecoveryCount++;
+                console.log(`Attempting media error recovery (${mediaErrorRecoveryCount}/${maxRecoveryAttempts})`);
+                
+                setTimeout(() => {
+                    hls.recoverMediaError();
+                }, 1000 * mediaErrorRecoveryCount); // Exponential backoff
+            } else {
+                console.error('Max media error recovery attempts reached');
+                showUserError('Video format not supported or corrupted stream.');
+                
+                // Try alternative approach
+                tryAlternativePlayback(hls.media, hls.url);
+            }
+        }
+    });
+    
+    // Reset counter on successful recovery
+    hls.on(Hls.Events.MEDIA_ATTACHED, function() {
+        mediaErrorRecoveryCount = 0;
+    });
+}
+
+function tryAlternativePlayback(video, url) {
+    console.log('Trying alternative playback method...');
+    
+    // Destroy current HLS instance
+    if (window.currentHLS) {
+        window.currentHLS.destroy();
+    }
+    
+    // Try native playback as fallback
+    video.src = url;
+    video.load();
+    
+    video.addEventListener('error', function(e) {
+        console.error('Alternative playback also failed:', e);
+        showFinalError();
+    }, { once: true });
+}</pre>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h4><i class="fas fa-mobile-alt"></i> Mobile-Specific Issues</h4>
+                <p><strong>Common mobile problems and solutions:</strong></p>
+                <ul>
+                    <li><strong>Autoplay Blocked:</strong> Require user interaction before playing</li>
+                    <li><strong>iOS Fullscreen:</strong> Use `playsinline` attribute to prevent forced fullscreen</li>
+                    <li><strong>Android Chrome Issues:</strong> Test with different HLS.js configurations</li>
+                    <li><strong>Touch Controls:</strong> Ensure controls are properly sized for touch</li>
+                </ul>
+                
+                <div class="code-title">Mobile Issue Detection</div>
+                <div class="code-example with-title">
+<pre>function detectMobileIssues() {
+    const userAgent = navigator.userAgent;
+    const issues = [];
+    
+    // Check for known problematic browsers
+    if (/iPhone|iPad/.test(userAgent) && /OS 1[0-2]_/.test(userAgent)) {
+        issues.push('iOS 10-12 may have HLS playback issues');
+    }
+    
+    if (/Android.*Chrome\/[4-6][0-9]/.test(userAgent)) {
+        issues.push('Older Chrome on Android may need MSE polyfills');
+    }
+    
+    // Check for autoplay capability
+    const video = document.createElement('video');
+    video.muted = true;
+    const playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            issues.push('Autoplay blocked - user interaction required');
+        });
+    }
+    
+    return issues;
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-tachometer-alt icon-large"></i>Performance Optimization</h2>
+            <p>Optimizing your M3U8 player for performance ensures smooth playback and better user experience across all devices and network conditions.</p>
+
+            <h3><i class="fas fa-rocket"></i> Buffer Management</h3>
+            
+            <div class="code-title">Optimized HLS.js Configuration</div>
+            <div class="code-example with-title">
+<pre>function createOptimizedHLS() {
+    const hls = new Hls({
+        // Buffer settings for optimal performance
+        maxBufferLength: 30,              // Maximum buffer length in seconds
+        maxMaxBufferLength: 600,          // Maximum buffer length for high bitrate
+        maxBufferSize: 60 * 1000 * 1000, // Maximum buffer size in bytes (60MB)
+        maxBufferHole: 0.5,               // Maximum gap in buffer
+        
+        // Low latency settings
+        lowLatencyMode: true,             // Enable low latency mode
+        backBufferLength: 90,             // Keep 90 seconds of back buffer
+        
+        // Fragment loading optimization
+        fragLoadingTimeOut: 20000,        // Fragment loading timeout
+        fragLoadingMaxRetry: 6,           // Maximum fragment retry attempts
+        fragLoadingRetryDelay: 1000,      // Delay between retries
+        
+        // Manifest optimization
+        manifestLoadingTimeOut: 10000,    // Manifest loading timeout
+        manifestLoadingMaxRetry: 1,       // Manifest retry attempts
+        
+        // Quality switching
+        abrEwmaDefaultEstimate: 500000,   // Default bandwidth estimate
+        abrEwmaSlowVoD: 3.0,             // Slow VoD factor
+        abrEwmaFastVoD: 3.0,             // Fast VoD factor
+        abrEwmaSlowLive: 9.0,            // Slow live factor
+        abrEwmaFastLive: 3.0,            // Fast live factor
+        
+        // Advanced settings
+        enableWorker: true,               // Use web workers when available
+        enableSoftwareAES: true,          // Enable software AES decryption
+        startFragPrefetch: false,         // Disable fragment prefetching
+        testBandwidth: true               // Enable bandwidth testing
+    });
+    
+    return hls;
+}</pre>
+            </div>
+
+            <h3><i class="fas fa-chart-line"></i> Adaptive Bitrate Optimization</h3>
+            
+            <div class="code-title">Custom ABR Logic</div>
+            <div class="code-example with-title">
+<pre>function setupCustomABR(hls) {
+    let bandwidthHistory = [];
+    const maxHistoryLength = 10;
+    
+    hls.on(Hls.Events.FRAG_LOADED, function(event, data) {
+        // Track bandwidth performance
+        const bandwidth = data.frag.loaded * 8 / (data.stats.loading.end - data.stats.loading.start) * 1000;
+        
+        bandwidthHistory.push(bandwidth);
+        if (bandwidthHistory.length > maxHistoryLength) {
+            bandwidthHistory.shift();
+        }
+        
+        // Calculate average bandwidth
+        const avgBandwidth = bandwidthHistory.reduce((a, b) => a + b, 0) / bandwidthHistory.length;
+        
+        // Custom quality selection logic
+        adjustQualityBasedOnBandwidth(hls, avgBandwidth);
+    });
+    
+    // Monitor buffer health
+    hls.on(Hls.Events.BUFFER_APPENDED, function() {
+        const video = hls.media;
+        if (video) {
+            const bufferLength = video.buffered.length > 0 ? 
+                video.buffered.end(video.buffered.length - 1) - video.currentTime : 0;
+            
+            if (bufferLength < 5) {
+                // Low buffer - consider reducing quality
+                console.log('Low buffer detected, may need to reduce quality');
+            }
+        }
+    });
+}
+
+function adjustQualityBasedOnBandwidth(hls, bandwidth) {
+    const levels = hls.levels;
+    const currentLevel = hls.currentLevel;
+    
+    // Find optimal level based on bandwidth
+    let targetLevel = -1; // Auto
+    
+    for (let i = levels.length - 1; i >= 0; i--) {
+        if (bandwidth > levels[i].bitrate * 1.2) { // 20% safety margin
+            targetLevel = i;
+            break;
+        }
+    }
+    
+    if (targetLevel !== currentLevel && targetLevel !== -1) {
+        console.log(`Switching quality from level ${currentLevel} to ${targetLevel}`);
+        hls.currentLevel = targetLevel;
+    }
+}</pre>
+            </div>
+
+            <h3><i class="fas fa-memory"></i> Memory Management</h3>
+            
+            <div class="info-box">
+                <p><strong>Memory Optimization Tips:</strong></p>
+                <ul>
+                    <li>Properly destroy player instances when switching videos</li>
+                    <li>Limit back buffer length to prevent memory bloat</li>
+                    <li>Monitor memory usage in development tools</li>
+                    <li>Implement garbage collection for unused segments</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-shield-alt icon-large"></i>Security Considerations</h2>
+            <p>When embedding M3U8 players, security should be a top priority to protect both your application and users.</p>
+
+            <h3><i class="fas fa-lock"></i> Content Security Policy (CSP)</h3>
+            
+            <div class="code-title">CSP Configuration for M3U8 Players</div>
+            <div class="code-example with-title">
+<pre>&lt;!-- Add to your HTML head section --&gt;
+&lt;meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://vjs.zencdn.net;
+    style-src 'self' 'unsafe-inline' https://vjs.zencdn.net;
+    media-src 'self' https: data: blob:;
+    connect-src 'self' https: wss:;
+    worker-src 'self' blob:;
+    child-src 'self' blob:;
+"&gt;</pre>
+            </div>
+
+            <h3><i class="fas fa-user-shield"></i> Input Validation</h3>
+            
+            <div class="code-title">URL Validation and Sanitization</div>
+            <div class="code-example with-title">
+<pre>function validateM3U8Url(url) {
+    try {
+        const urlObj = new URL(url);
+        
+        // Check protocol
+        if (!['http:', 'https:'].includes(urlObj.protocol)) {
+            throw new Error('Only HTTP and HTTPS protocols are allowed');
+        }
+        
+        // Check for suspicious patterns
+        const suspiciousPatterns = [
+            /javascript:/i,
+            /data:/i,
+            /vbscript:/i,
+            /file:/i,
+            /ftp:/i
+        ];
+        
+        for (const pattern of suspiciousPatterns) {
+            if (pattern.test(url)) {
+                throw new Error('Suspicious URL pattern detected');
+            }
+        }
+        
+        // Validate M3U8 extension or parameter
+        const isM3U8 = urlObj.pathname.toLowerCase().includes('.m3u8') ||
+                      urlObj.search.toLowerCase().includes('m3u8') ||
+                      urlObj.pathname.toLowerCase().includes('.m3u');
+        
+        if (!isM3U8) {
+            console.warn('URL does not appear to be an M3U8 stream');
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('URL validation failed:', error.message);
+        return false;
+    }
+}
+
+function sanitizeUserInput(input) {
+    // Remove potentially dangerous characters
+    return input
+        .trim()
+        .replace(/[<>'"]/g, '') // Remove HTML/JS injection characters
+        .replace(/\s+/g, ' ')   // Normalize whitespace
+        .substring(0, 2048);    // Limit length
+}</pre>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>Security Warning:</strong> Never trust user-provided URLs without validation. Always implement proper input sanitization and consider using a whitelist of allowed domains for production applications.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-lightbulb icon-large"></i>Advanced Tips and Best Practices</h2>
+            <p>Take your M3U8 player implementation to the next level with these advanced techniques and industry best practices.</p>
+
+            <h3><i class="fas fa-analytics"></i> Analytics and Monitoring</h3>
+            
+            <div class="code-title">Player Analytics Implementation</div>
+            <div class="code-example with-title">
+<pre>function setupPlayerAnalytics(player) {
+    const analytics = {
+        sessionId: generateSessionId(),
+        startTime: Date.now(),
+        events: []
+    };
+    
+    // Track key events
+    const eventsToTrack = [
+        'loadstart', 'loadedmetadata', 'canplay', 'play', 'pause', 
+        'ended', 'error', 'waiting', 'seeking', 'seeked'
+    ];
+    
+    eventsToTrack.forEach(eventType => {
+        player.addEventListener(eventType, function(event) {
+            const eventData = {
+                type: eventType,
+                timestamp: Date.now(),
+                currentTime: player.currentTime,
+                duration: player.duration,
+                buffered: getBufferedRanges(player),
+                quality: getCurrentQuality(player)
+            };
+            
+            analytics.events.push(eventData);
+            
+            // Send to analytics service (implement your own)
+            sendAnalyticsEvent(eventData);
+        });
+    });
+    
+    // Track quality changes
+    if (window.hls) {
+        window.hls.on(Hls.Events.LEVEL_SWITCHED, function(event, data) {
+            const eventData = {
+                type: 'quality_change',
+                timestamp: Date.now(),
+                newLevel: data.level,
+                newBitrate: window.hls.levels[data.level].bitrate
+            };
+            
+            analytics.events.push(eventData);
+            sendAnalyticsEvent(eventData);
+        });
+    }
+    
+    return analytics;
+}
+
+function getBufferedRanges(video) {
+    const ranges = [];
+    for (let i = 0; i < video.buffered.length; i++) {
+        ranges.push({
+            start: video.buffered.start(i),
+            end: video.buffered.end(i)
+        });
+    }
+    return ranges;
+}</pre>
+            </div>
+
+            <h3><i class="fas fa-cog"></i> Custom Controls Implementation</h3>
+            
+            <div class="code-title">Custom Player Controls</div>
+            <div class="code-example with-title">
+<pre>function createCustomControls(video) {
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'custom-controls';
+    
+    // Play/Pause button
+    const playButton = document.createElement('button');
+    playButton.innerHTML = '&lt;i class="fas fa-play"&gt;&lt;/i&gt;';
+    playButton.onclick = togglePlayPause;
+    
+    // Progress bar
+    const progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar';
+    progressBar.innerHTML = `
+        &lt;div class="progress-track"&gt;
+            &lt;div class="progress-fill"&gt;&lt;/div&gt;
+            &lt;div class="progress-handle"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    `;
+    
+    // Volume control
+    const volumeControl = document.createElement('div');
+    volumeControl.className = 'volume-control';
+    volumeControl.innerHTML = `
+        &lt;button class="volume-button"&gt;&lt;i class="fas fa-volume-up"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"&gt;
+    `;
+    
+    // Quality selector
+    const qualitySelector = document.createElement('select');
+    qualitySelector.className = 'quality-selector';
+    
+    // Fullscreen button
+    const fullscreenButton = document.createElement('button');
+    fullscreenButton.innerHTML = '&lt;i class="fas fa-expand"&gt;&lt;/i&gt;';
+    fullscreenButton.onclick = toggleFullscreen;
+    
+    // Assemble controls
+    controlsContainer.appendChild(playButton);
+    controlsContainer.appendChild(progressBar);
+    controlsContainer.appendChild(volumeControl);
+    controlsContainer.appendChild(qualitySelector);
+    controlsContainer.appendChild(fullscreenButton);
+    
+    // Add event listeners
+    setupControlsEventListeners(video, controlsContainer);
+    
+    return controlsContainer;
+}
+
+function setupControlsEventListeners(video, controls) {
+    // Update progress bar
+    video.addEventListener('timeupdate', function() {
+        const progress = (video.currentTime / video.duration) * 100;
+        const progressFill = controls.querySelector('.progress-fill');
+        progressFill.style.width = progress + '%';
+    });
+    
+    // Handle progress bar clicks
+    const progressTrack = controls.querySelector('.progress-track');
+    progressTrack.addEventListener('click', function(e) {
+        const rect = progressTrack.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percentage = clickX / rect.width;
+        video.currentTime = percentage * video.duration;
+    });
+    
+    // Volume control
+    const volumeSlider = controls.querySelector('.volume-slider');
+    volumeSlider.addEventListener('input', function() {
+        video.volume = this.value;
+        updateVolumeIcon(this.value);
+    });
+}</pre>
+            </div>
+
+            <div class="success-box">
+                <p><strong>Congratulations!</strong> You now have a comprehensive understanding of how to embed M3U8 players in web pages. Remember to test thoroughly across different browsers and devices, implement proper error handling, and follow security best practices.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/post/what-is-a-m3u8-file.html">What is M3U8?</a>
+            <a href="/post/how-to-play-a-m3u8-file.html">How to Play M3U8</a>
+        </div>
+        <p>&copy; 2024 M3U8 Player Online. All rights reserved.</p>
+        <p>Free online M3U8 player for streaming HLS videos</p>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        
+        // Update theme toggle icon
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+        
+        updateThemeIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        // Language dropdown functionality
+        const languageBtn = document.getElementById('languageBtn');
+        const languageDropdown = document.getElementById('languageDropdown');
+        
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            languageDropdown.classList.remove('show');
+        });
+        
+        // Prevent dropdown from closing when clicking inside
+        languageDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add copy functionality to code examples
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-button';
+            copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+            copyButton.title = 'Copy code';
+            
+            copyButton.addEventListener('click', function() {
+                const code = codeBlock.querySelector('pre').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 0.5rem;
+                right: 0.5rem;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: none;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.2s;
+            `;
+            
+            codeBlock.addEventListener('mouseenter', () => {
+                copyButton.style.opacity = '1';
+            });
+            
+            codeBlock.addEventListener('mouseleave', () => {
+                copyButton.style.opacity = '0';
+            });
+            
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

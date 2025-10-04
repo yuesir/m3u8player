@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How to Play M3U8 Files on Windows Phone - Complete Guide | M3U8 Player Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to play M3U8 files on Windows Phone with our comprehensive guide. Discover compatible Windows Phone apps, installation methods, and step-by-step instructions for mobile M3U8 playback.">
+    <meta name="keywords" content="M3U8 Windows Phone, Windows Phone M3U8 player, VLC Windows Phone, CCPlayer, Perfect Video, Multimedia 8, Windows Mobile M3U8, mobile streaming">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">  
+    <meta name="author" content="M3U8 Player Online">
+    <meta property="og:title" content="How to Play M3U8 Files on Windows Phone - Complete Guide">
+    <meta property="og:description" content="Learn how to play M3U8 files on Windows Phone with our comprehensive guide. Discover compatible Windows Phone apps and mobile streaming solutions.">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Play M3U8 Files on Windows Phone - Complete Guide">
+    <meta name="twitter:description" content="Learn how to play M3U8 files on Windows Phone with our comprehensive guide. Discover compatible Windows Phone apps and mobile streaming solutions.">
+    <meta name="google-adsense-account" content="ca-pub-3161682431818340">
+    <link rel="canonical" href="https://m3u8player.co/post/how-to-play-m3u8-files-on-windows-phone.html">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3161682431818340"
+     crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 150px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+        }
+
+        .language-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .language-option:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .language-option:first-child {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .language-option:last-child {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem 0;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: var(--text-primary);
+        }
+
+        .content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            color: var(--text-primary);
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .content strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .content code {
+            background: var(--surface-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+            border: 1px solid var(--border-color);
+        }
+
+        .content pre {
+            background: var(--surface-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .content pre code {
+            background: none;
+            padding: 0;
+            border: none;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        [data-theme="dark"] .info-box {
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            color: #e0e7ff;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        [data-theme="dark"] .warning-box {
+            background: linear-gradient(135deg, #92400e, #b45309);
+            color: #fef3c7;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        [data-theme="dark"] .success-box {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            color: #d1fae5;
+        }
+
+        .app-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .app-info h4 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .app-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-item::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--surface-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        [data-theme="dark"] .comparison-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .toc {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .content h3 {
+                font-size: 1.3rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-play-circle"></i>
+                M3U8 Player
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/post/list.html" class="active">Guides</a>
+                <a href="/about.html">About</a>
+                <div class="language-selector">
+                    <button class="language-btn" onclick="toggleLanguageDropdown()">
+                        <i class="fas fa-globe"></i>
+                        EN
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="/bn/" class="language-option">বাংলা</a>
+                        <a href="/id/" class="language-option">Bahasa Indonesia</a>
+                        <a href="/it/" class="language-option">Italiano</a>
+                        <a href="/ja/" class="language-option">日本語</a>
+                        <a href="/ko/" class="language-option">한국어</a>
+                        <a href="/pt/" class="language-option">Português</a>
+                        <a href="/ru/" class="language-option">Русский</a>
+                        <a href="/sr/" class="language-option">Српски</a>
+                        <a href="/tr/" class="language-option">Türkçe</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="article-header">
+            <h1 class="article-title">How to Play M3U8 Files on Windows Phone</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> December 8, 2024</span>
+                <span><i class="fas fa-clock"></i> 18 min read</span>
+                <span><i class="fas fa-mobile-alt"></i> Windows Phone Guide</span>
+            </div>
+            <p class="article-description">
+                Discover how to play M3U8 files on Windows Phone devices with our comprehensive guide. Learn about compatible apps, installation methods, and troubleshooting tips for seamless mobile streaming.
+            </p>
+        </div>
+
+        <div class="toc">
+            <h3><i class="fas fa-list"></i> Table of Contents</h3>
+            <ul>
+                <li><a href="#introduction">Introduction to M3U8 on Windows Phone</a></li>
+                <li><a href="#supported-apps">Supported Windows Phone Apps</a></li>
+                <li><a href="#vlc-windows-phone">VLC for Windows Phone</a></li>
+                <li><a href="#ccplayer">CCPlayer</a></li>
+                <li><a href="#perfect-video">Perfect Video</a></li>
+                <li><a href="#multimedia-8">Multimedia 8</a></li>
+                <li><a href="#browser-playback">Browser-Based Playback</a></li>
+                <li><a href="#file-transfer">File Transfer Methods</a></li>
+                <li><a href="#limitations">Windows Phone Limitations</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#optimization">Performance Optimization</a></li>
+                <li><a href="#comparison">App Comparison</a></li>
+                <li><a href="#alternatives">Alternative Solutions</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <section id="introduction">
+                <h2><i class="fas fa-mobile-alt"></i> Introduction to M3U8 on Windows Phone</h2>
+                <p>
+                    Windows Phone, Microsoft's mobile operating system, had unique challenges when it came to playing M3U8 files. While the platform is now discontinued, many users still rely on Windows Phone devices and need solutions for streaming M3U8 content.
+                </p>
+                <p>
+                    M3U8 files are HTTP Live Streaming (HLS) playlists that contain references to video segments. Playing these files on Windows Phone requires specialized apps that can handle the HLS protocol and stream content effectively on mobile networks.
+                </p>
+
+                <div class="info-box">
+                    <strong><i class="fas fa-info-circle"></i> Important Note:</strong>
+                    Windows Phone is no longer supported by Microsoft as of December 2019. However, existing devices can still function and play M3U8 content with the right applications.
+                </div>
+            </section>
+
+            <section id="supported-apps">
+                <h2><i class="fas fa-mobile-alt"></i> Supported Windows Phone Apps</h2>
+                <p>
+                    Several applications on Windows Phone can handle M3U8 files effectively. Here are the most reliable options:
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="feature-title">VLC for Windows Phone</div>
+                        <div class="feature-description">The most reliable and feature-rich M3U8 player for Windows Phone</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="feature-title">CCPlayer</div>
+                        <div class="feature-description">Lightweight player with good M3U8 support and subtitle features</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="feature-title">Perfect Video</div>
+                        <div class="feature-description">Advanced video player with streaming capabilities</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="feature-title">Multimedia 8</div>
+                        <div class="feature-description">Comprehensive media player with M3U8 playlist support</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="vlc-windows-phone">
+                <h2><i class="fab fa-windows"></i> VLC for Windows Phone</h2>
+                <p>
+                    VLC for Windows Phone is the most recommended application for playing M3U8 files. It offers excellent compatibility and streaming performance.
+                </p>
+
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="app-info">
+                            <h4>VLC for Windows Phone</h4>
+                            <div class="app-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.5/5 - Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Native M3U8 and HLS support</li>
+                        <li>Network streaming capabilities</li>
+                        <li>Multiple audio track support</li>
+                        <li>Subtitle support (SRT, VTT)</li>
+                        <li>Gesture controls</li>
+                        <li>Background audio playback</li>
+                    </ul>
+                </div>
+
+                <h3>Installation Steps</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Open Windows Phone Store</strong><br>
+                        Launch the Windows Phone Store app on your device.
+                    </div>
+                    <div class="step-item">
+                        <strong>Search for VLC</strong><br>
+                        Use the search function to find "VLC for Windows Phone" by VideoLAN.
+                    </div>
+                    <div class="step-item">
+                        <strong>Install the App</strong><br>
+                        Tap "Install" and wait for the download to complete.
+                    </div>
+                    <div class="step-item">
+                        <strong>Launch VLC</strong><br>
+                        Open VLC from your app list or start screen.
+                    </div>
+                </div>
+
+                <h3>Playing M3U8 Files with VLC</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Open Network Stream</strong><br>
+                        In VLC, tap the menu button (three dots) and select "Open Network Stream."
+                    </div>
+                    <div class="step-item">
+                        <strong>Enter M3U8 URL</strong><br>
+                        Paste or type the M3U8 file URL in the network address field.
+                    </div>
+                    <div class="step-item">
+                        <strong>Start Playback</strong><br>
+                        Tap "Play" to begin streaming the M3U8 content.
+                    </div>
+                    <div class="step-item">
+                        <strong>Adjust Settings</strong><br>
+                        Use playback controls to adjust volume, quality, and other settings.
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong><i class="fas fa-check-circle"></i> Pro Tip:</strong>
+                    VLC can save M3U8 URLs in favorites for quick access. Use the bookmark feature to save frequently accessed streams.
+                </div>
+            </section>
+
+            <section id="ccplayer">
+                <h2><i class="fas fa-play"></i> CCPlayer</h2>
+                <p>
+                    CCPlayer is a lightweight alternative that offers good M3U8 support with additional features like subtitle management and gesture controls.
+                </p>
+
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="app-info">
+                            <h4>CCPlayer</h4>
+                            <div class="app-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>4.2/5 - Free with ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>M3U8 playlist support</li>
+                        <li>Advanced subtitle options</li>
+                        <li>Gesture-based controls</li>
+                        <li>Multiple video formats</li>
+                        <li>Sleep timer functionality</li>
+                    </ul>
+                </div>
+
+                <h3>Using CCPlayer for M3U8</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Install CCPlayer</strong><br>
+                        Download CCPlayer from the Windows Phone Store.
+                    </div>
+                    <div class="step-item">
+                        <strong>Access Network Options</strong><br>
+                        Open CCPlayer and navigate to the network or streaming section.
+                    </div>
+                    <div class="step-item">
+                        <strong>Add M3U8 URL</strong><br>
+                        Enter your M3U8 file URL in the network stream field.
+                    </div>
+                    <div class="step-item">
+                        <strong>Configure Playback</strong><br>
+                        Adjust quality settings and enable subtitles if needed.
+                    </div>
+                </div>
+            </section>
+
+            <section id="perfect-video">
+                <h2><i class="fas fa-video"></i> Perfect Video</h2>
+                <p>
+                    Perfect Video offers advanced streaming capabilities and is particularly good for high-quality M3U8 content playback on Windows Phone.
+                </p>
+
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="app-info">
+                            <h4>Perfect Video</h4>
+                            <div class="app-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>4.0/5 - Paid app</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Notable Features:</strong></p>
+                    <ul>
+                        <li>High-quality streaming support</li>
+                        <li>Advanced playback controls</li>
+                        <li>Network optimization</li>
+                        <li>Multiple audio tracks</li>
+                        <li>Playlist management</li>
+                    </ul>
+                </div>
+
+                <h3>Setup Process</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Purchase and Install</strong><br>
+                        Buy Perfect Video from the Windows Phone Store and install it.
+                    </div>
+                    <div class="step-item">
+                        <strong>Configure Network Settings</strong><br>
+                        Set up network preferences for optimal streaming performance.
+                    </div>
+                    <div class="step-item">
+                        <strong>Add M3U8 Source</strong><br>
+                        Use the "Add Network Source" option to input your M3U8 URL.
+                    </div>
+                    <div class="step-item">
+                        <strong>Optimize Quality</strong><br>
+                        Adjust streaming quality based on your network connection.
+                    </div>
+                </div>
+            </section>
+
+            <section id="multimedia-8">
+                <h2><i class="fas fa-film"></i> Multimedia 8</h2>
+                <p>
+                    Multimedia 8 is a comprehensive media player that includes M3U8 playlist support and various multimedia features designed for Windows Phone.
+                </p>
+
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="app-info">
+                            <h4>Multimedia 8</h4>
+                            <div class="app-rating">
+                                <span class="stars">★★★☆☆</span>
+                                <span>3.8/5 - Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Features Include:</strong></p>
+                    <ul>
+                        <li>M3U8 playlist parsing</li>
+                        <li>Local and network playback</li>
+                        <li>Basic media library</li>
+                        <li>Simple interface design</li>
+                        <li>Background playback support</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="browser-playback">
+                <h2><i class="fas fa-globe"></i> Browser-Based Playback</h2>
+                <p>
+                    Windows Phone browsers have limited M3U8 support, but some workarounds exist for basic playback functionality.
+                </p>
+
+                <h3>Internet Explorer Mobile</h3>
+                <p>
+                    Internet Explorer Mobile on Windows Phone has basic HLS support but may struggle with complex M3U8 files.
+                </p>
+
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Open Internet Explorer</strong><br>
+                        Launch the built-in Internet Explorer browser.
+                    </div>
+                    <div class="step-item">
+                        <strong>Navigate to M3U8 URL</strong><br>
+                        Enter the M3U8 file URL directly in the address bar.
+                    </div>
+                    <div class="step-item">
+                        <strong>Allow Playback</strong><br>
+                        If prompted, allow the browser to play the media content.
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong><i class="fas fa-exclamation-triangle"></i> Browser Limitations:</strong>
+                    Browser playback on Windows Phone is limited and may not work with all M3U8 files. Dedicated apps are recommended for better compatibility.
+                </div>
+            </section>
+
+            <section id="file-transfer">
+                <h2><i class="fas fa-exchange-alt"></i> File Transfer Methods</h2>
+                <p>
+                    Getting M3U8 files or URLs to your Windows Phone can be accomplished through several methods:
+                </p>
+
+                <h3>OneDrive Integration</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Upload to OneDrive</strong><br>
+                        Save M3U8 files or URLs to your OneDrive account from a computer.
+                    </div>
+                    <div class="step-item">
+                        <strong>Access on Phone</strong><br>
+                        Open OneDrive app on your Windows Phone to access the files.
+                    </div>
+                    <div class="step-item">
+                        <strong>Copy URLs</strong><br>
+                        Copy M3U8 URLs from OneDrive and paste them into your media player.
+                    </div>
+                </div>
+
+                <h3>Email Method</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Email M3U8 URLs</strong><br>
+                        Send M3U8 URLs to yourself via email from a computer.
+                    </div>
+                    <div class="step-item">
+                        <strong>Open on Phone</strong><br>
+                        Access your email on Windows Phone and copy the URLs.
+                    </div>
+                    <div class="step-item">
+                        <strong>Paste in Player</strong><br>
+                        Use the copied URLs in your preferred M3U8 player app.
+                    </div>
+                </div>
+
+                <h3>USB Transfer</h3>
+                <p>
+                    For local M3U8 files, you can transfer them via USB connection to your computer:
+                </p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Connect to PC</strong><br>
+                        Connect your Windows Phone to a computer via USB.
+                    </div>
+                    <div class="step-item">
+                        <strong>Copy Files</strong><br>
+                        Copy M3U8 files to your phone's storage or SD card.
+                    </div>
+                    <div class="step-item">
+                        <strong>Access via File Manager</strong><br>
+                        Use a file manager app to locate and open the transferred files.
+                    </div>
+                </div>
+            </section>
+
+            <section id="limitations">
+                <h2><i class="fas fa-exclamation-circle"></i> Windows Phone Limitations</h2>
+                <p>
+                    Windows Phone has several inherent limitations when it comes to M3U8 playback that users should be aware of:
+                </p>
+
+                <h3>Technical Constraints</h3>
+                <ul>
+                    <li><strong>Limited App Ecosystem:</strong> Fewer M3U8-compatible apps compared to Android or iOS</li>
+                    <li><strong>Browser Limitations:</strong> Internet Explorer Mobile has poor HLS support</li>
+                    <li><strong>Codec Support:</strong> Limited codec support may affect some M3U8 streams</li>
+                    <li><strong>Network Performance:</strong> Older hardware may struggle with high-bitrate streams</li>
+                    <li><strong>Background Processing:</strong> Limited background processing capabilities</li>
+                </ul>
+
+                <h3>Workarounds</h3>
+                <div class="info-box">
+                    <strong><i class="fas fa-lightbulb"></i> Solutions:</strong>
+                    <ul>
+                        <li>Use VLC as the primary M3U8 player for best compatibility</li>
+                        <li>Convert M3U8 streams to MP4 format when possible</li>
+                        <li>Use lower quality settings for better performance</li>
+                        <li>Ensure strong Wi-Fi connection for streaming</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="troubleshooting">
+                <h2><i class="fas fa-wrench"></i> Troubleshooting</h2>
+                <p>
+                    Common issues and solutions for M3U8 playback on Windows Phone:
+                </p>
+
+                <h3>Playback Issues</h3>
+                <div class="warning-box">
+                    <strong>Problem:</strong> M3U8 file won't play or shows error message
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Verify the M3U8 URL is correct and accessible</li>
+                        <li>Check your internet connection strength</li>
+                        <li>Try a different M3U8 player app</li>
+                        <li>Restart the app and try again</li>
+                        <li>Clear app cache if available</li>
+                    </ul>
+                </div>
+
+                <h3>Streaming Problems</h3>
+                <div class="warning-box">
+                    <strong>Problem:</strong> Frequent buffering or poor video quality
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Switch to a Wi-Fi connection if using cellular data</li>
+                        <li>Lower the video quality settings in the player</li>
+                        <li>Close other apps to free up system resources</li>
+                        <li>Check if the M3U8 source supports adaptive bitrate</li>
+                    </ul>
+                </div>
+
+                <h3>Audio Issues</h3>
+                <div class="warning-box">
+                    <strong>Problem:</strong> No audio or audio sync issues
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Check device volume and mute settings</li>
+                        <li>Try different audio track if available</li>
+                        <li>Restart the media player application</li>
+                        <li>Test with a different M3U8 file to isolate the issue</li>
+                    </ul>
+                </div>
+
+                <h3>App-Specific Issues</h3>
+                <h4>VLC Troubleshooting</h4>
+                <ul>
+                    <li>Update VLC to the latest available version</li>
+                    <li>Clear VLC cache and preferences</li>
+                    <li>Try different network protocols in VLC settings</li>
+                    <li>Disable hardware acceleration if experiencing crashes</li>
+                </ul>
+
+                <h4>General App Issues</h4>
+                <ul>
+                    <li>Restart your Windows Phone device</li>
+                    <li>Ensure sufficient storage space is available</li>
+                    <li>Check for Windows Phone system updates</li>
+                    <li>Reinstall the problematic app if issues persist</li>
+                </ul>
+            </section>
+
+            <section id="optimization">
+                <h2><i class="fas fa-tachometer-alt"></i> Performance Optimization</h2>
+                <p>
+                    Optimize your Windows Phone for better M3U8 playback performance:
+                </p>
+
+                <h3>Device Optimization</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Close Background Apps</strong><br>
+                        Press and hold the back button to see running apps and close unnecessary ones.
+                    </div>
+                    <div class="step-item">
+                        <strong>Free Up Storage</strong><br>
+                        Ensure at least 1GB of free storage for smooth streaming and caching.
+                    </div>
+                    <div class="step-item">
+                        <strong>Restart Regularly</strong><br>
+                        Restart your device periodically to clear memory and improve performance.
+                    </div>
+                    <div class="step-item">
+                        <strong>Update System</strong><br>
+                        Keep Windows Phone updated to the latest available version.
+                    </div>
+                </div>
+
+                <h3>Network Optimization</h3>
+                <ul>
+                    <li><strong>Use Wi-Fi:</strong> Prefer Wi-Fi over cellular data for better stability</li>
+                    <li><strong>Signal Strength:</strong> Ensure strong signal strength for consistent streaming</li>
+                    <li><strong>Data Saver:</strong> Disable data saver mode when streaming M3U8 content</li>
+                    <li><strong>Background Data:</strong> Allow background data for your M3U8 player apps</li>
+                </ul>
+
+                <h3>App Settings</h3>
+                <ul>
+                    <li><strong>Buffer Size:</strong> Increase buffer size in player settings if available</li>
+                    <li><strong>Quality Settings:</strong> Use adaptive quality or lower resolution for smoother playback</li>
+                    <li><strong>Hardware Acceleration:</strong> Enable or disable based on device performance</li>
+                    <li><strong>Cache Settings:</strong> Configure appropriate cache size for your storage capacity</li>
+                </ul>
+            </section>
+
+            <section id="comparison">
+                <h2><i class="fas fa-balance-scale"></i> App Comparison</h2>
+                <p>
+                    Compare the main M3U8 players available for Windows Phone:
+                </p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>VLC</th>
+                            <th>CCPlayer</th>
+                            <th>Perfect Video</th>
+                            <th>Multimedia 8</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>M3U8 Support</strong></td>
+                            <td>Excellent</td>
+                            <td>Good</td>
+                            <td>Good</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td>Free</td>
+                            <td>Free (ads)</td>
+                            <td>Paid</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td><strong>User Interface</strong></td>
+                            <td>Simple</td>
+                            <td>Modern</td>
+                            <td>Advanced</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subtitle Support</strong></td>
+                            <td>Excellent</td>
+                            <td>Good</td>
+                            <td>Good</td>
+                            <td>Limited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network Streaming</strong></td>
+                            <td>Excellent</td>
+                            <td>Good</td>
+                            <td>Excellent</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance</strong></td>
+                            <td>High</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td>Low</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Codec Support</strong></td>
+                            <td>Extensive</td>
+                            <td>Good</td>
+                            <td>Good</td>
+                            <td>Limited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Recommendation</strong></td>
+                            <td>★★★★★</td>
+                            <td>★★★★☆</td>
+                            <td>★★★★☆</td>
+                            <td>★★★☆☆</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success-box">
+                    <strong><i class="fas fa-trophy"></i> Winner:</strong>
+                    VLC for Windows Phone is the clear winner for M3U8 playback, offering the best combination of features, performance, and reliability at no cost.
+                </div>
+            </section>
+
+            <section id="alternatives">
+                <h2><i class="fas fa-route"></i> Alternative Solutions</h2>
+                <p>
+                    If native Windows Phone apps don't meet your needs, consider these alternative approaches:
+                </p>
+
+                <h3>Cloud-Based Solutions</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="feature-title">Cloud Streaming</div>
+                        <div class="feature-description">Use cloud services to convert M3U8 to compatible formats</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="feature-title">Remote Desktop</div>
+                        <div class="feature-description">Access a computer remotely to play M3U8 files</div>
+                    </div>
+                </div>
+
+                <h3>Conversion Methods</h3>
+                <p>
+                    Convert M3U8 streams to Windows Phone-compatible formats:
+                </p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <strong>Use Online Converters</strong><br>
+                        Utilize web-based M3U8 to MP4 conversion services.
+                    </div>
+                    <div class="step-item">
+                        <strong>Desktop Software</strong><br>
+                        Use FFmpeg or similar tools on a computer to convert files.
+                    </div>
+                    <div class="step-item">
+                        <strong>Transfer to Phone</strong><br>
+                        Move converted files to your Windows Phone for offline playback.
+                    </div>
+                </div>
+
+                <h3>Streaming Alternatives</h3>
+                <ul>
+                    <li><strong>DLNA Streaming:</strong> Stream from a DLNA server to your Windows Phone</li>
+                    <li><strong>Miracast:</strong> Mirror content from a compatible device</li>
+                    <li><strong>OneDrive Streaming:</strong> Upload converted files to OneDrive for cloud access</li>
+                    <li><strong>Network Attached Storage:</strong> Access M3U8 files from a home NAS device</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong><i class="fas fa-lightbulb"></i> Future Considerations:</strong>
+                    Since Windows Phone is discontinued, consider upgrading to a modern Android or iOS device for better M3U8 support and ongoing app updates.
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
+                <p>
+                    While Windows Phone presents unique challenges for M3U8 playback due to its discontinued status and limited app ecosystem, several viable solutions exist. VLC for Windows Phone remains the best option for most users, offering reliable M3U8 support with a comprehensive feature set.
+                </p>
+                <p>
+                    For optimal results, ensure your device is optimized for performance, use a stable network connection, and consider alternative solutions if native apps don't meet your specific needs. Remember that Windows Phone's limitations may require workarounds or eventual migration to a more modern mobile platform.
+                </p>
+
+                <div class="success-box">
+                    <strong><i class="fas fa-star"></i> Key Takeaways:</strong>
+                    <ul>
+                        <li>VLC for Windows Phone is the recommended M3U8 player</li>
+                        <li>Optimize device performance for better streaming</li>
+                        <li>Use Wi-Fi connections when possible</li>
+                        <li>Consider conversion alternatives for problematic files</li>
+                        <li>Plan for future device upgrades due to platform discontinuation</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>M3U8 Player</h4>
+                <ul>
+                    <li><a href="/">Online Player</a></li>
+                    <li><a href="/post/list.html">Guides & Tutorials</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Popular Guides</h4>
+                <ul>
+                    <li><a href="/post/what-is-a-m3u8-file.html">What is M3U8?</a></li>
+                    <li><a href="/post/how-to-play-a-m3u8-file.html">How to Play M3U8</a></li>
+                    <li><a href="/post/how-to-play-m3u8-files-in-vlc-player.html">M3U8 in VLC</a></li>
+                    <li><a href="/post/how-to-embed-m3u8-player-in-web-page.html">Embed M3U8 Player</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Platform Guides</h4>
+                <ul>
+                    <li><a href="/post/how-to-play-m3u8-files-on-windows.html">Windows</a></li>
+                    <li><a href="/post/how-to-play-m3u8-files-on-mac.html">macOS</a></li>
+                    <li><a href="/post/how-to-play-m3u8-files-on-linux.html">Linux</a></li>
+                    <li><a href="/post/how-to-play-m3u8-files-on-iphone.html">iPhone</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Tools & Resources</h4>
+                <ul>
+                    <li><a href="/mp4-player/">MP4 Player</a></li>
+                    <li><a href="/post/how-to-play-m3u8-files-offline.html">Offline Playback</a></li>
+                    <li><a href="https://github.com/videojs/http-streaming">HLS.js Library</a></li>
+                    <li><a href="https://www.videolan.org/vlc/">VLC Media Player</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 M3U8 Player Online. All rights reserved. | Made with ❤️ for the streaming community</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update theme toggle icon
+            const themeToggle = document.querySelector('.theme-toggle i');
+            themeToggle.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Language dropdown functionality
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Update theme toggle icon
+            const themeToggle = document.querySelector('.theme-toggle i');
+            themeToggle.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
